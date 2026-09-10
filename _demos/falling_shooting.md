@@ -2,6 +2,7 @@
 title: Falling and shooting ball
 pira: 1D60.20
 category: mechanics
+card_picture: 1C10.25_1.jpg
 ---
 
 Also known as **projectile motion** or **simultaneous fall**. A ball shot horizontally by a projectile launcher will hit the floor at the same time as a ball dropped from the same height.
