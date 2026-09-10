@@ -12,6 +12,6 @@ Also known as **projectile motion** or **simultaneous fall**. A ball shot horizo
 - 2 x ball bearings
 - Vernier power adapter
 - Power bar
-
+{% picture 1C10.25_1.jpg %}
 {% include youtubePlayer.html id="Fxp_3jHh2ow" %}
 {% include youtubePlayer.html id="4Y3JG6B0DWE" %}
