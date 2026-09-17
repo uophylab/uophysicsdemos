@@ -1,5 +1,5 @@
 ---
-title: Whirligig
+title: Measuring g
 pira: 1D50.20
 category: mechanics
 card_picture: 1D50.20_1.jpg
