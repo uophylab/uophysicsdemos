@@ -6,25 +6,27 @@
     <title>{{ page.title }}</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/picnic">
     <link rel="stylesheet" href="{{ site.baseurl }}/assets/styles/style.css">
-       <style>
-      /* Optional adjustment to space out the new horizontal button row */
+          <style>
+      /* MAKES THE TOTAL PAGE SPACE LARGER */
+      main.document {
+        max-width: 95%;      /* Increases the maximum width limit (default is much narrower) */
+        width: 1400px;       /* Sets a comfortable widescreen limit so it doesn't stretch infinitely */
+        margin: 0 auto;      /* Keeps the content centered on the screen */
+        padding-top: 5em;    /* Pushes content down so it doesn't hide behind the sticky navbar */
+      }
+
+      /* Spacing out the horizontal navigation row */
       .horizontal-nav {
         margin-bottom: 25px;
         width: 100%;
       }
-      
-      /* TARGETING BUTTON SIZE AND FONT HERE */
       .horizontal-nav .pseudo.button {
         margin-right: 8px;
         margin-bottom: 8px;
-        
-        /* Font Styles */
-        font-family: "Helvetica Neue", Arial, sans-serif; /* Changes the font type */
-        font-weight: 500;                                 /* Changes text thickness (e.g., 400 normal, 700 bold) */
-        
-        /* Size Styles */
-        font-size: 16px;                                  /* Changes text size */
-        padding: 8px 16px;                                /* Adjusts button size (top/bottom padding, left/right padding) */
+        font-family: "Helvetica Neue", Arial, sans-serif;
+        font-weight: 500;
+        font-size: 16px;
+        padding: 8px 16px;
       }
       
       /* Styling to visually highlight the current active category button */
@@ -33,6 +35,7 @@
         font-weight: bold;
       }
     </style>
+
   </head>
   <body>
     <nav>
