@@ -6,16 +6,27 @@
     <title>{{ page.title }}</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/picnic">
     <link rel="stylesheet" href="{{ site.baseurl }}/assets/styles/style.css">
-    <style>
+       <style>
       /* Optional adjustment to space out the new horizontal button row */
       .horizontal-nav {
         margin-bottom: 25px;
         width: 100%;
       }
+      
+      /* TARGETING BUTTON SIZE AND FONT HERE */
       .horizontal-nav .pseudo.button {
-        margin-right: 5px;
-        margin-bottom: 5px;
+        margin-right: 8px;
+        margin-bottom: 8px;
+        
+        /* Font Styles */
+        font-family: "Helvetica Neue", Arial, sans-serif; /* Changes the font type */
+        font-weight: 500;                                 /* Changes text thickness (e.g., 400 normal, 700 bold) */
+        
+        /* Size Styles */
+        font-size: 16px;                                  /* Changes text size */
+        padding: 8px 16px;                                /* Adjusts button size (top/bottom padding, left/right padding) */
       }
+      
       /* Styling to visually highlight the current active category button */
       .horizontal-nav .pseudo.button.current {
         background-color: rgba(17, 17, 17, 0.1);
