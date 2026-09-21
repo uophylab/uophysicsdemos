@@ -6,25 +6,48 @@
     <title>{{ page.title }}</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/picnic">
     <link rel="stylesheet" href="{{ site.baseurl }}/assets/styles/style.css">
+    <style>
+      /* Optional adjustment to space out the new horizontal button row */
+      .horizontal-nav {
+        margin-bottom: 25px;
+        width: 100%;
+      }
+      .horizontal-nav .pseudo.button {
+        margin-right: 5px;
+        margin-bottom: 5px;
+      }
+      /* Styling to visually highlight the current active category button */
+      .horizontal-nav .pseudo.button.current {
+        background-color: rgba(17, 17, 17, 0.1);
+        font-weight: bold;
+      }
+    </style>
   </head>
   <body>
     <nav>
       <a class="brand" href="{{ site.baseurl }}">University of Ottawa Physics Demos</a>
     </nav>
     <main class="document">
-      <section class="flex five">
-        <aside class="full fifth-1000">
-          <div class="links flex two three-500 five-800 one-1000">
+      <!-- 1. The main layout grid wrapper -->
+      <section class="flex one">
+        
+        <!-- 2. NEW Global Horizontal Category Navigation Row -->
+        <header class="full">
+          <div class="horizontal-nav">
             {% for category in site.categories %}
               {% capture relative_category_url %}{{ category.url | relative_url }}{% endcapture %}
-              <div><a class="pseudo button{% if current_category_url == relative_category_url %} current{% endif %}" href="{{ relative_category_url }}">{{ category.title }}</a></div>
+              <a class="pseudo button{% if current_category_url == relative_category_url %} current{% endif %}" href="{{ relative_category_url }}">{{ category.title }}</a>
             {% endfor %}
           </div>
-        </aside>
-        <article class="four-fifth-1000">
+          <hr style="opacity: 0.15; margin-bottom: 20px;">
+        </header>
+
+        <!-- 3. Page content container now takes full width -->
+        <article class="full">
           <h1>{{ page.title }}</h1>
           {{ content }}
         </article>
+
       </section>
     </main>
     <!-- Site rendered on {{ site.time }} -->
