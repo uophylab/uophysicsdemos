@@ -1,6 +1,25 @@
 ---
 layout: default
 ---
+
+<!-- 1. Horizontal Category Navigation Navigation -->
+<div class="flex row" style="gap: 15px; margin-bottom: 20px; list-style: none; padding: 0;">
+  {% assign categories = site.demos | map: 'category' | uniq %}
+  {% for cat in categories %}
+    {% capture cat_url %}/categories/{{ cat }}{% endcapture %}
+    <div>
+      <a href="{{ cat_url | relative_url }}" 
+         class="pseudo button {% if cat_url == page.url %}active{% endif %}"
+         style="text-transform: capitalize;">
+        {{ cat }}
+      </a>
+    </div>
+  {% endfor %}
+</div>
+
+<hr style="margin-bottom: 30px; opacity: 0.2;">
+
+<!-- 2. Grid of Demo Cards (Your Original Layout) -->
 <div class="flex three">
 {% for demo in site.demos %}
     {% capture category_url %}/categories/{{ demo.category }}{% endcapture %}
