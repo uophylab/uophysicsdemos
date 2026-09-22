@@ -88,34 +88,24 @@ html, body, main, document, .document, section, article {
       <!-- 1. The main layout grid wrapper -->
       <section class="flex one">
         
-        <!-- Global Horizontal Category Navigation Row (Foolproof Active State) -->
+        <!-- NEW Global Horizontal Category Navigation Row -->
         <header class="full">
           <div class="horizontal-nav">
-            {% for cat_name in site.navigation_order %}
+            {% for category in site.categories %}
+              {% capture relative_category_url %}{{ category.url | relative_url }}{% endcapture %}
               
-              <!-- 1. Find the matching category object from your configuration -->
-              {% assign category = site.categories | where: "title", cat_name | first %}
-              
-              {% if category %}
-                {% capture relative_category_url %}{{ category.url | relative_url }}{% endcapture %}
-                
-                <!-- 2. Foolproof active check for BOTH category indexes and single card pages -->
-                {% assign is_active = false %}
-                
-                <!-- Convert to downcase to avoid any capital letter mismatch bugs -->
-                {% assign current_page_cat = page.category | downcase %}
-                {% assign loop_cat_name = cat_name | downcase %}
-                
-                {% if page.url == category.url or current_page_cat == loop_cat_name %}
-                  {% assign is_active = true %}
-                {% endif %}
-                
-                <a class="pseudo button{% if is_active %} current{% endif %}" href="{{ relative_category_url }}">{{ category.title }}</a>
+              <!-- SMART CHECK: Triggers maroon if looking at the main category page OR an individual card -->
+              {% assign is_active = false %}
+              {% if current_category_url == relative_category_url or page.url == relative_category_url %}
+                {% assign is_active = true %}
               {% endif %}
+              
+              <a class="pseudo button{% if is_active %} current{% endif %}" href="{{ relative_category_url }}">{{ category.title }}</a>
             {% endfor %}
           </div>
           <hr style="opacity: 0.15; margin-bottom: 20px;">
         </header>
+
         <!-- 3. Page content container now takes full width -->
         <article class="full">
           <h1>{{ page.title }}</h1>
