@@ -88,33 +88,20 @@ html, body, main, document, .document, section, article {
       <!-- 1. The main layout grid wrapper -->
       <section class="flex one">
         
-        <!-- Global Horizontal Category Navigation Row (Dynamic & Fixed Maroon Highlighting) -->
+        <!-- NEW Global Horizontal Category Navigation Row -->
         <header class="full">
           <div class="horizontal-nav">
-            
-            <!-- 1. Automatically grab every unique category from your site demos -->
-            {% assign dynamic_categories = site.demos | map: "category" | uniq %}
-            
-            {% for cat_title in dynamic_categories %}
-              <!-- Sanitize spacing and letters to accurately match your folders and URLs -->
-              {% assign loop_cat_slug = cat_title | downcase | strip | replace: ' ', '-' %}
-              {% assign current_card_cat = page.category | downcase | strip | replace: ' ', '-' %}
+            {% for category in site.categories %}
+              {% capture relative_category_url %}{{ category.url | relative_url }}{% endcapture %}
               
-              <!-- Map out the clean structural link destination path -->
-              {% capture relative_category_url %}{{ site.baseurl }}/categories/{{ loop_cat_slug }}/{% endcapture %}
-              
-              <!-- 2. Foolproof Active State Checks -->
+              <!-- SMART CHECK: Triggers maroon if looking at the main category page OR an individual card -->
               {% assign is_active = false %}
-              {% capture cat_path_snippet %}/categories/{{ loop_cat_slug }}/{% endcapture %}
-              
-              <!-- Lights up maroon if the individual card tags match OR if the browser path hits the category route -->
-              {% if current_card_cat == loop_cat_slug or page.url == cat_path_snippet or page.url contains cat_path_snippet %}
+              {% if current_category_url == relative_category_url or page.url == relative_category_url %}
                 {% assign is_active = true %}
               {% endif %}
               
-              <a class="pseudo button{% if is_active %} current{% endif %}" href="{{ relative_category_url | relative_url }}">{{ cat_title }}</a>
+              <a class="pseudo button{% if is_active %} current{% endif %}" href="{{ relative_category_url }}">{{ category.title }}</a>
             {% endfor %}
-            
           </div>
           <hr style="opacity: 0.15; margin-bottom: 20px;">
         </header>
