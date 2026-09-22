@@ -88,12 +88,19 @@ html, body, main, document, .document, section, article {
       <!-- 1. The main layout grid wrapper -->
       <section class="flex one">
         
-        <!-- 2. NEW Global Horizontal Category Navigation Row -->
+        <!-- NEW Global Horizontal Category Navigation Row -->
         <header class="full">
           <div class="horizontal-nav">
             {% for category in site.categories %}
               {% capture relative_category_url %}{{ category.url | relative_url }}{% endcapture %}
-              <a class="pseudo button{% if current_category_url == relative_category_url %} current{% endif %}" href="{{ relative_category_url }}">{{ category.title }}</a>
+              
+              <!-- SMART CHECK: Triggers maroon if looking at the main category page OR an individual card -->
+              {% assign is_active = false %}
+              {% if current_category_url == relative_category_url or page.url == relative_category_url %}
+                {% assign is_active = true %}
+              {% endif %}
+              
+              <a class="pseudo button{% if is_active %} current{% endif %}" href="{{ relative_category_url }}">{{ category.title }}</a>
             {% endfor %}
           </div>
           <hr style="opacity: 0.15; margin-bottom: 20px;">
