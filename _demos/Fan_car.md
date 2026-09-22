@@ -2,21 +2,24 @@
 title: Fan Car
 pira: 1D50.20
 category: mechanics
-card_picture: IMG_0622.JPG
+card_picture: IMG_0625.JPG
 ---
 
-An experiment involving a stack of discs and a ruler is a classic demonstration of Newton's First Law of Motion, also known as the Law of Inertia.
+The fan cart with a sail is a classic physics demonstration that tests Newton's Third Law of Motion (Action and Reaction) by asking a trick question: **Can a car move if its own fan blows wind into its own sail?**
 
-### Instruction ###
-* **Stack the Discs:** Place 5 to 7 flat, identical discs in a neat, vertical column on a smooth table.
-* **Position the Ruler:** Hold a flat plastic or wooden ruler horizontally by one end, keeping it level with the table.
-* **The Action:** Flick or swing the ruler quickly and sharply across the table, aiming directly at the bottom-most disc in the stack.
+### The setup ###
+A small toy cart has both a motorized fan and a flat sail mounted to its frame, with the fan pointed directly at the sail.
+
+* **Build the Cart:** Mount a battery-operated toy fan securely to one end of a lightweight, low-friction toy car or cart.
+* **Add the Sail:** Attach a small mast to the other end of the cart and mount a square piece of stiff paper or cardboard to act as a sail, positioned directly in front of the fan's airflow.
+* **The Action:** Place the cart on a smooth, flat surface and switch the fan on so it blows air directly into the sail.
 
 ### The physics ###
-Newton's First Law states that an object at rest stays at rest, and an object in motion stays in motion, unless acted upon by an external force.
+Newton's Third Law states that for every action, there is an equal and opposite reaction. In this experiment, we look at the forces acting on the car as a single, combined system.
 
-* **The Bottom Disc:** The ruler applies a direct, sudden horizontal force to the bottom disc. Because the force overcomes the disc's inertia, it flies out of the stack.
-* **The Upper Discs:** Because you move the ruler so fast, the friction between the bottom disc and the one above it doesn't have enough time to transfer significant horizontal force to the rest of the stack.
-* **Inertia & Gravity:** Due to inertia, the upper discs "want" to stay right where they are. Once the bottom disc is gone, the external force of gravity pulls the rest of the stack straight down into the empty space.
+* **The Fan (Backward Force):** To blow air forward, the fan blades must exert a forward force on the air molecules. In return, the air molecules exert an equal and opposite backward force on the fan. This "recoil" tries to push the car backward.
+* **The Sail (Forward Force):**  The air molecules travel forward and collide with the flat sail. This collision transfers the air's momentum to the sail, pushing the sail (and the cart) forward.
+* **Internal Forces Cancel:** Because the fan and the sail are attached to the exact same chassis, these two forces are internal to the system. The forward push on the sail perfectly matches the backward recoil on the fan. They cancel each other out, resulting in a net force of zero.
+* **The Curve Exception:** A curved sail catches the air and physically redirects it backward. Bouncing the air backward creates a brand-new reaction force that pushes the sail forward. This extra forward thrust is finally enough to overcome the fan's backward recoil, allowing the car to move.
 
-{% picture IMG_0622.JPG %}
+{% picture IMG_0625.JPG %}
