@@ -6,7 +6,7 @@
     <title>{{ page.title }}|University of Ottawa | Physic Laboratories</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/picnic">
     <link rel="stylesheet" href="{{ site.baseurl }}/assets/styles/style.css">
-              <style>
+    <style>
       /* FORCES THE BACKGROUND OF THE WHOLE SCREEN TO LIGHT GRAY */
       body {
         background-color: #f4f5f7 !important; /* Soft, modern light gray background */
@@ -26,14 +26,16 @@
         font-size: 1.3em !important;          /* Keeps title bold and highly readable */
         line-height: 3.5em !important;        /* Centers text vertically inside the navbar */
       }
-/* FORCES THE COMPLETE SCREEN (INCLUDING THE CENTER) TO TURN LIGHT GRAY */
-html, body, main, document, .document, section, article {
-  background-color: #f4f5f7 !important; /* Forces the exact color code globally */
-  background: #f4f5f7 !important;       /* Overwrites any gradient backgrounds */
-  box-shadow: none !important;          /* Wipes out any borders hiding under containers */
-  border: none !important;              /* Wipes out framework card borders */
-}
-          /* FORCES THE WEBSITE TO TIGHTLY EXPAND TO 100% EDGE-TO-EDGE FULL SCREEN */
+
+      /* FORCES THE COMPLETE SCREEN (INCLUDING THE CENTER) TO TURN LIGHT GRAY */
+      html, body, main, document, .document, section, article {
+        background-color: #f4f5f7 !important; /* Forces the exact color code globally */
+        background: #f4f5f7 !important;       /* Overwrites any gradient backgrounds */
+        box-shadow: none !important;          /* Wipes out any borders hiding under containers */
+        border: none !important;              /* Wipes out framework card borders */
+      }
+
+      /* FORCES THE WEBSITE TO TIGHTLY EXPAND TO 100% EDGE-TO-EDGE FULL SCREEN */
       main.document {
         max-width: 100% !important; 
         width: 100% !important;     
@@ -41,8 +43,6 @@ html, body, main, document, .document, section, article {
         padding-top: 5.5em;                   
         padding-left: 20px;         
         padding-right: 20px;        
-        
-        /* ADD THIS LINE HERE */
         background-color: transparent !important; /* Removes any hidden white blocks over the gray body */
       }
 
@@ -60,6 +60,8 @@ html, body, main, document, .document, section, article {
         margin-bottom: 25px; 
         width: 100%;
       }
+      
+      /* UNSELECTED STATE: STANDBY WHITE BUTTONS WITH DARK TEXT */
       .horizontal-nav .pseudo.button {
         margin-right: 14px;   
         margin-bottom: 10px;
@@ -67,23 +69,23 @@ html, body, main, document, .document, section, article {
         font-size: 20px !important;    
         font-weight: bold !important;  
         padding: 8px 16px !important;  
-        background-color: #ffffff !important; /* Makes category buttons crisp white cards against the gray background */
-        border: 1px solid #d1d5db !important; /* Adds a fine gray outline boundary to structural elements */
-        color: #111111 !important;            /* Keeps category texts dark for high contrast reading */
+        background-color: #ffffff !important; /* White button card */
+        border: 1px solid #d1d5db !important; /* Fine edge outline */
+        color: #111111 !important;            /* Dark text */
       }
       
-      /* STYLING FOR THE CURRENT SELECTED NAVIGATION BUTTON */
+      /* SELECTED STATE: ACTIVE CATEGORY TURNS MAROON WITH WHITE TEXT */
       .horizontal-nav .pseudo.button.current {
-        background-color: #8F001A !important; /* Highlighted button turns maroon to match the top banner logo */
+        background-color: #8F001A !important; /* Highlighted button matches the navbar maroon */
         color: #ffffff !important;            /* Text color flips to white when selected */
         border-color: #8F001A !important;
       }
     </style>
   </head>
   <body>
-   <nav style="display: flex; justify-content: space-between; align-items: center; padding: 0 25px; box-sizing: border-box;">
+    <nav style="display: flex; justify-content: space-between; align-items: center; padding: 0 25px; box-sizing: border-box;">
       
-      <!-- 1. TOP LEFT: Official White uOttawa Logo Image -->
+      <!-- 1. TOP LEFT: Reliable public uOttawa Logo Image with vector mask inversion -->
       <a href="{{ site.baseurl }}" style="display: flex; align-items: center; height: 100%;">
         <img src="https://wikimedia.org" 
              alt="University of Ottawa Logo" 
@@ -97,7 +99,6 @@ html, body, main, document, .document, section, article {
 
     </nav>
     <main class="document">
-      <!-- 1. The main layout grid wrapper -->
       <section class="flex one">
         
         <!-- NEW Global Horizontal Category Navigation Row -->
@@ -106,9 +107,14 @@ html, body, main, document, .document, section, article {
             {% for category in site.categories %}
               {% capture relative_category_url %}{{ category.url | relative_url }}{% endcapture %}
               
-              <!-- SMART CHECK: Triggers maroon if looking at the main category page OR an individual card -->
+              <!-- FOOLPROOF STRIPPED URL ACTIVE CHECK -->
               {% assign is_active = false %}
-              {% if current_category_url == relative_category_url or page.url == relative_category_url %}
+              {% assign loop_slug = category.title | downcase | strip | replace: ' ', '-' %}
+              {% assign current_card_cat = page.category | downcase | strip | replace: ' ', '-' %}
+              
+              {% capture cat_path_snippet %}/categories/{{ loop_slug }}/{% endcapture %}
+              
+              {% if current_card_cat == loop_slug or page.url == cat_path_snippet or page.url contains cat_path_snippet %}
                 {% assign is_active = true %}
               {% endif %}
               
@@ -118,7 +124,7 @@ html, body, main, document, .document, section, article {
           <hr style="opacity: 0.15; margin-bottom: 20px;">
         </header>
 
-        <!-- 3. Page content container now takes full width -->
+        <!-- Page content container now takes full width -->
         <article class="full">
           <h1>{{ page.title }}</h1>
           {{ content }}
@@ -126,6 +132,5 @@ html, body, main, document, .document, section, article {
 
       </section>
     </main>
-    <!-- Site rendered on {{ site.time }} -->
   </body>
 </html>
