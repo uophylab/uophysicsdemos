@@ -54,6 +54,117 @@ html, body, main, document, .document, section, article {
         box-shadow: none !important;
       }
 
+      /* Spacing out your horizontal category navigation button row */
+      .horizontal-nav {
+        margin-top: 15px;     
+        margin-bottom: 25px; 
+        width: 100%;
+      }
+      .horizontal-nav .pseudo.button {
+        margin-right: 14px;   
+        margin-bottom: 10px;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 20px !important;    
+        font-weight: bold !important;  
+        padding: 8px 16px !important;  
+        background-color: #ffffff !important; /* Makes category buttons crisp white cards against the gray background */
+        border: 1px solid #d1d5db !important; /* Adds a fine gray outline boundary to structural elements */
+        color: #111111 !important;            /* Keeps category texts dark for high contrast reading */
+      }
+      
+      /* STYLING FOR THE CURRENT SELECTED NAVIGATION BUTTON */
+      .horizontal-nav .pseudo.button.current {
+        background-color: #8F001A !important; /* Highlighted button turns maroon to match the top banner logo */
+        color: #ffffff !important;            /* Text color flips to white when selected */
+        border-color: #8F001A !important;
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <a class="brand" href="{{ site.baseurl }}">University of Ottawa | Physic Laboratories | Demos</a>
+    </nav>
+    <main class="document">
+      <!-- 1. The main layout grid wrapper -->
+      <section class="flex one">
+        
+        <!-- 2. NEW Global Horizontal Category Navigation Row -->
+        <header class="full">
+          <div class="horizontal-nav">
+            {% for category in site.categories %}
+              {% capture relative_category_url %}{{ category.url | relative_url }}{% endcapture %}
+              <a class="pseudo button{% if current_category_url == relative_category_url %} current{% endif %}" href="{{ relative_category_url }}">{{ category.title }}</a>
+            {% endfor %}
+          </div>
+          <hr style="opacity: 0.15; margin-bottom: 20px;">
+        </header>
+
+        <!-- 3. Page content container now takes full width -->
+        <article class="full">
+          <h1>{{ page.title }}</h1>
+          {{ content }}
+        </article>
+
+      </section>
+    </main>
+    <!-- Site rendered on {{ site.time }} -->
+  </body>
+</html><!doctype html>
+<html lang="en">
+  <head>
+    {% capture current_category_url %}{{ site.baseurl  | append: "/categories/" | append: page.category | strip }}{% endcapture %}
+    <meta charset="utf-8">
+    <title>{{ page.title }}|University of Ottawa | Physic Laboratories</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/picnic">
+    <link rel="stylesheet" href="{{ site.baseurl }}/assets/styles/style.css">
+              <style>
+      /* FORCES THE BACKGROUND OF THE WHOLE SCREEN TO LIGHT GRAY */
+      body {
+        background-color: #f4f5f7 !important; /* Soft, modern light gray background */
+      }
+
+      /* CHANGING THE NAVBAR COLOR TO MAROON */
+      nav {
+        background-color: #8F001A !important;  /* Official University of Ottawa Garnet/Maroon */
+        height: 3.5em !important;             /* Slightly taller layout to frame larger text comfortably */
+        box-shadow: 0 2px 5px rgba(0,0,0,0.15) !important; /* Clean drop shadow beneath the colored bar */
+      }
+
+      /* FIXES THE TEXT INSIDE THE MAROON NAVBAR TO BE CRISP WHITE */
+      nav .brand {
+        color: #ffffff !important;            /* Changes "uOttawa Physics Demonstrations" text to white */
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 1.3em !important;          /* Keeps title bold and highly readable */
+        line-height: 3.5em !important;        /* Centers text vertically inside the navbar */
+      }
+/* FORCES THE COMPLETE SCREEN (INCLUDING THE CENTER) TO TURN LIGHT GRAY */
+html, body, main, document, .document, section, article {
+  background-color: #f4f5f7 !important; /* Forces the exact color code globally */
+  background: #f4f5f7 !important;       /* Overwrites any gradient backgrounds */
+  box-shadow: none !important;          /* Wipes out any borders hiding under containers */
+  border: none !important;              /* Wipes out framework card borders */
+}
+          /* FORCES THE WEBSITE TO TIGHTLY EXPAND TO 100% EDGE-TO-EDGE FULL SCREEN */
+      main.document {
+        max-width: 100% !important; 
+        width: 100% !important;     
+        margin: 0 !important;       
+        padding-top: 5.5em;                   
+        padding-left: 20px;         
+        padding-right: 20px;        
+        
+        /* ADD THIS LINE HERE */
+        background-color: transparent !important; /* Removes any hidden white blocks over the gray body */
+      }
+
+      /* ALSO FORCE THE INNER CONTENT AREA TO BE TRANSPARENT */
+      main.document article.full, 
+      main.document article {
+        background-color: transparent !important; /* Clears the background behind your titles and text */
+        border: none !important;                  /* Removes any framework borders box outlines */
+        box-shadow: none !important;
+      }
+
          /* Decreases spacing specifically around your horizontal button bar */
       .horizontal-nav {
         margin-top: 15px;     
