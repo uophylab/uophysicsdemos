@@ -1,5 +1,5 @@
 ---
-title: Ball and feather in air/vacuum
+title: Ball and feather free fall
 pira: 1C20.10
 category: mechanics
 card_picture: 1C20.10_1.jpg
