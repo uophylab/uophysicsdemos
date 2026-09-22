@@ -7,12 +7,15 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/picnic">
     <link rel="stylesheet" href="{{ site.baseurl }}/assets/styles/style.css">
               <style>
-     main.document {
-  max-width: 96% !important; /* Forces the layout to span nearly edge-to-edge */
-  width: 100% !important;     /* Removes the pixel limit so it uses wide monitors */
-  margin: 0 auto;            /* Centers the remaining layout on the screen */
-  padding-top: 5em;          /* Pushes down the content so it sits below the navbar */
-}
+      /* FORCES THE WEBSITE TO TIGHTLY EXPAND TO 100% EDGE-TO-EDGE FULL SCREEN */
+      main.document {
+        max-width: 100% !important; /* Removes any maximum size restrictions */
+        width: 100% !important;     /* Forces the content area to fill 100% of any screen width */
+        margin: 0 !important;       /* Removes outer margins so it hits the very edges of the glass */
+        padding-top: 5em;           /* Keeps your layout content comfortably below the sticky navbar */
+        padding-left: 20px;         /* Adds a clean, subtle 20px safety border so text doesn't touch the monitor frame */
+        padding-right: 20px;        /* Adds a clean, subtle 20px safety border on the right side */
+      }
 
      /* Decreases spacing specifically around your horizontal button bar */
       .horizontal-nav {
