@@ -14,19 +14,23 @@
   padding-top: 5em;          /* Pushes down the content so it sits below the navbar */
 }
 
-      /* Decreases spacing specifically around your horizontal button bar */
+     /* Decreases spacing specifically around your horizontal button bar */
       .horizontal-nav {
-        margin-top: 5px;     /* Pulls the categories closer to the main top header */
-        margin-bottom: 15px; /* Decreases the gap between buttons and page content */
+        margin-top: 15px;     /* Leaves a clean gap beneath the top site header */
+        margin-bottom: 25px; /* Gives nice spacing above the "Mechanics" title */
         width: 100%;
       }
       .horizontal-nav .pseudo.button {
-        margin-right: 6px;   /* Packs the category buttons tighter side-by-side */
-        margin-bottom: 6px;
-        font-family: "Helvetica Neue", Arial, sans-serif;
-        font-weight: 500;
-        font-size: 16px;
-        padding: 6px 12px;   /* Slightly slims down the inner button padding */
+        margin-right: 14px;   /* Adds healthy spacing between the large text links */
+        margin-bottom: 10px;
+        font-family: Arial, Helvetica, sans-serif;
+        
+        /* SCALES UP THE FONT SIZE AND WEIGHT */
+        font-size: 20px !important;    /* Increased from 16px to make them large and readable */
+        font-weight: bold !important;  /* Changes weight to bold so they stand out as main navigation tabs */
+        
+        /* EXPANDS THE BUTTON HIT-BOX SPACING SURROUNDING THE TEXT */
+        padding: 8px 16px !important;  /* Gives the labels room to breathe */
       }
       
       /* Styling to visually highlight the current active category button */
