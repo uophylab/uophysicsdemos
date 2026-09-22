@@ -54,12 +54,14 @@ html, body, main, document, .document, section, article {
         box-shadow: none !important;
       }
 
-      /* Spacing out your horizontal category navigation button row */
+         /* Decreases spacing specifically around your horizontal button bar */
       .horizontal-nav {
         margin-top: 15px;     
         margin-bottom: 25px; 
         width: 100%;
       }
+      
+      /* STYLING THE BUTTONS TO MATCH THE NAVBAR (MAROON BACKGROUND & WHITE TEXT) */
       .horizontal-nav .pseudo.button {
         margin-right: 14px;   
         margin-bottom: 10px;
@@ -67,16 +69,20 @@ html, body, main, document, .document, section, article {
         font-size: 20px !important;    
         font-weight: bold !important;  
         padding: 8px 16px !important;  
-        background-color: #ffffff !important; /* Makes category buttons crisp white cards against the gray background */
-        border: 1px solid #d1d5db !important; /* Adds a fine gray outline boundary to structural elements */
-        color: #111111 !important;            /* Keeps category texts dark for high contrast reading */
+        
+        /* Color Overrides */
+        background-color: #8F001A !important; /* Official uOttawa Maroon background */
+        color: #ffffff !important;            /* Crisp white text color */
+        border: 1px solid #8F001A !important; /* Matching maroon outline border */
+        border-radius: 4px !important;        /* Smooth clean button corners */
+        box-shadow: 0 1px 3px rgba(0,0,0,0.1) !important; /* Subtle card shadow */
       }
       
-      /* STYLING FOR THE CURRENT SELECTED NAVIGATION BUTTON */
+      /* STYLING FOR THE CURRENT ACTIVE SELECTED BUTTON */
       .horizontal-nav .pseudo.button.current {
-        background-color: #8F001A !important; /* Highlighted button turns maroon to match the top banner logo */
-        color: #ffffff !important;            /* Text color flips to white when selected */
-        border-color: #8F001A !important;
+        background-color: #ffffff !important; /* Flips background to white so users know it's selected */
+        color: #8F001A !important;            /* Flips text to maroon for ultimate readability */
+        border: 2px solid #8F001A !important; /* Bold maroon boundary line */
       }
     </style>
   </head>
