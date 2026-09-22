@@ -21,10 +21,3 @@ Newton's First Law states that an object at rest stays at rest, and an object in
 
 {% picture IMG_0622.JPG %}
 
-{% picture 1D50.20_1.jpg %}
-Wooden ball with mass:
-{% include youtubePlayer.html id="6lu8ywG0ZFI" %}
-
-Wooden ball release:
-{% include youtubePlayer.html id="arVy2Nzdsw4" %}
-
