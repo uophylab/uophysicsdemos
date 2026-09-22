@@ -6,27 +6,30 @@
     <title>{{ page.title }}</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/picnic">
     <link rel="stylesheet" href="{{ site.baseurl }}/assets/styles/style.css">
-          <style>
-      /* MAKES THE TOTAL PAGE SPACE LARGER */
+              <style>
+      /* DECREASES SIDE MARGINS TO MAXIMUM WIDTH */
       main.document {
-        max-width: 95%;      /* Increases the maximum width limit (default is much narrower) */
-        width: 2000px;       /* Sets a comfortable widescreen limit so it doesn't stretch infinitely */
-        margin: 0 auto;      /* Keeps the content centered on the screen */
-        padding-top: 5em;    /* Pushes content down so it doesn't hide behind the sticky navbar */
+        max-width: 98%;      /* Drastically reduces the outer side margins */
+        width: 100%;         /* Allows the content to fill up the absolute max space allowed */
+        margin: 0 auto;      /* Centers the container grid precisely */
+        padding-top: 4.5em;  /* Keeps content just beneath the fixed sticky top navigation bar */
+        padding-left: 10px;  /* Minimal safety padding so text doesn't touch the glass screen edge */
+        padding-right: 10px; /* Minimal safety padding for the right edge */
       }
 
-      /* Spacing out the horizontal navigation row */
+      /* Decreases spacing specifically around your horizontal button bar */
       .horizontal-nav {
-        margin-bottom: 25px;
+        margin-top: 5px;     /* Pulls the categories closer to the main top header */
+        margin-bottom: 15px; /* Decreases the gap between buttons and page content */
         width: 100%;
       }
       .horizontal-nav .pseudo.button {
-        margin-right: 8px;
-        margin-bottom: 8px;
+        margin-right: 6px;   /* Packs the category buttons tighter side-by-side */
+        margin-bottom: 6px;
         font-family: "Helvetica Neue", Arial, sans-serif;
         font-weight: 500;
         font-size: 16px;
-        padding: 8px 16px;
+        padding: 6px 12px;   /* Slightly slims down the inner button padding */
       }
       
       /* Styling to visually highlight the current active category button */
@@ -35,7 +38,6 @@
         font-weight: bold;
       }
     </style>
-
   </head>
   <body>
     <nav>
