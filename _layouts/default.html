@@ -26,7 +26,13 @@
         font-size: 1.3em !important;          /* Keeps title bold and highly readable */
         line-height: 3.5em !important;        /* Centers text vertically inside the navbar */
       }
-
+/* FORCES THE COMPLETE SCREEN (INCLUDING THE CENTER) TO TURN LIGHT GRAY */
+html, body, main, document, .document, section, article {
+  background-color: #f4f5f7 !important; /* Forces the exact color code globally */
+  background: #f4f5f7 !important;       /* Overwrites any gradient backgrounds */
+  box-shadow: none !important;          /* Wipes out any borders hiding under containers */
+  border: none !important;              /* Wipes out framework card borders */
+}
           /* FORCES THE WEBSITE TO TIGHTLY EXPAND TO 100% EDGE-TO-EDGE FULL SCREEN */
       main.document {
         max-width: 100% !important; 
