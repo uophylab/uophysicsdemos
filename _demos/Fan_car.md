@@ -10,6 +10,8 @@ The fan cart with a sail is a classic physics demonstration that tests Newton's 
 ### The setup ###
 A small toy cart has both a motorized fan and a flat sail mounted to its frame, with the fan pointed directly at the sail.
 
+
+### Instruction ###
 * **Build the Cart:** Mount a battery-operated toy fan securely to one end of a lightweight, low-friction toy car or cart.
 * **Add the Sail:** Attach a small mast to the other end of the cart and mount a square piece of stiff paper or cardboard to act as a sail, positioned directly in front of the fan's airflow.
 * **The Action:** Place the cart on a smooth, flat surface and switch the fan on so it blows air directly into the sail.
