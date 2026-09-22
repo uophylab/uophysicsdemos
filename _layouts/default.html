@@ -7,45 +7,60 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/picnic">
     <link rel="stylesheet" href="{{ site.baseurl }}/assets/styles/style.css">
               <style>
-      /* FORCES THE WEBSITE TO TIGHTLY EXPAND TO 100% EDGE-TO-EDGE FULL SCREEN */
-      main.document {
-        max-width: 100% !important; /* Removes any maximum size restrictions */
-        width: 100% !important;     /* Forces the content area to fill 100% of any screen width */
-        margin: 0 !important;       /* Removes outer margins so it hits the very edges of the glass */
-        padding-top: 5em;           /* Keeps your layout content comfortably below the sticky navbar */
-        padding-left: 20px;         /* Adds a clean, subtle 20px safety border so text doesn't touch the monitor frame */
-        padding-right: 20px;        /* Adds a clean, subtle 20px safety border on the right side */
+      /* FORCES THE BACKGROUND OF THE WHOLE SCREEN TO LIGHT GRAY */
+      body {
+        background-color: #f4f5f7 !important; /* Soft, modern light gray background */
       }
 
-     /* Decreases spacing specifically around your horizontal button bar */
+      /* CHANGING THE NAVBAR COLOR TO MAROON */
+      nav {
+        background-color: #8F001A !important;  /* Official University of Ottawa Garnet/Maroon */
+        height: 3.5em !important;             /* Slightly taller layout to frame larger text comfortably */
+        box-shadow: 0 2px 5px rgba(0,0,0,0.15) !important; /* Clean drop shadow beneath the colored bar */
+      }
+
+      /* FIXES THE TEXT INSIDE THE MAROON NAVBAR TO BE CRISP WHITE */
+      nav .brand {
+        color: #ffffff !important;            /* Changes "uOttawa Physics Demonstrations" text to white */
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 1.3em !important;          /* Keeps title bold and highly readable */
+        line-height: 3.5em !important;        /* Centers text vertically inside the navbar */
+      }
+
+      /* FORCES THE WEBSITE TO TIGHTLY EXPAND TO 100% EDGE-TO-EDGE FULL SCREEN */
+      main.document {
+        max-width: 100% !important; 
+        width: 100% !important;     
+        margin: 0 !important;       
+        padding-top: 5.5em;                   /* Increased padding so content doesn't hide behind the colored bar */
+        padding-left: 20px;         
+        padding-right: 20px;        
+      }
+
+      /* Spacing out your horizontal category navigation button row */
       .horizontal-nav {
-        margin-top: 15px;     /* Leaves a clean gap beneath the top site header */
-        margin-bottom: 25px; /* Gives nice spacing above the "Mechanics" title */
+        margin-top: 15px;     
+        margin-bottom: 25px; 
         width: 100%;
       }
       .horizontal-nav .pseudo.button {
-        margin-right: 14px;   /* Adds healthy spacing between the large text links */
+        margin-right: 14px;   
         margin-bottom: 10px;
         font-family: Arial, Helvetica, sans-serif;
-        
-        /* SCALES UP THE FONT SIZE AND WEIGHT */
-        font-size: 20px !important;    /* Increased from 16px to make them large and readable */
-        font-weight: bold !important;  /* Changes weight to bold so they stand out as main navigation tabs */
-        
-        /* EXPANDS THE BUTTON HIT-BOX SPACING SURROUNDING THE TEXT */
-        padding: 8px 16px !important;  /* Gives the labels room to breathe */
+        font-size: 20px !important;    
+        font-weight: bold !important;  
+        padding: 8px 16px !important;  
+        background-color: #ffffff !important; /* Makes category buttons crisp white cards against the gray background */
+        border: 1px solid #d1d5db !important; /* Adds a fine gray outline boundary to structural elements */
+        color: #111111 !important;            /* Keeps category texts dark for high contrast reading */
       }
       
-      /* Styling to visually highlight the current active category button */
+      /* STYLING FOR THE CURRENT SELECTED NAVIGATION BUTTON */
       .horizontal-nav .pseudo.button.current {
-        background-color: rgba(17, 17, 17, 0.1);
-        font-weight: bold;
+        background-color: #8F001A !important; /* Highlighted button turns maroon to match the top banner logo */
+        color: #ffffff !important;            /* Text color flips to white when selected */
+        border-color: #8F001A !important;
       }
-   nav .brand {
-  font-size: 1.4em !important; /* Increases the text size (default is 1em) */
-  font-family: Arial, sans-serif; /* Ensures a clean, modern font */
-  font-weight: bold; /* Makes the title stand out */
-}
     </style>
   </head>
   <body>
