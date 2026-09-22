@@ -27,14 +27,25 @@
         line-height: 3.5em !important;        /* Centers text vertically inside the navbar */
       }
 
-      /* FORCES THE WEBSITE TO TIGHTLY EXPAND TO 100% EDGE-TO-EDGE FULL SCREEN */
+          /* FORCES THE WEBSITE TO TIGHTLY EXPAND TO 100% EDGE-TO-EDGE FULL SCREEN */
       main.document {
         max-width: 100% !important; 
         width: 100% !important;     
         margin: 0 !important;       
-        padding-top: 5.5em;                   /* Increased padding so content doesn't hide behind the colored bar */
+        padding-top: 5.5em;                   
         padding-left: 20px;         
         padding-right: 20px;        
+        
+        /* ADD THIS LINE HERE */
+        background-color: transparent !important; /* Removes any hidden white blocks over the gray body */
+      }
+
+      /* ALSO FORCE THE INNER CONTENT AREA TO BE TRANSPARENT */
+      main.document article.full, 
+      main.document article {
+        background-color: transparent !important; /* Clears the background behind your titles and text */
+        border: none !important;                  /* Removes any framework borders box outlines */
+        box-shadow: none !important;
       }
 
       /* Spacing out your horizontal category navigation button row */
