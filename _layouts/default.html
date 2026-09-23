@@ -95,12 +95,22 @@
     <main class="document">
       <section class="flex one">
         
-               <!-- Global Horizontal Category Navigation Row -->
+            <!-- Global Header Section containing Search and Categories -->
         <header class="full">
+
+          <!-- 1. NOW ON TOP: Clean Search Engine Input Bar Layout Space -->
+          <div class="global-search-container" style="position: relative; margin-top: 15px; margin-bottom: 20px; width: 100%; max-width: 500px;">
+            <input type="text" id="jekyll-search-input" placeholder="🔍 Search laboratory physics demos..." style="width: 100%; padding: 10px 15px; font-size: 16px; border: 1px solid #d1d5db; border-radius: 4px; box-sizing: border-box; background-color: #ffffff !important; color: #111111 !important;">
+            <!-- Dropdown result overlay panel -->
+            <ul id="jekyll-search-results" style="position: absolute; top: 100%; left: 0; right: 0; background: #ffffff; border: 1px solid #d1d5db; border-radius: 0 0 4px 4px; list-style: none; padding: 0; margin: 0; z-index: 9999; box-shadow: 0 4px 10px rgba(0,0,0,0.15); max-height: 300px; overflow-y: auto; display: none;"></ul>
+          </div>
+
+          <!-- 2. NOW UNDERNEATH: Global Horizontal Category Navigation Row -->
           <div class="horizontal-nav">
             {% for category in site.categories %}
               {% capture relative_category_url %}{{ category.url | relative_url }}{% endcapture %}
               
+              <!-- SMART CHECK: Triggers maroon if looking at the main category page OR an individual card -->
               {% assign is_active = false %}
               {% assign loop_slug = category.title | downcase | strip | replace: ' ', '-' %}
               {% assign current_card_cat = page.category | downcase | strip | replace: ' ', '-' %}
@@ -113,13 +123,6 @@
               
               <a class="pseudo button{% if is_active %} current{% endif %}" href="{{ relative_category_url }}">{{ category.title }}</a>
             {% endfor %}
-          </div>
-
-          <!-- NEW: Clean Search Engine Input Bar Layout Space -->
-          <div class="global-search-container" style="position: relative; margin-bottom: 20px; width: 100%; max-width: 500px;">
-            <input type="text" id="jekyll-search-input" placeholder="🔍 Search laboratory physics demos..." style="width: 100%; padding: 10px 15px; font-size: 16px; border: 1px solid #d1d5db; border-radius: 4px; box-sizing: border-box; background-color: #ffffff !important; color: #111111 !important;">
-            <!-- Dropdown result overlay panel -->
-            <ul id="jekyll-search-results" style="position: absolute; top: 100%; left: 0; right: 0; background: #ffffff; border: 1px solid #d1d5db; border-radius: 0 0 4px 4px; list-style: none; padding: 0; margin: 0; z-index: 9999; box-shadow: 0 4px 10px rgba(0,0,0,0.15); max-height: 300px; overflow-y: auto; display: none;"></ul>
           </div>
 
           <hr style="opacity: 0.15; margin-bottom: 20px;">
