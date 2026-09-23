@@ -18,6 +18,9 @@ To simulate this experiment, a ballbearing is aimed upwards at a suspended metal
 - Power cord
 - Power bar
 
+
+{% picture IMG_3756.JPG %}
+
 {% include youtubePlayer.html id="pfSiNWj1WGU" %}
 {% include youtubePlayer.html id="RO6xurNabb4" %}
 {% include youtubePlayer.html id="m_V1z3KNF8A" %}
