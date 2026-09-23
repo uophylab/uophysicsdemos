@@ -1,5 +1,5 @@
 ---
-title: Tennis racket rotation
+title: Light tube rotation
 pira: 1D40.00
 category: mechanics
 card_picture: 1D40.00_2.jpg
