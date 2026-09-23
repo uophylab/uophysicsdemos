@@ -2,6 +2,7 @@
 title: Picket fence and photogate
 pira: 1C30.35
 category: mechanics
+card_picture: Measuring_g.png
 ---
 
 A calibrated picket fence is dropped through a photogate to measure the acceleration due to gravity, g.
