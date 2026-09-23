@@ -2,6 +2,7 @@
 title: Inertia Tower
 pira: 1D50.20
 category: mechanics
+subcategory: "Kinematics" 
 card_picture: IMG_0622.JPG
 ---
 
