@@ -136,39 +136,71 @@
 
       </section>
     </main>
-    <!-- Script core dependency for simple-jekyll-search engine engine built via CDN -->
-    <script src="https://unpkg.com"></script>
+    <!-- Native JavaScript Search Engine Engine (No External Dependencies) -->
     <script>
-      const searchInput = document.getElementById('jekyll-search-input');
-      const resultsContainer = document.getElementById('jekyll-search-results');
+      document.addEventListener("DOMContentLoaded", function() {
+        const searchInput = document.getElementById('jekyll-search-input');
+        const resultsContainer = document.getElementById('jekyll-search-results');
+        if (!searchInput || !resultsContainer) return;
 
-      // Initialize the script search runner
-      const sjs = SimpleJekyllSearch({
-        searchInput: searchInput,
-        resultsContainer: resultsContainer,
-        
-        // FOOLPROOF PATH FIX FOR GITHUB PAGES SUBFOLDERS:
-        json: '{{ "/search.json" | relative_url }}',
-        
-        searchResultTemplate: '<li style="border-bottom: 1px solid #f3f4f6;"><a href="{url}" style="display: block; padding: 12px 15px; color: #111111 !important; text-decoration: none; font-size: 15px; font-weight: bold; background: #ffffff; transition: background 0.2s;"><span style="color:#8F001A;">[{category}]</span> {title}</a></li>',
-        noResultsText: '<li style="padding: 12px 15px; color: #6b7280; font-size: 14px;">No matching laboratory templates found</li>'
-      });
+        let searchData = [];
 
-      // Show the dropdown results list ONLY when typing has content inside input bounds
-      searchInput.addEventListener('input', function() {
-        if (this.value.trim().length > 0) {
-          resultsContainer.style.display = 'block';
-        } else {
-          resultsContainer.style.display = 'none';
-        }
-      });
+        // 1. Fetch the compiled search registry file using dynamic relative paths
+        fetch('{{ "/search.json" | relative_url }}')
+          .then(response => {
+            if (!response.ok) throw new Error("Network response error fetching search file");
+            return response.json();
+          })
+          .then(data => {
+            searchData = data;
+          })
+          .catch(error => console.error("Search engine setup error:", error));
 
-      // Close the tracking dropdown view automatically if user clicks elsewhere on the canvas
-      document.addEventListener('click', function(e) {
-        if (!e.target.closest('.global-search-container')) {
-          resultsContainer.style.display = 'none';
-        }
+        // 2. Real-time key filtering logic
+        searchInput.addEventListener('input', function() {
+          const query = this.value.toLowerCase().trim();
+          resultsContainer.innerHTML = '';
+          
+          if (query.length === 0) {
+            resultsContainer.style.display = 'none';
+            return;
+          }
+
+          const filtered = searchData.filter(item => {
+            const title = (item.title || '').toLowerCase();
+            const category = (item.category || '').toLowerCase();
+            return title.includes(query) || category.includes(query);
+          });
+
+          // 3. Render matching elements instantly into your dropdown view
+          if (filtered.length > 0) {
+            filtered.forEach(item => {
+              const li = document.createElement('li');
+              li.style.borderBottom = '1px solid #f3f4f6';
+              li.innerHTML = `<a href="${item.url}" style="display: block; padding: 12px 15px; color: #111111 !important; text-decoration: none; font-size: 15px; font-weight: bold; background: #ffffff; transition: background 0.2s;"><span style="color:#8F001A;">[${item.category}]</span> ${item.title}</a>`;
+              resultsContainer.appendChild(li);
+            });
+            resultsContainer.style.display = 'block';
+          } else {
+            const li = document.createElement('li');
+            li.style.padding = '12px 15px';
+            li.style.color = '#6b7280';
+            li.style.fontSize = '14px';
+            li.style.background = '#ffffff';
+            li.textContent = 'No matching physics demonstrations found';
+            resultsContainer.appendChild(li);
+            resultsContainer.style.display = 'block';
+          }
+        });
+
+        // 4. Collapse dropdown automatically if the user clicks somewhere else on screen
+        document.addEventListener('click', function(e) {
+          if (!e.target.closest('.global-search-container')) {
+            resultsContainer.style.display = 'none';
+          }
+        });
       });
     </script>
+  </body>
     </body>
 </html>
