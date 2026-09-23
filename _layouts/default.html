@@ -136,7 +136,7 @@
 
       </section>
     </main>
-       <!-- Script core dependency for simple-jekyll-search engine engine built via CDN -->
+    <!-- Script core dependency for simple-jekyll-search engine engine built via CDN -->
     <script src="https://unpkg.com"></script>
     <script>
       const searchInput = document.getElementById('jekyll-search-input');
@@ -147,8 +147,8 @@
         searchInput: searchInput,
         resultsContainer: resultsContainer,
         
-        // CORRECTION FOR GITHUB PAGES SUBFOLDERS
-        json: '{{ site.baseurl }}/search.json',
+        // FOOLPROOF PATH FIX FOR GITHUB PAGES SUBFOLDERS:
+        json: '{{ "/search.json" | relative_url }}',
         
         searchResultTemplate: '<li style="border-bottom: 1px solid #f3f4f6;"><a href="{url}" style="display: block; padding: 12px 15px; color: #111111 !important; text-decoration: none; font-size: 15px; font-weight: bold; background: #ffffff; transition: background 0.2s;"><span style="color:#8F001A;">[{category}]</span> {title}</a></li>',
         noResultsText: '<li style="padding: 12px 15px; color: #6b7280; font-size: 14px;">No matching laboratory templates found</li>'
