@@ -80,7 +80,8 @@
         color: #ffffff !important;            /* Text color flips to white when selected */
         border-color: #8F001A !important;
       }
-            /* Dropdown rows hover aesthetic effects */
+      
+      /* Dropdown rows hover aesthetic effects */
       #jekyll-search-results li a:hover {
         background-color: #f3f4f6 !important; /* Soft gray highlight color */
         color: #8F001A !important;             /* Flips text targets to uOttawa Maroon on hover */
@@ -95,7 +96,7 @@
     <main class="document">
       <section class="flex one">
         
-            <!-- Global Header Section containing Search and Categories -->
+        <!-- Global Header Section containing Search and Categories -->
         <header class="full">
 
           <!-- 1. NOW ON TOP: Clean Search Engine Input Bar Layout Space -->
@@ -136,7 +137,8 @@
 
       </section>
     </main>
-  <!-- Native JavaScript Search Engine Engine (Multi-Page Aware Fix) -->
+
+    <!-- Native JavaScript Search Engine Engine (Multi-Page Aware Fix) -->
     <script>
       document.addEventListener("DOMContentLoaded", function() {
         const searchInput = document.getElementById('jekyll-search-input');
@@ -144,72 +146,127 @@
         if (!searchInput || !resultsContainer) return;
 
         let searchData = [];
+        let currentFocus = -1; // Tracks which list item is currently highlighted
 
-      // 1. JEKYLL CONFIGURATION MATCH: Pulls the precise root path directly from your site configuration
-const searchUrl = "{{ '/search.json' | relative_url }}";
-
-fetch(searchUrl)
+        // 1. Fetch the search file
+        const searchUrl = "{{ '/search.json' | relative_url }}";
+        fetch(searchUrl)
           .then(response => {
             if (!response.ok) throw new Error("Network response error fetching search file");
             return response.json();
           })
-          .then(data => {
-            searchData = data;
-          })
+          .then(data => { searchData = data; })
           .catch(error => console.error("Search engine setup error:", error));
 
-        // 2. Real-time key filtering logic
+        // 2. Real-time filtering logic
         searchInput.addEventListener('input', function() {
           const query = this.value.toLowerCase().trim();
           resultsContainer.innerHTML = '';
+          currentFocus = -1; // Reset focus when typing changes
           
           if (query.length === 0) {
             resultsContainer.style.display = 'none';
             return;
           }
 
-          const filtered = searchData.filter(item => {
-            const title = (item.title || '').toLowerCase();
-            const category = (item.category || '').toLowerCase();
-            return title.includes(query) || category.includes(query);
-          });
+          // Filter data based on title, category, or content elements
+          const filtered = searchData.filter(item => 
+            item.title.toLowerCase().includes(query) || 
+            (item.category && item.category.toLowerCase().includes(query)) ||
+            (item.content && item.content.toLowerCase().includes(query))
+          );
 
-          // 3. Render matching elements with secure absolute root URLs
           if (filtered.length > 0) {
             filtered.forEach(item => {
               const li = document.createElement('li');
-              li.style.borderBottom = '1px solid #f3f4f6';
+              const a = document.createElement('a');
+              a.href = item.url;
+              a.style.display = 'block';
+              a.style.padding = '10px 15px';
+              a.style.textDecoration = 'none';
+              a.style.color = '#111111';
               
-              // Ensure paths start correctly with the repository host prefix
-              let correctUrl = item.url;
-              if (!correctUrl.startsWith('http') && !correctUrl.startsWith('/uophysicsdemos')) {
-                correctUrl = '/uophysicsdemos' + (correctUrl.startsWith('/') ? '' : '/') + correctUrl;
+              // Create the card title label segment
+              const titleSpan = document.createElement('span');
+              titleSpan.textContent = item.title;
+              titleSpan.style.fontWeight = 'bold';
+              titleSpan.className = 'demo-title-text';
+
+              // Create the custom maroon category tag label segment
+              const categorySpan = document.createElement('span');
+              if (item.category) {
+                categorySpan.textContent = ` [${item.category}]`;
+                categorySpan.style.color = '#8F001A'; // Official uOttawa Maroon
+                categorySpan.style.fontSize = '0.9em';
+                categorySpan.style.marginLeft = '8px';
+                categorySpan.className = 'category-tag';
               }
               
-              li.innerHTML = `<a href="${correctUrl}" style="display: block; padding: 12px 15px; color: #111111 !important; text-decoration: none; font-size: 15px; font-weight: bold; background: #ffffff; transition: background 0.2s;"><span style="color:#8F001A;">[${item.category}]</span> ${item.title}</a>`;
+              a.appendChild(titleSpan);
+              a.appendChild(categorySpan);
+              li.appendChild(a);
               resultsContainer.appendChild(li);
             });
             resultsContainer.style.display = 'block';
           } else {
-            const li = document.createElement('li');
-            li.style.padding = '12px 15px';
-            li.style.color = '#6b7280';
-            li.style.fontSize = '14px';
-            li.style.background = '#ffffff';
-            li.textContent = 'No matching physics demonstrations found';
-            resultsContainer.appendChild(li);
-            resultsContainer.style.display = 'block';
+            resultsContainer.style.display = 'none';
           }
         });
 
-        // 4. Collapse dropdown automatically if the user clicks somewhere else on screen
+        // 3. Keyboard arrow navigation navigation bindings (Arrows + Enter Key)
+        searchInput.addEventListener('keydown', function(e) {
+          const items = resultsContainer.getElementsByTagName('li');
+          if (items.length === 0) return;
+
+          if (e.key === 'ArrowDown') {
+            e.preventDefault();
+            currentFocus++;
+            addActive(items);
+          } else if (e.key === 'ArrowUp') {
+            e.preventDefault();
+            currentFocus--;
+            addActive(items);
+          } else if (e.key === 'Enter') {
+            if (currentFocus > -1 && items[currentFocus]) {
+              e.preventDefault();
+              const targetLink = items[currentFocus].getElementsByTagName('a')[0];
+              if (targetLink) targetLink.click();
+            }
+          }
+        });
+
+        function addActive(items) {
+          if (!items) return false;
+          removeActive(items);
+          
+          if (currentFocus >= items.length) currentFocus = 0;
+          if (currentFocus < 0) currentFocus = items.length - 1;
+          
+          // Highlight active active container background row
+          items[currentFocus].style.backgroundColor = '#f3f4f6';
+          
+          // Flip link hover title text targets to uOttawa Maroon on keyboard focus match
+          const targetLink = items[currentFocus].getElementsByTagName('a')[0];
+          if (targetLink) targetLink.style.color = '#8F001A';
+          
+          items[currentFocus].scrollIntoView({ block: 'nearest' });
+        }
+
+        function removeActive(items) {
+          for (let i = 0; i < items.length; i++) {
+            items[i].style.backgroundColor = '';
+            const targetLink = items[i].getElementsByTagName('a')[0];
+            if (targetLink) targetLink.style.color = '#111111';
+          }
+        }
+
+        // Close dropdown if user clicks anywhere outside the input bounds layout area
         document.addEventListener('click', function(e) {
-          if (!e.target.closest('.global-search-container')) {
+          if (e.target !== searchInput && e.target !== resultsContainer) {
             resultsContainer.style.display = 'none';
           }
         });
       });
     </script>
   </body>
-    </body>
 </html>
