@@ -4,10 +4,9 @@ layout: none
 [
   {% for demo in site.demos %}
     {
-      "title"    : "{{ demo.title | escape }}",
-      "category" : "{{ demo.category | escape }}",
-      "url"      : "{{ demo.url | relative_url }}",
-      "date"     : "{{ demo.date }}"
+      "title"    : {{ demo.title | strip_html | strip_newlines | jsonify }},
+      "category" : {{ demo.category | strip_html | strip_newlines | jsonify }},
+      "url"      : {{ demo.url | relative_url | jsonify }}
     }{% unless forloop.last %},{% endunless %}
   {% endfor %}
 ]
