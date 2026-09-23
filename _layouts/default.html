@@ -173,16 +173,38 @@
       item.category.toLowerCase().includes(query)
     );
 
-    if (filtered.length > 0) {
+  if (filtered.length > 0) {
       filtered.forEach(item => {
         const li = document.createElement('li');
         const a = document.createElement('a');
         a.href = item.url;
-        a.textContent = item.title;
         a.style.display = 'block';
         a.style.padding = '10px 15px';
         a.style.textDecoration = 'none';
         a.style.color = '#111111';
+        
+        // Create the bold card title segment
+        const titleSpan = document.createElement('span');
+        titleSpan.textContent = item.title;
+        titleSpan.style.fontWeight = 'bold';
+
+        // Create the custom red category tag layout
+        const categorySpan = document.createElement('span');
+        categorySpan.textContent = ` [${item.category}]`;
+        categorySpan.style.color = '#8F001A'; // Official uOttawa Garnet Red text color
+        categorySpan.style.fontSize = '0.9em';
+        categorySpan.style.marginLeft = '8px';
+
+        // Append components together inside the link element
+        a.appendChild(titleSpan);
+        a.appendChild(categorySpan);
+        li.appendChild(a);
+        resultsContainer.appendChild(li);
+      });
+      resultsContainer.style.display = 'block';
+    } else {
+      resultsContainer.style.display = 'none';
+    }
         
         li.appendChild(a);
         resultsContainer.appendChild(li);
