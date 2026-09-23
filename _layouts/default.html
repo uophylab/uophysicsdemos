@@ -111,16 +111,16 @@
             {% for category in site.categories %}
               {% capture relative_category_url %}{{ category.url | relative_url }}{% endcapture %}
               
-              <!-- SMART CHECK: Triggers maroon if looking at the main category page OR an individual card -->
+                            <!-- SMART CHECK: Triggers maroon if on the main category page OR reading an individual card -->
               {% assign is_active = false %}
               {% assign loop_slug = category.title | downcase | strip | replace: ' ', '-' %}
               {% assign current_card_cat = page.category | downcase | strip | replace: ' ', '-' %}
+              {% assign current_page_title = page.title | downcase | strip | replace: ' ', '-' %}
               
-              {% capture cat_path_snippet %}/categories/{{ loop_slug }}/{% endcapture %}
-              
-              {% if current_card_cat == loop_slug or page.url == cat_path_snippet or page.url contains cat_path_snippet %}
+              {% if current_card_cat == loop_slug or current_page_title == loop_slug or page.url contains loop_slug %}
                 {% assign is_active = true %}
               {% endif %}
+
               
               <a class="pseudo button{% if is_active %} current{% endif %}" href="{{ relative_category_url }}">{{ category.title }}</a>
             {% endfor %}
