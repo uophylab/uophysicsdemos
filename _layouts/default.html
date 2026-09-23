@@ -136,7 +136,7 @@
 
       </section>
     </main>
-    <!-- Native JavaScript Search Engine Engine (No External Dependencies) -->
+  <!-- Native JavaScript Search Engine Engine (Multi-Page Aware Fix) -->
     <script>
       document.addEventListener("DOMContentLoaded", function() {
         const searchInput = document.getElementById('jekyll-search-input');
@@ -145,17 +145,19 @@
 
         let searchData = [];
 
-       // 1. Fetch the compiled search registry file using your concrete repository URL
-        fetch('/uophysicsdemos/search.json')
+        // 1. DYNAMIC LOCATION MATCH: Reads your host path directly from the browser URL address bar
+        const siteRoot = window.location.origin + "/uophysicsdemos";
+        
+        fetch(siteRoot + '/search.json')
           .then(response => {
             if (!response.ok) throw new Error("Network response error fetching search file");
             return response.json();
           })
           .then(data => {
             searchData = data;
-            console.log("Successfully loaded " + data.length + " physics demos!");
           })
           .catch(error => console.error("Search engine setup error:", error));
+
         // 2. Real-time key filtering logic
         searchInput.addEventListener('input', function() {
           const query = this.value.toLowerCase().trim();
@@ -172,12 +174,19 @@
             return title.includes(query) || category.includes(query);
           });
 
-          // 3. Render matching elements instantly into your dropdown view
+          // 3. Render matching elements with secure absolute root URLs
           if (filtered.length > 0) {
             filtered.forEach(item => {
               const li = document.createElement('li');
               li.style.borderBottom = '1px solid #f3f4f6';
-              li.innerHTML = `<a href="${item.url}" style="display: block; padding: 12px 15px; color: #111111 !important; text-decoration: none; font-size: 15px; font-weight: bold; background: #ffffff; transition: background 0.2s;"><span style="color:#8F001A;">[${item.category}]</span> ${item.title}</a>`;
+              
+              // Ensure paths start correctly with the repository host prefix
+              let correctUrl = item.url;
+              if (!correctUrl.startsWith('http') && !correctUrl.startsWith('/uophysicsdemos')) {
+                correctUrl = '/uophysicsdemos' + (correctUrl.startsWith('/') ? '' : '/') + correctUrl;
+              }
+              
+              li.innerHTML = `<a href="${correctUrl}" style="display: block; padding: 12px 15px; color: #111111 !important; text-decoration: none; font-size: 15px; font-weight: bold; background: #ffffff; transition: background 0.2s;"><span style="color:#8F001A;">[${item.category}]</span> ${item.title}</a>`;
               resultsContainer.appendChild(li);
             });
             resultsContainer.style.display = 'block';
