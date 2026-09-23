@@ -138,77 +138,113 @@
     </main>
   <!-- Native JavaScript Search Engine Engine (Multi-Page Aware Fix) -->
     <script>
-      document.addEventListener("DOMContentLoaded", function() {
-        const searchInput = document.getElementById('jekyll-search-input');
-        const resultsContainer = document.getElementById('jekyll-search-results');
-        if (!searchInput || !resultsContainer) return;
+     document.addEventListener("DOMContentLoaded", function() {
+  const searchInput = document.getElementById('jekyll-search-input');
+  const resultsContainer = document.getElementById('jekyll-search-results');
+  if (!searchInput || !resultsContainer) return;
 
-        let searchData = [];
+  let searchData = [];
+  let currentFocus = -1; // Tracks which list item is currently highlighted
 
-      // 1. JEKYLL CONFIGURATION MATCH: Pulls the precise root path directly from your site configuration
-const searchUrl = "{{ '/search.json' | relative_url }}";
+  // 1. Fetch the search file
+  const searchUrl = "{{ '/search.json' | relative_url }}";
+  fetch(searchUrl)
+    .then(response => {
+      if (!response.ok) throw new Error("Network response error fetching search file");
+      return response.json();
+    })
+    .then(data => { searchData = data; })
+    .catch(error => console.error("Search engine setup error:", error));
 
-fetch(searchUrl)
-          .then(response => {
-            if (!response.ok) throw new Error("Network response error fetching search file");
-            return response.json();
-          })
-          .then(data => {
-            searchData = data;
-          })
-          .catch(error => console.error("Search engine setup error:", error));
+  // 2. Real-time filtering logic
+  searchInput.addEventListener('input', function() {
+    const query = this.value.toLowerCase().trim();
+    resultsContainer.innerHTML = '';
+    currentFocus = -1; // Reset focus when typing changes
+    
+    if (query.length === 0) {
+      resultsContainer.style.display = 'none';
+      return;
+    }
 
-        // 2. Real-time key filtering logic
-        searchInput.addEventListener('input', function() {
-          const query = this.value.toLowerCase().trim();
-          resultsContainer.innerHTML = '';
-          
-          if (query.length === 0) {
-            resultsContainer.style.display = 'none';
-            return;
-          }
+    // Filter data based on title or content
+    const filtered = searchData.filter(item => 
+      item.title.toLowerCase().includes(query) || 
+      item.category.toLowerCase().includes(query)
+    );
 
-          const filtered = searchData.filter(item => {
-            const title = (item.title || '').toLowerCase();
-            const category = (item.category || '').toLowerCase();
-            return title.includes(query) || category.includes(query);
-          });
-
-          // 3. Render matching elements with secure absolute root URLs
-          if (filtered.length > 0) {
-            filtered.forEach(item => {
-              const li = document.createElement('li');
-              li.style.borderBottom = '1px solid #f3f4f6';
-              
-              // Ensure paths start correctly with the repository host prefix
-              let correctUrl = item.url;
-              if (!correctUrl.startsWith('http') && !correctUrl.startsWith('/uophysicsdemos')) {
-                correctUrl = '/uophysicsdemos' + (correctUrl.startsWith('/') ? '' : '/') + correctUrl;
-              }
-              
-              li.innerHTML = `<a href="${correctUrl}" style="display: block; padding: 12px 15px; color: #111111 !important; text-decoration: none; font-size: 15px; font-weight: bold; background: #ffffff; transition: background 0.2s;"><span style="color:#8F001A;">[${item.category}]</span> ${item.title}</a>`;
-              resultsContainer.appendChild(li);
-            });
-            resultsContainer.style.display = 'block';
-          } else {
-            const li = document.createElement('li');
-            li.style.padding = '12px 15px';
-            li.style.color = '#6b7280';
-            li.style.fontSize = '14px';
-            li.style.background = '#ffffff';
-            li.textContent = 'No matching physics demonstrations found';
-            resultsContainer.appendChild(li);
-            resultsContainer.style.display = 'block';
-          }
-        });
-
-        // 4. Collapse dropdown automatically if the user clicks somewhere else on screen
-        document.addEventListener('click', function(e) {
-          if (!e.target.closest('.global-search-container')) {
-            resultsContainer.style.display = 'none';
-          }
-        });
+    if (filtered.length > 0) {
+      filtered.forEach(item => {
+        const li = document.createElement('li');
+        const a = document.createElement('a');
+        a.href = item.url;
+        a.textContent = item.title;
+        a.style.display = 'block';
+        a.style.padding = '10px 15px';
+        a.style.textDecoration = 'none';
+        a.style.color = '#111111';
+        
+        li.appendChild(a);
+        resultsContainer.appendChild(li);
       });
+      resultsContainer.style.display = 'block';
+    } else {
+      resultsContainer.style.display = 'none';
+    }
+  });
+
+  // 3. NEW: Keyboard navigation handling (Arrows and Enter)
+  searchInput.addEventListener('keydown', function(e) {
+    const items = resultsContainer.getElementsByTagName('li');
+    if (items.length === 0) return;
+
+    if (e.key === 'ArrowDown') {
+      e.preventDefault();
+      currentFocus++;
+      addActive(items);
+    } else if (e.key === 'ArrowUp') {
+      e.preventDefault();
+      currentFocus--;
+      addActive(items);
+    } else if (e.key === 'Enter') {
+      if (currentFocus > -1 && items[currentFocus]) {
+        e.preventDefault();
+        // Click the link inside the highlighted item
+        items[currentFocus].getElementsByTagName('a')[0].click();
+      }
+    }
+  });
+
+  // Helper function to handle CSS highlighting
+  function addActive(items) {
+    if (!items) return false;
+    removeActive(items);
+    
+    if (currentFocus >= items.length) currentFocus = 0;
+    if (currentFocus < 0) currentFocus = items.length - 1;
+    
+    // Highlight the active row and give it a subtle gray background
+    items[currentFocus].style.backgroundColor = '#f3f4f6';
+    items[currentFocus].getElementsByTagName('a')[0].style.color = '#8F001A';
+    
+    // Auto-scroll the dropdown menu if navigating past visible area
+    items[currentFocus].scrollIntoView({ block: 'nearest' });
+  }
+
+  function removeActive(items) {
+    for (let i = 0; i < items.length; i++) {
+      items[i].style.backgroundColor = '';
+      items[i].getElementsByTagName('a')[0].style.color = '#111111';
+    }
+  }
+
+  // Close dropdown if user clicks anywhere else outside the search box
+  document.addEventListener('click', function(e) {
+    if (e.target !== searchInput && e.target !== resultsContainer) {
+      resultsContainer.style.display = 'none';
+    }
+  });
+});
     </script>
   </body>
     </body>
