@@ -170,7 +170,18 @@
         box-shadow: 0 4px 12px rgba(0,0,0,0.1) !important;
         transition: all 0.2s ease-in-out !important;
       }
-
+ /* FIXED TOP NAV BAR: STICKS TO THE TOP OF THE PAGE AS YOU SCROLL */
+      nav {
+        position: fixed !important;            /* CRITICAL: Forcefully locks the navbar to the viewport screen position */
+        top: 0 !important;                     /* Snaps it to the absolute top edge of the window */
+        left: 0 !important;                    /* Pins it to the left edge boundary wall */
+        right: 0 !important;                   /* Stretches it full width across to the right wall edge */
+        width: 100% !important;                /* Guarantees 100% full screen coverage edge-to-edge */
+        background-color: #8F001A !important;  /* Official University of Ottawa Garnet/Maroon */
+        height: 4.2em !important;             
+        box-shadow: 0 2px 5px rgba(0,0,0,0.15) !important; 
+        z-index: 999999 !important;            /* PLACED ON TOP: Keeps the navbar layered above all cards and image plugins */
+      }
     </style>
   </head>
   <body>
