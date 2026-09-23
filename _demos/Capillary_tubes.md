@@ -1,7 +1,7 @@
 ---
 title: Capillary tubes
 pira: 1D50.20
-category: Fluid mechanics
+category: Fluid_mechanics
 card_picture: IMG_0625.JPG
 ---
 
