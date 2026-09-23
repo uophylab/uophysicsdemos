@@ -111,13 +111,16 @@
             {% for category in site.categories %}
               {% capture relative_category_url %}{{ category.url | relative_url }}{% endcapture %}
               
-                            <!-- SMART CHECK: Triggers maroon if on the main category page OR reading an individual card -->
+                    <!-- SMART CHECK: Triggers maroon strictly on absolute matches to avoid overlapping sub-strings -->
               {% assign is_active = false %}
               {% assign loop_slug = category.title | downcase | strip | replace: ' ', '-' %}
               {% assign current_card_cat = page.category | downcase | strip | replace: ' ', '-' %}
               {% assign current_page_title = page.title | downcase | strip | replace: ' ', '-' %}
               
-              {% if current_card_cat == loop_slug or current_page_title == loop_slug or page.url contains loop_slug %}
+              <!-- Generate the definitive category landing page URL template -->
+              {% capture target_cat_url %}/categories/{{ loop_slug }}/{% endcapture %}
+              
+              {% if current_card_cat == loop_slug or current_page_title == loop_slug or page.url == target_cat_url %}
                 {% assign is_active = true %}
               {% endif %}
 
