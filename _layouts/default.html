@@ -136,17 +136,20 @@
 
       </section>
     </main>
-      <!-- Script core dependency for simple-jekyll-search engine engine built via CDN -->
-    <script src="https://unpkg.com/simple-jekyll-search@latest/dest/simple-jekyll-search.min.js"></script>
+     <!-- Script core dependency for simple-jekyll-search engine engine built via CDN -->
+    <script src="https://unpkg.com"></script>
     <script>
       const searchInput = document.getElementById('jekyll-search-input');
       const resultsContainer = document.getElementById('jekyll-search-results');
 
-       // Initialize the script search runner
+      // Initialize the script search runner
       const sjs = SimpleJekyllSearch({
         searchInput: searchInput,
         resultsContainer: resultsContainer,
-        json: '{{ "/search.json" | relative_url }}', /* DYNAMIC PATH REINFORCEMENT */
+        
+        // CORRECTION: Uses absolute URL strings to ensure subfolders don't break the tracking path
+        json: '{{ site.baseurl }}/search.json',
+        
         searchResultTemplate: '<li style="border-bottom: 1px solid #f3f4f6;"><a href="{url}" style="display: block; padding: 12px 15px; color: #111111 !important; text-decoration: none; font-size: 15px; font-weight: bold; background: #ffffff; transition: background 0.2s;"><span style="color:#8F001A;">[{category}]</span> {title}</a></li>',
         noResultsText: '<li style="padding: 12px 15px; color: #6b7280; font-size: 14px;">No matching laboratory templates found</li>'
       });
