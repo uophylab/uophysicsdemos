@@ -137,25 +137,38 @@
         box-shadow: 0 4px 12px rgba(0,0,0,0.1) !important;
         transition: all 0.2s ease-in-out !important;
       }
-            /* FIX: FORCES ALL PLUGINS AND FRAMES INSIDE THE CARD TO PASS CLICKS DOWN TO THE BUTTON */
-      .card picture, 
-      .card img, 
-      .card figure, 
-      .card picture * {
-        pointer-events: none !important;     /* Rips away mouse blocking so clicks go straight through to the link layer */
+       /* STRETCHED LINK PATTERN: CREATES AN INVISIBLE CLICK LAYER OVER THE ENTIRE CARD AREA */
+      .card {
+        position: relative !important;       /* Establishes the clear boundary box */
       }
 
-      /* RETAINS SELECTABLE CLICKS EXCLUSIVELY FOR THE STRETCHED OVERLAY LAYER */
       .card .stretched-link::after {
         position: absolute !important;
         top: 0 !important;
         right: 0 !important;
         bottom: 0 !important;
         left: 0 !important;
-        z-index: 99 !important;             /* Elevated layer to float directly on top of the card surface */
+        z-index: 99999 !important;           /* ELEVATED: Pushes it to the absolute top layer above all plugins */
         content: "" !important;
         cursor: pointer !important;
-        pointer-events: auto !important;     /* Forcefully captures your clicks */
+        display: block !important;
+        pointer-events: auto !important;     /* Forcefully intercepts all mouse clicks */
+      }
+
+      /* FORCES PLUGINS AND GENERATED IMAGE FRAMES TO PASS CLICKS DIRECTLY THROUGH */
+      .card picture, 
+      .card img, 
+      .card figure, 
+      .card video,
+      .card p {
+        pointer-events: none !important;     /* Clicks pass straight through these elements like glass */
+      }
+
+      /* ACCENT VISUAL HOVER EFFECT ON THE OVERALL CONTAINER CARD */
+      .card:hover {
+        transform: translateY(-2px) !important;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.1) !important;
+        transition: all 0.2s ease-in-out !important;
       }
 
     </style>
