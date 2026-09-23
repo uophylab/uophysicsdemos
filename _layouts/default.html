@@ -4,7 +4,7 @@
     {% capture current_category_url %}{{ site.baseurl  | append: "/categories/" | append: page.category | strip }}{% endcapture %}
     <meta charset="utf-8">
     <title>{{ page.title }}|University of Ottawa | Physics Laboratories</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/picnic">
+    <link rel="stylesheet" href="https://jsdelivr.net">
     <link rel="stylesheet" href="{{ site.baseurl }}/assets/styles/style.css">
     <style>
       /* FORCES THE BACKGROUND OF THE WHOLE SCREEN TO LIGHT GRAY */
@@ -15,24 +15,25 @@
       /* CHANGING THE NAVBAR COLOR TO MAROON */
       nav {
         background-color: #8F001A !important;  /* Official University of Ottawa Garnet/Maroon */
-        height: 3.5em !important;             /* Slightly taller layout to frame larger text comfortably */
-        box-shadow: 0 2px 5px rgba(0,0,0,0.15) !important; /* Clean drop shadow beneath the colored bar */
+        height: auto !important;              
+        min-height: 3.5em !important;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.15) !important; 
       }
 
       /* FIXES THE TEXT INSIDE THE MAROON NAVBAR TO BE CRISP WHITE */
       nav .brand {
-        color: #ffffff !important;            /* Changes "uOttawa Physics Demonstrations" text to white */
+        color: #ffffff !important;            
         font-family: Arial, Helvetica, sans-serif;
-        font-size: 1.3em !important;          /* Keeps title bold and highly readable */
-        line-height: 3.5em !important;        /* Centers text vertically inside the navbar */
+        font-size: 1.3em !important;          
+        line-height: 1.2 !important;
       }
 
-      /* FORCES THE COMPLETE SCREEN (INCLUDING THE CENTER) TO TURN LIGHT GRAY */
+      /* FORCES THE COMPLETE SCREEN TO TURN LIGHT GRAY */
       html, body, main, document, .document, section, article {
-        background-color: #f4f5f7 !important; /* Forces the exact color code globally */
-        background: #f4f5f7 !important;       /* Overwrites any gradient backgrounds */
-        box-shadow: none !important;          /* Wipes out any borders hiding under containers */
-        border: none !important;              /* Wipes out framework card borders */
+        background-color: #f4f5f7 !important; 
+        background: #f4f5f7 !important;       
+        box-shadow: none !important;          
+        border: none !important;              
       }
 
       /* FORCES THE WEBSITE TO TIGHTLY EXPAND TO 100% EDGE-TO-EDGE FULL SCREEN */
@@ -43,14 +44,14 @@
         padding-top: 5.5em;                   
         padding-left: 20px;         
         padding-right: 20px;        
-        background-color: transparent !important; /* Removes any hidden white blocks over the gray body */
+        background-color: transparent !important; 
       }
 
       /* ALSO FORCE THE INNER CONTENT AREA TO BE TRANSPARENT */
       main.document article.full, 
       main.document article {
-        background-color: transparent !important; /* Clears the background behind your titles and text */
-        border: none !important;                  /* Removes any framework borders box outlines */
+        background-color: transparent !important; 
+        border: none !important;                  
         box-shadow: none !important;
       }
 
@@ -69,40 +70,65 @@
         font-size: 20px !important;    
         font-weight: bold !important;  
         padding: 8px 16px !important;  
-        background-color: #ffffff !important; /* White button card */
-        border: 1px solid #d1d5db !important; /* Fine edge outline */
-        color: #111111 !important;            /* Dark text */
+        background-color: #ffffff !important; 
+        border: 1px solid #d1d5db !important; 
+        color: #111111 !important;            
       }
       
       /* SELECTED STATE: ACTIVE CATEGORY TURNS MAROON WITH WHITE TEXT */
       .horizontal-nav .pseudo.button.current {
-        background-color: #8F001A !important; /* Highlighted button matches the navbar maroon */
-        color: #ffffff !important;            /* Text color flips to white when selected */
+        background-color: #8F001A !important; 
+        color: #ffffff !important;            
         border-color: #8F001A !important;
       }
-            /* Dropdown rows hover aesthetic effects */
-      #jekyll-search-results li a:hover {
-        background-color: #f3f4f6 !important; /* Soft gray highlight color */
-        color: #8F001A !important;             /* Flips text targets to uOttawa Maroon on hover */
+
+      /* Clean styles to keep the Google Search container neat */
+      .search-box-wrapper {
+        margin-top: 15px;
+        margin-bottom: 20px;
+        max-width: 500px;
+        width: 100%;
+      }
+
+      /* Responsive rules to prevent navbar clutter on smaller viewports */
+      @media all and (max-width: 850px) {
+        nav .brand { font-size: 1.1em !important; }
+      }
+      @media all and (max-width: 650px) {
+        nav { justify-content: center !important; text-align: center !important; padding: 12px 15px !important; }
+        nav .brand { width: 100%; text-align: center !important; margin-top: 8px !important; }
+        main.document { padding-top: 7.5em !important; }
       }
     </style>
   </head>
   <body>
-   <nav>
-      <a class="brand" href="{{ site.baseurl }}">University of Ottawa | Physic Laboratory | Demos</a>
+    <!-- Top Navigation Bar Layout Wrapper with logo and adjusted side text alignment -->
+    <nav style="display: flex; justify-content: space-between; align-items: center; padding: 0 25px; box-sizing: border-box;">
+      
+      <!-- 1. TOP LEFT: Local Picture File (logo.png from assets/images/fullsize/) -->
+      <a href="{{ site.baseurl }}/" style="display: flex; align-items: center; height: 100%;">
+        <img src="{{ site.baseurl }}/assets/images/fullsize/logo.png" 
+             alt="University of Ottawa Logo" 
+             style="height: 2.2em; max-height: 40px; width: auto; display: block; filter: brightness(0) invert(1); flex-shrink: 0;">
+      </a>
+
+      <!-- 2. TOP RIGHT: Custom Text Title kept as a hyperlink -->
+      <a class="brand" href="{{ site.baseurl }}/" style="float: none; position: relative; top: auto; transform: none; margin: 0; padding: 0; text-align: right; white-space: normal;">
+        University of Ottawa | Physics Laboratories | Demos
+      </a>
+
     </nav>
 
     <main class="document">
       <section class="flex one">
         
-            <!-- Global Header Section containing Search and Categories -->
+        <!-- Global Header Section containing Search and Categories -->
         <header class="full">
 
-          <!-- 1. NOW ON TOP: Clean Search Engine Input Bar Layout Space -->
-          <div class="global-search-container" style="position: relative; margin-top: 15px; margin-bottom: 20px; width: 100%; max-width: 500px;">
-            <input type="text" id="jekyll-search-input" placeholder="🔍 Search physic laboratory demos..." style="width: 100%; padding: 10px 15px; font-size: 16px; border: 1px solid #d1d5db; border-radius: 4px; box-sizing: border-box; background-color: #ffffff !important; color: #111111 !important;">
-            <!-- Dropdown result overlay panel -->
-            <ul id="jekyll-search-results" style="position: absolute; top: 100%; left: 0; right: 0; background: #ffffff; border: 1px solid #d1d5db; border-radius: 0 0 4px 4px; list-style: none; padding: 0; margin: 0; z-index: 9999; box-shadow: 0 4px 10px rgba(0,0,0,0.15); max-height: 300px; overflow-y: auto; display: none;"></ul>
+          <!-- 1. SEARCH BAR ON TOP: Google Search Box restricted to search only your physics site -->
+          <div class="search-box-wrapper">
+            <script async src="https://google.com"></script>
+            <div class="gcse-searchbox-only" data-resultsUrl="{{ site.baseurl }}/" data-queryParameterName="search"></div>
           </div>
 
           <!-- 2. NOW UNDERNEATH: Global Horizontal Category Navigation Row -->
@@ -136,80 +162,5 @@
 
       </section>
     </main>
-  <!-- Native JavaScript Search Engine Engine (Multi-Page Aware Fix) -->
-    <script>
-      document.addEventListener("DOMContentLoaded", function() {
-        const searchInput = document.getElementById('jekyll-search-input');
-        const resultsContainer = document.getElementById('jekyll-search-results');
-        if (!searchInput || !resultsContainer) return;
-
-        let searchData = [];
-
-        // 1. DYNAMIC LOCATION MATCH: Reads your host path directly from the browser URL address bar
-        const siteRoot = window.location.origin + "/uophysicsdemos";
-        
-        fetch(siteRoot + '/search.json')
-          .then(response => {
-            if (!response.ok) throw new Error("Network response error fetching search file");
-            return response.json();
-          })
-          .then(data => {
-            searchData = data;
-          })
-          .catch(error => console.error("Search engine setup error:", error));
-
-        // 2. Real-time key filtering logic
-        searchInput.addEventListener('input', function() {
-          const query = this.value.toLowerCase().trim();
-          resultsContainer.innerHTML = '';
-          
-          if (query.length === 0) {
-            resultsContainer.style.display = 'none';
-            return;
-          }
-
-          const filtered = searchData.filter(item => {
-            const title = (item.title || '').toLowerCase();
-            const category = (item.category || '').toLowerCase();
-            return title.includes(query) || category.includes(query);
-          });
-
-          // 3. Render matching elements with secure absolute root URLs
-          if (filtered.length > 0) {
-            filtered.forEach(item => {
-              const li = document.createElement('li');
-              li.style.borderBottom = '1px solid #f3f4f6';
-              
-              // Ensure paths start correctly with the repository host prefix
-              let correctUrl = item.url;
-              if (!correctUrl.startsWith('http') && !correctUrl.startsWith('/uophysicsdemos')) {
-                correctUrl = '/uophysicsdemos' + (correctUrl.startsWith('/') ? '' : '/') + correctUrl;
-              }
-              
-              li.innerHTML = `<a href="${correctUrl}" style="display: block; padding: 12px 15px; color: #111111 !important; text-decoration: none; font-size: 15px; font-weight: bold; background: #ffffff; transition: background 0.2s;"><span style="color:#8F001A;">[${item.category}]</span> ${item.title}</a>`;
-              resultsContainer.appendChild(li);
-            });
-            resultsContainer.style.display = 'block';
-          } else {
-            const li = document.createElement('li');
-            li.style.padding = '12px 15px';
-            li.style.color = '#6b7280';
-            li.style.fontSize = '14px';
-            li.style.background = '#ffffff';
-            li.textContent = 'No matching physics demonstrations found';
-            resultsContainer.appendChild(li);
-            resultsContainer.style.display = 'block';
-          }
-        });
-
-        // 4. Collapse dropdown automatically if the user clicks somewhere else on screen
-        document.addEventListener('click', function(e) {
-          if (!e.target.closest('.global-search-container')) {
-            resultsContainer.style.display = 'none';
-          }
-        });
-      });
-    </script>
   </body>
-    </body>
 </html>
