@@ -1,0 +1,13 @@
+---
+layout: null
+---
+[
+  {% for demo in site.demos %}
+    {
+      "title"    : "{{ demo.title | escape }}",
+      "category" : "{{ demo.category | escape }}",
+      "url"      : "{{ demo.url | relative_url }}",
+      "content"  : "{{ demo.content | strip_html | strip_newlines | escape | replace: '\', '\\' | remove: '"' }}"
+    }{% unless forloop.last %},{% endunless %}
+  {% endfor %}
+]
