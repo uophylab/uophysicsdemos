@@ -35,15 +35,24 @@
         border: none !important;              /* Wipes out framework card borders */
       }
 
-      /* FORCES THE WEBSITE TO TIGHTLY EXPAND TO 100% EDGE-TO-EDGE FULL SCREEN */
+          /* FORCES THE WEBSITE TO TIGHTLY EXPAND TO 100% EDGE-TO-EDGE FULL SCREEN */
       main.document {
         max-width: 100% !important; 
         width: 100% !important;     
         margin: 0 !important;       
-        padding-top: 5.5em;                   
+        padding-top: 4.8em !important;        /* TIGHTENED: Reduced from 5.5em to pull everything up */
         padding-left: 20px;         
         padding-right: 20px;        
         background-color: transparent !important; /* Removes any hidden white blocks over the gray body */
+      }
+
+      /* 1. NOW ON TOP: Clean Search Engine Input Bar Layout Space */
+      .global-search-container {
+        position: relative; 
+        margin-top: 5px !important;           /* TIGHTENED: Reduced from 15px to close the gap beneath nav */
+        margin-bottom: 15px !important;       /* Clean spacing before the categories follow below */
+        width: 100%; 
+        max-width: 500px;
       }
 
       /* ALSO FORCE THE INNER CONTENT AREA TO BE TRANSPARENT */
@@ -97,7 +106,7 @@
         top: 50% !important;                 /* Pushes down past top boundary to line level */
         right: 20px !important;              /* Locks and snaps it 20px from the far right screen wall */
         transform: translateY(-50%) !important; /* Perfect vertical centerline calculation trick */
-        height: 2.8em !important;            /* Constrains height to frame inside maroon limits safely */
+        height: 3.2em !important;            /* Constrains height to frame inside maroon limits safely */
         width: auto !important;              /* Prevents horizontal distortions or compression squishing */
         display: block !important;
       }
