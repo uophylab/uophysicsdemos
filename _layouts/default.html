@@ -80,6 +80,11 @@
         color: #ffffff !important;            /* Text color flips to white when selected */
         border-color: #8F001A !important;
       }
+            /* Dropdown rows hover aesthetic effects */
+      #jekyll-search-results li a:hover {
+        background-color: #f3f4f6 !important; /* Soft gray highlight color */
+        color: #8F001A !important;             /* Flips text targets to uOttawa Maroon on hover */
+      }
     </style>
   </head>
   <body>
@@ -90,13 +95,12 @@
     <main class="document">
       <section class="flex one">
         
-        <!-- NEW Global Horizontal Category Navigation Row -->
+               <!-- Global Horizontal Category Navigation Row -->
         <header class="full">
           <div class="horizontal-nav">
             {% for category in site.categories %}
               {% capture relative_category_url %}{{ category.url | relative_url }}{% endcapture %}
               
-              <!-- FOOLPROOF STRIPPED URL ACTIVE CHECK -->
               {% assign is_active = false %}
               {% assign loop_slug = category.title | downcase | strip | replace: ' ', '-' %}
               {% assign current_card_cat = page.category | downcase | strip | replace: ' ', '-' %}
@@ -110,6 +114,14 @@
               <a class="pseudo button{% if is_active %} current{% endif %}" href="{{ relative_category_url }}">{{ category.title }}</a>
             {% endfor %}
           </div>
+
+          <!-- NEW: Clean Search Engine Input Bar Layout Space -->
+          <div class="global-search-container" style="position: relative; margin-bottom: 20px; width: 100%; max-width: 500px;">
+            <input type="text" id="jekyll-search-input" placeholder="🔍 Search laboratory physics demos..." style="width: 100%; padding: 10px 15px; font-size: 16px; border: 1px solid #d1d5db; border-radius: 4px; box-sizing: border-box; background-color: #ffffff !important; color: #111111 !important;">
+            <!-- Dropdown result overlay panel -->
+            <ul id="jekyll-search-results" style="position: absolute; top: 100%; left: 0; right: 0; background: #ffffff; border: 1px solid #d1d5db; border-radius: 0 0 4px 4px; list-style: none; padding: 0; margin: 0; z-index: 9999; box-shadow: 0 4px 10px rgba(0,0,0,0.15); max-height: 300px; overflow-y: auto; display: none;"></ul>
+          </div>
+
           <hr style="opacity: 0.15; margin-bottom: 20px;">
         </header>
 
@@ -121,5 +133,36 @@
 
       </section>
     </main>
-  </body>
+      <!-- Script core dependency for simple-jekyll-search engine engine built via CDN -->
+    <script src="https://unpkg.com/simple-jekyll-search@latest/dest/simple-jekyll-search.min.js"></script>
+    <script>
+      const searchInput = document.getElementById('jekyll-search-input');
+      const resultsContainer = document.getElementById('jekyll-search-results');
+
+      // Initialize the script search runner
+      const sjs = SimpleJekyllSearch({
+        searchInput: searchInput,
+        resultsContainer: resultsContainer,
+        json: '{{ site.baseurl }}/search.json',
+        searchResultTemplate: '<li style="border-bottom: 1px solid #f3f4f6;"><a href="{url}" style="display: block; padding: 12px 15px; color: #111111 !important; text-decoration: none; font-size: 15px; font-weight: bold; background: #ffffff; transition: background 0.2s;"><span style="color:#8F001A;">[{category}]</span> {title}</a></li>',
+        noResultsText: '<li style="padding: 12px 15px; color: #6b7280; font-size: 14px;">No matching laboratory templates found</li>'
+      });
+
+      // Show the dropdown results list ONLY when typing has content inside input bounds
+      searchInput.addEventListener('input', function() {
+        if (this.value.trim().length > 0) {
+          resultsContainer.style.display = 'block';
+        } else {
+          resultsContainer.style.display = 'none';
+        }
+      });
+
+      // Close the tracking dropdown view automatically if user clicks elsewhere on the canvas
+      document.addEventListener('click', function(e) {
+        if (!e.target.closest('.global-search-container')) {
+          resultsContainer.style.display = 'none';
+        }
+      });
+    </script>
+    </body>
 </html>
