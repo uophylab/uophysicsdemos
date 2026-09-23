@@ -2,6 +2,7 @@
 title: Flattening earth
 pira: 1D52.10
 category: mechanics
+card_picture: flat_earth.png
 ---
 
 A filled bucket is attached to a rope and spun around. The water stays in the bucket due to the force pushing it against the bottom of the bucket.
@@ -15,4 +16,5 @@ A filled bucket is attached to a rope and spun around. The water stays in the bu
 1. Fill the bucket about halfway with water.
 2. Hold the bucket by the handle or with the string and spin it in a big circle.
 
+{% picture flat_earth.png %}
 {% include youtubePlayer.html id="bQ-uDYKrCV4" %}
