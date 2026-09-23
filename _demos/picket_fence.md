@@ -15,3 +15,5 @@ A calibrated picket fence is dropped through a photogate to measure the accelera
 
 ### Instruction ###
 Connect the photogate to the computer and launch the Logger Pro software. Collect data as you drop the picket fence through the arms of the photogate.
+
+{% picture Measuring_g.png %}
