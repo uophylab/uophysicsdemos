@@ -86,6 +86,21 @@
         background-color: #f3f4f6 !important; /* Soft gray highlight color */
         color: #8F001A !important;             /* Flips text targets to uOttawa Maroon on hover */
       }
+        /* FORCES NAV TO RECOGNIZE BOUNDARIES FOR ABSOLUTE ELEMENT PINNING */
+      nav {
+        position: relative !important;
+      }
+
+      /* CRITICAL FIX: FORCES THE NEW LOGO TO STAY CAPTURED ON THE FAR RIGHT EDGE */
+      nav .navbar-logo-right {
+        position: absolute !important;       /* Rips image from column order to float independently */
+        top: 50% !important;                 /* Pushes down past top boundary to line level */
+        right: 20px !important;              /* Locks and snaps it 20px from the far right screen wall */
+        transform: translateY(-50%) !important; /* Perfect vertical centerline calculation trick */
+        height: 2.2em !important;            /* Constrains height to frame inside maroon limits safely */
+        width: auto !important;              /* Prevents horizontal distortions or compression squishing */
+        display: block !important;
+      }
     </style>
   </head>
   <body>
