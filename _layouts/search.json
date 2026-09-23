@@ -6,7 +6,7 @@ layout: none
     {
       "title"    : {{ demo.title | strip_html | strip_newlines | jsonify }},
       "category" : {{ demo.category | strip_html | strip_newlines | jsonify }},
-      "url"      : "{{ site.baseurl }}{{ demo.url }}"
+      "url"      : {{ demo.url | relative_url | jsonify }}
     }{% unless forloop.last %},{% endunless %}
   {% endfor %}
 ]
