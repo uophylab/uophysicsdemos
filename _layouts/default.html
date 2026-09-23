@@ -145,10 +145,10 @@
 
         let searchData = [];
 
-        // 1. DYNAMIC LOCATION MATCH: Reads your host path directly from the browser URL address bar
-        const siteRoot = window.location.origin + "/uophysicsdemos";
-        
-        fetch(siteRoot + '/search.json')
+      // 1. JEKYLL CONFIGURATION MATCH: Pulls the precise root path directly from your site configuration
+const searchUrl = "{{ '/search.json' | relative_url }}";
+
+fetch(searchUrl)
           .then(response => {
             if (!response.ok) throw new Error("Network response error fetching search file");
             return response.json();
