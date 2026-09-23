@@ -145,17 +145,17 @@
 
         let searchData = [];
 
-        // 1. Fetch the compiled search registry file using dynamic relative paths
-        fetch('{{ "/search.json" | relative_url }}')
+       // 1. Fetch the compiled search registry file using your concrete repository URL
+        fetch('/uophysicsdemos/search.json')
           .then(response => {
             if (!response.ok) throw new Error("Network response error fetching search file");
             return response.json();
           })
           .then(data => {
             searchData = data;
+            console.log("Successfully loaded " + data.length + " physics demos!");
           })
           .catch(error => console.error("Search engine setup error:", error));
-
         // 2. Real-time key filtering logic
         searchInput.addEventListener('input', function() {
           const query = this.value.toLowerCase().trim();
