@@ -1,7 +1,7 @@
 ---
-title: Fan Car
+title: Capillary tubes
 pira: 1D50.20
-category: mechanics
+category: fluids
 card_picture: IMG_0625.JPG
 ---
 
