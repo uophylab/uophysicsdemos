@@ -2,6 +2,7 @@
 title: Monkey and hunter
 pira: 1D60.30 
 category: mechanics
+card_picture: IMG_3756.JPG
 ---
 
 A hunter spies a monkey in a tree, takes aim, and fires. At the moment the bullet leaves the gun the monkey lets go of the tree branch and drops straight down. Does the hunter's bullet hit the monkey?
