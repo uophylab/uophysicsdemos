@@ -2,6 +2,7 @@
 title: Air Track
 PIRA: 1C10.25
 category: mechanics
+subcategory: "Dynamics"
 tags:
   - one-dimensional motion
   - frictionless
