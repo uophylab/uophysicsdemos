@@ -2,6 +2,7 @@
 title: Whirligig
 pira: 1D50.20
 category: mechanics
+subcategory: "Rotational motion"
 card_picture: 1D50.20_1.jpg
 ---
 
