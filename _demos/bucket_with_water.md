@@ -2,6 +2,7 @@
 title: Bucket with water
 pira: 1D50.40
 category: mechanics
+subcategory: "Rotational motion"
 card_picture: 1D50.40_2.jpg
 ---
 
