@@ -2,6 +2,7 @@
 title: Fan Car
 pira: 1D50.20
 category: mechanics
+subcategory: "Dynamics"
 card_picture: IMG_0625.JPG
 ---
 
