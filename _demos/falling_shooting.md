@@ -2,6 +2,7 @@
 title: Falling and shooting ball
 pira: 1D60.20
 category: mechanics
+subcategory: "Kinematics"
 card_picture: 1C10.25_1.jpg
 ---
 
