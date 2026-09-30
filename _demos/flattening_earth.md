@@ -2,6 +2,7 @@
 title: Flattening earth
 pira: 1D52.10
 category: mechanics
+subcategory: "Rotational motion"
 card_picture: flat_earth.png
 ---
 
