@@ -3,7 +3,7 @@ title: Coriolis effect
 pira: 1D50.20
 category: mechanics
 subcategory: "Rotational motion"
-card_picture: IMG_1502.JPG
+card_picture: 1673.jpg
 
 ---
 
@@ -26,4 +26,4 @@ Newton's Third Law states that for every action, there is an equal and opposite 
 * **Internal Forces Cancel:** Because the fan and the sail are attached to the exact same chassis, these two forces are internal to the system. The forward push on the sail perfectly matches the backward recoil on the fan. They cancel each other out, resulting in a net force of zero.
 * **The Curve Exception:** A curved sail catches the air and physically redirects it backward. Bouncing the air backward creates a brand-new reaction force that pushes the sail forward. This extra forward thrust is finally enough to overcome the fan's backward recoil, allowing the car to move.
 
-{% picture IMG_1502.JPG %}
+{% picture 1673.jpg %}
