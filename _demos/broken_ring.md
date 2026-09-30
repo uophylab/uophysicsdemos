@@ -2,6 +2,7 @@
 title: Broken ring
 pira: 1D55.10
 category: mechanics
+subcategory: "Rotational motion"
 card_picture: 1D55.10_1.jpg
 ---
 
