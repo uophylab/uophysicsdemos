@@ -2,6 +2,7 @@
 title: Lighter mass lifting heavier mass
 pira: 1D50.20
 category: mechanics
+subcategory: "Statics"
 card_picture: 1D50.20_1a.jpg
 ---
 
