@@ -2,6 +2,7 @@
 title: Tennis racket rotation
 pira: 1D40.00
 category: mechanics
+subcategory: "Rotational motion"
 card_picture: 1D40.00_1.jpg
 ---
 
