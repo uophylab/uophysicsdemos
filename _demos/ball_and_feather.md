@@ -2,6 +2,7 @@
 title: Ball and feather free fall
 pira: 1C20.10
 category: mechanics
+subcategory: "Dynamics"
 card_picture: 1C20.10_1.jpg
 ---
 
