@@ -2,7 +2,9 @@
 title: Coriolis effect
 pira: 1D50.20
 category: mechanics
+subcategory: "Rotational motion"
 card_picture: IMG_1502.JPG
+
 ---
 
 The fan cart with a sail is a classic physics demonstration that tests Newton's Third Law of Motion (Action and Reaction) by asking a trick question: **Can a car move if its own fan blows wind into its own sail?**
