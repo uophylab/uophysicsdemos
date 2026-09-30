@@ -2,6 +2,7 @@
 title: Monkey and hunter
 pira: 1D60.30 
 category: mechanics
+subcategory: "Kinematics"
 card_picture: IMG_3756.JPG
 ---
 
