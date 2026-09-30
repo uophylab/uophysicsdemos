@@ -2,6 +2,7 @@
 title: Picket fence and photogate
 pira: 1C30.35
 category: mechanics
+subcategory: "Kinematics"
 card_picture: picket_fence.png
 ---
 
