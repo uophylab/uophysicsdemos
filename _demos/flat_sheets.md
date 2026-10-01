@@ -15,3 +15,6 @@ The paper sheet drops slower than the metal one when dropped side by side due to
 
 ### Instruction ###
 First drop the two sheets side-by-side, then drop them while they are pressed together.
+
+
+{% picture flat_metal.jpg %}
