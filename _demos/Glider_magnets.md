@@ -2,7 +2,8 @@
 title: Glider with magnets
 pira: 1D60.10
 category: mechanics
-card_picture: 1D60.10_1.jpg
+subcategory: "Dynamics"
+card_picture: IMG_1297.JPG
 ---
 
 A moving cart launches a ball vertically. The ball lands back in the launcher because it has the same horizontal velocity as the cart.
@@ -16,7 +17,7 @@ A moving cart launches a ball vertically. The ball lands back in the launcher be
 2. Place the pin through the hole in the rod to hold the launcher steady.
 3. Put the cart in motion then pull out the pin. The ball bearing will launch vertically.
 
-{% picture 1D60.10_1.jpg %}
+{% picture IMG_1297.JPG %}
 
 Cart with vertical ball launcher
 {% include youtubePlayer.html id="t5eHdUebB5w" %}
