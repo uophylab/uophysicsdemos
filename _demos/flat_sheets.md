@@ -3,6 +3,7 @@ title: Flat metal and paper sheet
 pira: 1C20.11
 category: mechanics
 subcategory: "Dynamics"
+card_picture: flat_metal.jpg
 
 ---
 
