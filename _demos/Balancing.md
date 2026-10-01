@@ -1,5 +1,5 @@
 ---
-title: Centre of mass
+title: Balancing irregular objects 
 pira: 1D50.20
 category: mechanics
 subcategory: "Kinematics"
