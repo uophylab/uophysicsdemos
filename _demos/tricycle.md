@@ -24,8 +24,5 @@ An air track demonstrates frictionless 1D travel as well as 1-D frictionless col
 ### Instruction ###
 Place air track on a flat, level surface. Adjust feet screws to level the track. Connect hose from pump to track and turn on pump. Adjust pump speed as necessary. Demonstrate frictionless travel and/or collisions using gliders.
 
-{% picture 1176.jpg %}
 {% picture IMG_0745.JPG %}
 
-{% include youtubePlayer.html id="GnJ4C3ELX6Q" %}
-{% include youtubePlayer.html id="iOfaPKEmu0U" %}
