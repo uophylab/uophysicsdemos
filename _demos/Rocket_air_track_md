@@ -27,3 +27,6 @@ Place air track on a flat, level surface. Adjust feet screws to level the track.
 {% picture 1176.JPG %}
 {% picture IMG_1313.JPG %}
 
+{% include youtubePlayer.html id="GnJ4C3ELX6Q" %}
+{% include youtubePlayer.html id="iOfaPKEmu0U" %}
+
