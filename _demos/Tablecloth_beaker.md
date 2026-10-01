@@ -15,3 +15,5 @@ A tube with two LEDs is thrown and spun in the air. The red LED is at the tube's
 Throw the light tube in the air such that it rotates rapidly, end over end. The red LED at the center of mass of the tube will appear to fly in a parabolic pattern.
 
 {% picture IMG_0611.JPG %}
+
+{% include youtubePlayer.html id="QTlcgkONP9w" %}
