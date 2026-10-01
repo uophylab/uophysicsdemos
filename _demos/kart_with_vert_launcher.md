@@ -1,5 +1,5 @@
 ---
-title: Cart with vertical ball launcher
+title: Kart with vertical ball launcher
 pira: 1D60.10
 category: mechanics
 card_picture: 1D60.10_1.jpg
