@@ -10,7 +10,7 @@ card_picture: IMG_0719.JPG
 {% picture IMG_0719.JPG %}
 
 ### Description ###
-The center of mass of irregular objects is used to balance these objects in precarious positions.
+The center of mass of irregular objects allows these objects to balance themselves in precarious positions.
 
 
 ### Equipment ###
