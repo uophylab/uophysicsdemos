@@ -18,7 +18,7 @@ The centre of mass in a tennis racket is at the base of the loop. This is shown 
 Throw the tennis racket in the air such that it rotates rapidly, end over end. The centre of mass of the racket will appear to fly in a parabolic pattern.
 
 <video width="100%" controls>
-  <source src="{{ site.baseurl }}/assets/videos/MVI_1219.MOV" type="video/MOV">
+  <source src="{{ site.baseurl }}/assets/videos/MVI_1219.MOV" type="video/mp4">
   Your browser does not support the video tag.
 </video>
 
