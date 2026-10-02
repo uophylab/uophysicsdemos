@@ -5,7 +5,14 @@ category: mechanics
 card_picture: IMG_0875.JPG
 ---
 
-A feather falls more slowly than a ball down a tube due to air resistance. When the tubes are evacuated, both the feather and ball fall with equal speed.
+### Description ###
+A metal disc is balanced on either side by small masses and rolls down a rope. This simulates a tightrope walker using a long pole to balance himself.
+Also known as a funambule in french.
+
+### Equipment ###
+Tightrope walker
+String
+Two c-clamps with rods
 
 ### Instruction ###
 With both cylinders in air, rotate the tubes by 180 degrees...
