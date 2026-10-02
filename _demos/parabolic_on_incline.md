@@ -18,3 +18,6 @@ A ball that is fired up an incline follows a parabolic trajectory. The steepness
 i) Set the desired incline for the plane, ii) set the desired angle of fire and iii) launch the ball bearing to observe the parabolic trajectory.
   
 {% include youtubePlayer.html id="3736ilWTgDE" %}
+
+### Keywords ###
+ball, incline, parabolic, trajectory
