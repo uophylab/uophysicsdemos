@@ -13,8 +13,8 @@ A hammer is balanced on an arc of metal which is held by the demonstrator's fing
 
 
 ### Equipment ###
-* **Hammer
-* **Metal arc
+* Hammer
+* Metal arc
 
 ### Instruction ###
 Place the arc into the hammer's forked side. Balance the flat end of the arc on your finger. (see images and movies)
