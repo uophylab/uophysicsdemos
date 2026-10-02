@@ -20,3 +20,6 @@ A tablecloth is quickly pulled from underneath a beaker filled with water. The b
 Lay the tablecloth flat on the table and place the filled beaker on top of it. Swiftly pull the tablecloth off the table and the beaker should remain in place.
 
 {% include youtubePlayer.html id="QTlcgkONP9w" %}
+
+### Keywords ###
+tablecloth, napkin, beakerwater, dishes
