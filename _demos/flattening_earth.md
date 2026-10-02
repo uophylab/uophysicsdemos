@@ -5,17 +5,19 @@ category: mechanics
 subcategory: "Rotational motion"
 card_picture: flat_earth.png
 ---
+{% picture flat_earth.png %}
 
-A filled bucket is attached to a rope and spun around. The water stays in the bucket due to the force pushing it against the bottom of the bucket.
+### Description ###
+A drill spins a globe made of flexible metal hoops. The globe begins to compress as the drill spins faster and faster.
 
 ### Equipment ###
-- Big bucket
-- Water
-- Strong cord
+* cordless drill
+* flexible metal globe
 
 ### Instruction ###
-1. Fill the bucket about halfway with water.
-2. Hold the bucket by the handle or with the string and spin it in a big circle.
+Attach the "earth" to the drill. As the drill spins faster, the globe will start to compress and flatten. The degree of compression is determined by the velocity of the drill's spin.
 
-{% picture flat_earth.png %}
 {% include youtubePlayer.html id="bQ-uDYKrCV4" %}
+
+### Keywords ###
+flattening, earth, flexible, globe, drill
