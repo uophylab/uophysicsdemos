@@ -5,13 +5,16 @@ category: mechanics
 subcategory: "Kinematics"
 card_picture: IMG_0561.JPG
 ---
+{% picture IMG_0561.JPG %}
 
-Also known as **projectile motion** or **simultaneous fall**. A ball shot horizontally by a projectile launcher will hit the floor at the same time as a ball dropped from the same height.
+### Description ###
+A ball that is fired up an incline follows a parabolic trajectory. The steepness of the incline can be adjusted.
 
 ### Equipment ###
-- Projectile launcher with hand pump
-- 2 x ball bearings
-- Vernier power adapter
-- Power bar
+* Inclined plane
+* Ball bearing
+
+### Instructions ###
+i) Set the desired incline for the plane, ii) set the desired angle of fire and iii) launch the ball bearing to observe the parabolic trajectory.
   
-{% picture IMG_0561.JPG %}
+
