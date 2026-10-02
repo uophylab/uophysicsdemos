@@ -19,7 +19,7 @@ magnet attachments
 Connect the air track to the pump and turn it on. Insert the magnetic attachments into the gliders and softly collide them. Magnets with similar polarity will repel (elastic collision) while those with opposite polarity with attract (inelastic collision).
 
 <video width="100%" controls>
-  <source src="{{ site.baseurl }}/glider_magnet.mp4" type="video/mp4">
+  <source src="{{ site.baseurl }}/assets/videos/glider_magnet.mp4" type="video/mp4">
   Your browser does not support the video tag.
 </video>
 
