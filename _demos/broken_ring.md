@@ -7,6 +7,7 @@ card_picture: 1D55.10_1.jpg
 ---
 {% picture 1D55.10_1.jpg %}
 
+### Description ###
 Upon exit, a ball goes off on a tangent as it is rolled around a circular ring with a gap.
 
 ### Equipment ###
