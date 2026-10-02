@@ -11,9 +11,9 @@ A metal disc is balanced on either side by small masses and rolls down a rope. T
 Also known as a funambule in french.
 
 ### Equipment ###
-* **Tightrope walker
-* **String
-* **Two c-clamps with rods
+* Tightrope walker
+* String
+* Two c-clamps with rods
 
 ### Instruction ###
 Attach a taut string between two rods at a small angle (15 - 30°). Place the tightrope walker at the highest point of the string and watch it travel down.
