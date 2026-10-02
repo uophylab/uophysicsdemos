@@ -19,4 +19,6 @@ Using a Bob, three lines are drawn down from different edges of this arbitrary o
 ### Instruction ###
 The object has previously been hung by each of the three nails around its edge. In each case, a mass on a string has been attached to the nail and a line was drawn along the path of the string. The point at which the three lines inter-connect is the centre of mass of the non-uniform flat object.
 
+### Keywords ###
+object, non-uniform, irregular, centre, mass
 
