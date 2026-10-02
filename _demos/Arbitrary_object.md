@@ -1,5 +1,5 @@
 ---
-title: CM of Arbitrary flat object
+title: CM of an arbitrary flat object
 pira: 1D50.20
 category: mechanics
 subcategory: "Kinematics"
