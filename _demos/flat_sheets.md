@@ -7,7 +7,7 @@ card_picture: flat_metal.jpg
 
 ---
 {% picture flat_metal.jpg %}
-
+### Description ###
 The paper sheet drops slower than the metal one when dropped side by side due to air resistance. They drop at the same speed when the paper is placed on top of the metal then dropped.
 
 ### Equipment ###
@@ -19,3 +19,6 @@ First drop the two sheets side-by-side, then drop them while they are pressed to
 
 
 {% include youtubePlayer.html id="ZgeVIcFj30s" %}
+
+### Keywords ###
+drop, copper, metal, sheet, paper, air resistance
