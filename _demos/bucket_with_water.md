@@ -5,6 +5,7 @@ category: mechanics
 subcategory: "Rotational motion"
 card_picture: 1D50.40_2.jpg
 ---
+{% picture 1D50.40_2.jpg %}
 
 A filled bucket is attached to a rope and spun around. The water stays in the bucket due to the force pushing it against the bottom of the bucket.
 
@@ -14,9 +15,7 @@ A filled bucket is attached to a rope and spun around. The water stays in the bu
 - Strong cord
 
 ### Instruction ###
-1. Fill the bucket about halfway with water.
-2. Hold the bucket by the handle or with the string and spin it in a big circle.
+i) Fill the bucket about halfway with water. ii) Hold the bucket by the handle or with the string and spin it in a big circle.
 
-{% picture 1D50.40_2.jpg %}
-
-{% include youtubePlayer.html id="2-ApZ5D1mH4" %}
+### Keywords ###
+bucket, water, rope, centripetal, acceleration, centrifugal, spin
