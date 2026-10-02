@@ -17,3 +17,6 @@ magnet attachments
 
 ### Instruction ###
 Connect the air track to the pump and turn it on. Insert the magnetic attachments into the gliders and softly collide them. Magnets with similar polarity will repel (elastic collision) while those with opposite polarity with attract (inelastic collision).
+
+### Keywords ###
+air, track, friction-less, collision, magnet, glider, motion, detector, sensor
