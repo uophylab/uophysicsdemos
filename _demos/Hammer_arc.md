@@ -2,7 +2,7 @@
 title: Hammer and skyhook
 pira: 1D50.20
 category: mechanics
-subcategory: "Kinematics"
+subcategory: "Statics"
 card_picture: hammer_arc.jpg
 
 ---
