@@ -23,3 +23,5 @@ Spray-paint the ball. Start rotating the platform then drop the ball onto the ce
 ### The physics ###
 Newton's Third Law states that for every action, there is an equal and opposite reaction. In this experiment, we look at the forces acting on the car as a single, combined system.
 
+### Keywords ###
+Coriolis, rotating, platform, ink, paint
