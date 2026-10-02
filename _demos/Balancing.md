@@ -2,7 +2,7 @@
 title: Balancing irregular objects 
 pira: 1D50.20
 category: mechanics
-subcategory: "Kinematics"
+subcategory: "Statics"
 card_picture: IMG_0719.JPG
 
 ---
