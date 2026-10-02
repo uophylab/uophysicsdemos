@@ -16,5 +16,11 @@ A tube with two LEDs is thrown and spun in the air. The red LED is at the tube's
 ### Instruction ###
 Throw the light tube in the air such that it rotates rapidly, end over end. The red LED at the center of mass of the tube will appear to fly in a parabolic pattern.
 
+
+<video width="100%" controls>
+  <source src="{{ site.baseurl }}/assets/videos/MVI_1215.MOV" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
+
 ### Keywords ###
 light tube, center of mass, rotation
