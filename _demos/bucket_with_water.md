@@ -7,6 +7,7 @@ card_picture: 1D50.40_2.jpg
 ---
 {% picture 1D50.40_2.jpg %}
 
+### Description ###
 A filled bucket is attached to a rope and spun around. The water stays in the bucket due to the force pushing it against the bottom of the bucket.
 
 ### Equipment ###
