@@ -6,6 +6,7 @@ subcategory: "Dynamics"
 card_picture: flat_metal.jpg
 
 ---
+{% picture flat_metal.jpg %}
 
 The paper sheet drops slower than the metal one when dropped side by side due to air resistance. They drop at the same speed when the paper is placed on top of the metal then dropped.
 
@@ -17,4 +18,4 @@ The paper sheet drops slower than the metal one when dropped side by side due to
 First drop the two sheets side-by-side, then drop them while they are pressed together.
 
 
-{% picture flat_metal.jpg %}
+
