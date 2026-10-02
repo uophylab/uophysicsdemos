@@ -2,7 +2,7 @@
 title: CM of an arbitrary flat object
 pira: 1D50.20
 category: mechanics
-subcategory: "Kinematics"
+subcategory: "Statics"
 card_picture: IMG_0767.JPG
 
 ---
