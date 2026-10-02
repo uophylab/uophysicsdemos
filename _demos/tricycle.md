@@ -10,19 +10,21 @@ tags:
 card_picture: IMG_0745.JPG
 ---
 
-An air track demonstrates frictionless 1D travel as well as 1-D frictionless collisions
+{% picture IMG_0740.JPG %}
+
+### Description ###
+A compressed gas cylinder (argon) is attached to a tricycle. When the gas is released, it propels the tricycle forwards. Can also be a fire extinguisher.
 
 ### Equipment ###
-- 2 metre long air track
-- Air pump
-- Flexible hose
-- Power cable
-- Extension cord
-- Gliders (with magnets/pins)
-- Motion detectors and computer/software
+* Rocket bike (with argon canister attached)
+* helmet
+* adjustable wrench
 
 ### Instruction ###
-Place air track on a flat, level surface. Adjust feet screws to level the track. Connect hose from pump to track and turn on pump. Adjust pump speed as necessary. Demonstrate frictionless travel and/or collisions using gliders.
+Have a demonstrator sit on the bike with his/her feet off the pedals, preferably placed on the frame. The bike should be located at the edge of a room/area. The professor should then open the valve on the argon bottle. Once the bike has been propelled far enough, a second person should close the valve.
 
-{% picture IMG_0740.JPG %}
+### Keywords ###
+rocket, bike, bicycle, tricycle, argon, gas, fire extinguisher
+
+
 
