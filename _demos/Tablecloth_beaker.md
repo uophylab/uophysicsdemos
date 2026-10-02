@@ -5,15 +5,18 @@ category: mechanics
 subcategory: "Dynamics"
 card_picture: IMG_0611.JPG
 ---
+{% picture IMG_0611.JPG %}
 
-A tube with two LEDs is thrown and spun in the air. The red LED is at the tube's center of mass while the yellow LED is at the end. When thrown and spun, the red LED's trajectory is a parabola.
+
+### Description ###
+A tablecloth is quickly pulled from underneath a beaker filled with water. The beaker does not topple over due to inertia.
 
 ### Equipment ###
-- Light tube
+* 4 L beaker filled with water + food colouring
+* Tablecloth
+* Flat surface
 
 ### Instruction ###
-Throw the light tube in the air such that it rotates rapidly, end over end. The red LED at the center of mass of the tube will appear to fly in a parabolic pattern.
-
-{% picture IMG_0611.JPG %}
+Lay the tablecloth flat on the table and place the filled beaker on top of it. Swiftly pull the tablecloth off the table and the beaker should remain in place.
 
 {% include youtubePlayer.html id="QTlcgkONP9w" %}
