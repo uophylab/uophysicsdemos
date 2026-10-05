@@ -2,6 +2,7 @@
 title: Walking the spool
 pira: 1C20.10
 category: mechanics
+subcategory: "Dynamics"
 card_picture: IMG_0800.JPG
 ---
 {% picture IMG_0800.JPG %}
