@@ -22,7 +22,7 @@ Put the spool on the floor or on a table so that it can roll freely over at leas
 
 
 <video width="100%" controls>
-  <source src="{{ site.baseurl }}/assets/videos/coriolis.mp4" type="video/mp4">
+  <source src="{{ site.baseurl }}/assets/videos/yoyo.mp4" type="video/mp4">
   Your browser does not support the video tag.
 </video>
 
