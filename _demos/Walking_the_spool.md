@@ -4,17 +4,27 @@ pira: 1C20.10
 category: mechanics
 card_picture: IMG_0875.JPG
 ---
-{% picture IMG_0875.JPG %}
+{% picture 1673.jpg %}
 
 ### Description ###
-A metal disc is balanced on either side by small masses and rolls down a rope. This simulates a tightrope walker using a long pole to balance himself.
-Also known as a funambule in french.
+A freshly painted ball is dropped onto the center of a rotating platform covered by white paper. The ball's trail shows a curve from the center to the edge, demonstrating the coriolis effect.
 
 ### Equipment ###
-* Tightrope walker
-* String
-* Two c-clamps with rods
+* Rotating platform
+* Plastic ball
+* White newsprint paper
+* Black spray-paint
 
 ### Instruction ###
-Attach a taut string between two rods at a small angle (15 - 30°). Place the tightrope walker at the highest point of the string and watch it travel down.
+Spray-paint the ball. Start rotating the platform then drop the ball onto the center of the platform.
 
+### The physics ###
+Newton's Third Law states that for every action, there is an equal and opposite reaction. In this experiment, we look at the forces acting on the car as a single, combined system.
+
+<video width="100%" controls>
+  <source src="{{ site.baseurl }}/assets/videos/coriolis.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
+
+### Keywords ###
+Coriolis, rotating, platform, ink, paint
