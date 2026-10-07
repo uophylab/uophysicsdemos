@@ -23,5 +23,10 @@ Pull a wooden block using a string. A minimal force proportional to the static f
 ### Instruction ###
 Pull the block using the string attached the the spring scale. Note the tension at which motion starts and then tension required to maintain motion. Change the orientation of the block, changing the surface area, and repeat. Add masses and repeat; the tension readings should proportional to the masses. Different surfaces can produce different result. Different angle between the surface and the string will produce different result.
 
+<video width="100%" controls>
+  <source src="{{ site.baseurl }}/assets/videos/friction.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
+
 ### Keywords ###
 block, string, pull, friction
