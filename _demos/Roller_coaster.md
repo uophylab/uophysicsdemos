@@ -20,5 +20,11 @@ A cart is only able to complete the loop-de-loop in a roller coaster if it's sta
 ### Instruction ###
 Place the cart at various positions along the roller coaster's ramp and release it.
 
+
+<video width="100%" controls>
+  <source src="{{ site.baseurl }}/assets/videos/roller_coaster.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
+
 ### Keywords ###
 loop-de-loop, roller, coaster, ramp, cart, acceleration
