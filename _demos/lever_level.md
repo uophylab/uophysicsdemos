@@ -3,11 +3,11 @@ title: Lever level
 pira: 1D50.20
 category: mechanics
 subcategory: "Statics"
-card_picture: poulies_2x-2x-3x-4x.jpeg
+card_picture: 1M20.40_1.JPG
 
 ---
 
-{% picture poulies_2x-2x-3x-4x.jpeg %}
+{% picture 1M20.40_1.JPG %}
 
 ### Description ###
 A lever level shows how forces can be balanced depending on their position along the lever.
@@ -20,7 +20,11 @@ A lever level shows how forces can be balanced depending on their position along
 ### Instruction ###
 Attach the lever level to the vertical rod. Place masses along the various positions on the lever and show how forces are balanced.
 
-{% picture IMG_0664.JPG %}
+
+{% include youtubePlayer.html id="jfTtE12dwVk" %}
+{% include youtubePlayer.html id="51Gi79clH_s" %}
+{% include youtubePlayer.html id="dw-YBVvZZVo" %}
+{% include youtubePlayer.html id="T9qrvHv_p6E" %}
 
 ### Keywords ###
 lever, balance, level
