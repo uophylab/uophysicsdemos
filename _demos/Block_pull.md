@@ -3,11 +3,11 @@ title: Static and dynamic friction
 pira: 1D50.20
 category: mechanics
 subcategory: "Statics"
-card_picture: IMG_0767.JPG
+card_picture: IMG_0518.JPG
 
 ---
 
-{% picture IMG_0767.JPG %}
+{% picture IMG_0518.JPG %}
 
 ### Description ###
 Pull a wooden block using a string. A minimal force proportional to the static friction coefficient is required to make the block move. This coefficient only depends on the surfaces, not the area of contact or the normal force.
