@@ -7,7 +7,7 @@ card_picture: IMG_0692.JPG
 
 ---
 
-{% picture IMG_0693.JPG %}
+{% picture IMG_0692.JPG %}
 
 ### Description ###
 The amplitude of an oscillating pendulum will not increase (the bowling ball will not hit the person's face).
