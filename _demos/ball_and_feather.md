@@ -23,7 +23,5 @@ With both cylinders in air, rotate the tubes by 180 degrees and see what falls f
 
 {% include youtubePlayer.html id="0rAob6A8ms0" %}
 
-{% picture 1C20.10_1.jpg %}
-
 ### Keywords ###
 ball, drop, feather, vacuum
