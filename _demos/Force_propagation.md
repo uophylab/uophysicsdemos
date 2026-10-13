@@ -2,7 +2,7 @@
 title: Force propagation and collision
 pira: 1D50.20
 category: mechanics
-subcategory: "Dynamics"
+subcategory: "Oscillation motion"
 card_picture: IMG_1083.JPG
 
 ---
