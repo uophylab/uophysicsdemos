@@ -19,6 +19,7 @@ A tennis ball is sitting atop a basketball and both balls are dropped. A large r
 ### Instruction ###
 Have the tennis ball directly above and touching the basketball. Drop both balls from waist-height.
 
+{% include youtubePlayer.html id="NB48JtwJ9FI" %}
 
 <video width="100%" controls>
   <source src="{{ site.baseurl }}/assets/videos/basket_tennis.mp4" type="video/mp4">
