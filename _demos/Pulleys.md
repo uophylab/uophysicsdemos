@@ -24,5 +24,11 @@ Arrange the pulleys according to the diagrams. The first setup shows that throug
 
 {% picture IMG_0664.JPG %}
 
+### Physics ###
+In an ideal, frictionless pulley system, the tension (T) remains uniform throughout a single continuous rope. The load mass is supported by the vertical strands of rope directly pulling up on the pulley. If a system has 4 supporting strands, the upward force is 4T. Therefore, to balance a load, the required input force is 4 times less yielding a mechanical advantage.
+
+### Concepts ###
+Tension: The pulling force transmitted axially through a string, rope, or cable, which stays constant across a single ideal strand.
+
 ### Keywords ###
 pulley, mass, force, lift
