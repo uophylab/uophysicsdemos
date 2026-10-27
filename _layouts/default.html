@@ -3,65 +3,122 @@
   <head>
     {% capture current_category_url %}{{ site.baseurl  | append: "/categories/" | append: page.category | strip }}{% endcapture %}
     <meta charset="utf-8">
-    <title>{{ page.title }}|University of Ottawa | Physics Laboratories</title>
+    <title>{{ page.title }} | University of Ottawa | Physics Laboratories</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/picnic">
     <link rel="stylesheet" href="{{ site.baseurl }}/assets/styles/style.css">
     <style>
       /* FORCES THE BACKGROUND OF THE WHOLE SCREEN TO LIGHT GRAY */
       body {
-        background-color: #f4f5f7 !important; /* Soft, modern light gray background */
+        background-color: #f4f5f7 !important;
       }
 
       /* CHANGING THE NAVBAR COLOR TO MAROON */
       nav {
-        background-color: #8F001A !important;  /* Official University of Ottawa Garnet/Maroon */
-        height: 3.5em !important;             /* Slightly taller layout to frame larger text comfortably */
-        box-shadow: 0 2px 5px rgba(0,0,0,0.15) !important; /* Clean drop shadow beneath the colored bar */
+        background-color: #8F001A !important;  
+        height: 3.5em !important;             
+        box-shadow: 0 2px 5px rgba(0,0,0,0.15) !important; 
+        position: relative !important;        
+        z-index: 100000 !important;           
       }
 
       /* FIXES THE TEXT INSIDE THE MAROON NAVBAR TO BE CRISP WHITE */
       nav .brand {
-        color: #ffffff !important;            /* Changes "uOttawa Physics Demonstrations" text to white */
+        color: #ffffff !important;            
         font-family: Arial, Helvetica, sans-serif;
-        font-size: 1.3em !important;          /* Keeps title bold and highly readable */
-        line-height: 3.5em !important;        /* Centers text vertically inside the navbar */
+        font-size: 1.3em !important;          
+        line-height: 3.5em !important;        
       }
 
-      /* FORCES THE COMPLETE SCREEN (INCLUDING THE CENTER) TO TURN LIGHT GRAY */
+      /* FORCES THE COMPLETE SCREEN TO TURN LIGHT GRAY */
       html, body, main, document, .document, section, article {
-        background-color: #f4f5f7 !important; /* Forces the exact color code globally */
-        background: #f4f5f7 !important;       /* Overwrites any gradient backgrounds */
-        box-shadow: none !important;          /* Wipes out any borders hiding under containers */
-        border: none !important;              /* Wipes out framework card borders */
+        background-color: #f4f5f7 !important; 
+        background: #f4f5f7 !important;       
+        box-shadow: none !important;          
+        border: none !important;              
       }
 
       /* FORCES THE WEBSITE TO TIGHTLY EXPAND TO 100% EDGE-TO-EDGE FULL SCREEN */
       main.document {
-        max-width: 100% !important; 
-        width: 100% !important;     
-        margin: 0 !important;       
-        padding-top: 5.5em;                   
+        max-width: 100% !important;          
+        width: 100% !important;              
+        margin: 0 auto !important;       
+        padding-top: 1.1em !important;        
         padding-left: 20px;         
         padding-right: 20px;        
-        background-color: transparent !important; /* Removes any hidden white blocks over the gray body */
+        background-color: transparent !important; 
       }
 
-      /* ALSO FORCE THE INNER CONTENT AREA TO BE TRANSPARENT */
+      /* ELEVATES SEARCH CONTAINER ABOVE CARDS */
+      .global-search-container {
+        position: relative !important; 
+        margin-top: 15px !important;           
+        margin-bottom: 20px !important;       
+        width: 100%; 
+        max-width: 650px !important;          
+        z-index: 1000001 !important;          
+      }
+
+      /* CRITICAL SHIELD: Overrides framework list mechanics to restore visibility */
+      #jekyll-search-results {
+        position: absolute !important; 
+        top: 100% !important; 
+        left: 0 !important; 
+        right: 0 !important; 
+        background-color: #ffffff !important; 
+        border: 1px solid #d1d5db !important; 
+        border-radius: 0 0 4px 4px !important; 
+        list-style: none !important; 
+        list-style-type: none !important;
+        padding: 0 !important; 
+        margin: 0 !important; 
+        z-index: 999999 !important; 
+        box-shadow: 0 4px 10px rgba(0,0,0,0.15) !important; 
+        max-height: 300px !important; 
+        overflow-y: auto !important; 
+        display: none;
+        width: 100% !important;
+      }
+
+      /* Isolates each list item to render inside standard block lines */
+      #jekyll-search-results li {
+        display: block !important;
+        width: 100% !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        background-color: #ffffff !important;
+        border-bottom: 1px solid #f3f4f6 !important;
+        text-align: left !important;
+      }
+      
+      #jekyll-search-results li a {
+        display: block !important;
+        width: 100% !important;
+        padding: 12px 15px !important;
+        text-decoration: none !important;
+        color: #111111 !important;
+        box-sizing: border-box !important;
+      }
+
+      #jekyll-search-results li a:hover,
+      #jekyll-search-results li.search-item-active {
+        background-color: #f3f4f6 !important; 
+      }
+
       main.document article.full, 
       main.document article {
-        background-color: transparent !important; /* Clears the background behind your titles and text */
-        border: none !important;                  /* Removes any framework borders box outlines */
+        background-color: transparent !important; 
+        border: none !important;                  
         box-shadow: none !important;
       }
 
-      /* Spacing out your horizontal category navigation button row */
       .horizontal-nav {
         margin-top: 15px;     
         margin-bottom: 25px; 
         width: 100%;
+        position: relative !important;
+        z-index: 100000 !important;           
       }
       
-      /* UNSELECTED STATE: STANDBY WHITE BUTTONS WITH DARK TEXT */
       .horizontal-nav .pseudo.button {
         margin-right: 14px;   
         margin-bottom: 10px;
@@ -69,58 +126,91 @@
         font-size: 20px !important;    
         font-weight: bold !important;  
         padding: 8px 16px !important;  
-        background-color: #ffffff !important; /* White button card */
-        border: 1px solid #d1d5db !important; /* Fine edge outline */
-        color: #111111 !important;            /* Dark text */
+        background-color: #ffffff !important; 
+        border: 1px solid #d1d5db !important; 
+        color: #111111 !important;            
       }
       
-      /* SELECTED STATE: ACTIVE CATEGORY TURNS MAROON WITH WHITE TEXT */
       .horizontal-nav .pseudo.button.current {
-        background-color: #8F001A !important; /* Highlighted button matches the navbar maroon */
-        color: #ffffff !important;            /* Text color flips to white when selected */
+        background-color: #8F001A !important; 
+        color: #ffffff !important;            
         border-color: #8F001A !important;
       }
-            /* Dropdown rows hover aesthetic effects */
-      #jekyll-search-results li a:hover {
-        background-color: #f3f4f6 !important; /* Soft gray highlight color */
-        color: #8F001A !important;             /* Flips text targets to uOttawa Maroon on hover */
+
+      nav .navbar-logo-right {
+        position: absolute !important;       
+        top: 50% !important;                 
+        right: 20px !important;              
+        transform: translateY(-50%) !important; 
+        height: 3.2em !important;            
+        width: auto !important;              
+        display: block !important;
+      }
+
+      .card {
+        position: relative !important;       
+      }
+
+      .card .stretched-link::after {
+        position: absolute !important;
+        top: 0 !important;
+        right: 0 !important;
+        bottom: 0 !important;
+        left: 0 !important;
+        z-index: 99999 !important;           
+        content: "" !important;
+        cursor: pointer !important;
+        display: block !important;
+        pointer-events: auto !important;     
+      }
+
+      .card picture, 
+      .card img, 
+      .card figure, 
+      .card video,
+      .card p {
+        pointer-events: none !important;     
+      }
+
+      .card:hover {
+        transform: translateY(-2px) !important;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.1) !important;
+        transition: all 0.2s ease-in-out !important;
       }
     </style>
   </head>
   <body>
    <nav>
-      <a class="brand" href="{{ site.baseurl }}">University of Ottawa | Physic Laboratory | Demos</a>
-    </nav>
+      <a class="brand" href="{{ site.baseurl }}/">University of Ottawa | Physics Laboratory | Demos</a>
+      <img src="{{ site.baseurl }}/assets/images/fullsize/2025-uOttawa-Logo-HOR-WHITE.png" class="navbar-logo-right" alt="uOttawa Logo">
+   </nav>
 
     <main class="document">
       <section class="flex one">
         
-            <!-- Global Header Section containing Search and Categories -->
         <header class="full">
-
-          <!-- 1. NOW ON TOP: Clean Search Engine Input Bar Layout Space -->
-          <div class="global-search-container" style="position: relative; margin-top: 15px; margin-bottom: 20px; width: 100%; max-width: 500px;">
-            <input type="text" id="jekyll-search-input" placeholder="🔍 Search physic laboratory demos..." style="width: 100%; padding: 10px 15px; font-size: 16px; border: 1px solid #d1d5db; border-radius: 4px; box-sizing: border-box; background-color: #ffffff !important; color: #111111 !important;">
-            <!-- Dropdown result overlay panel -->
-            <ul id="jekyll-search-results" style="position: absolute; top: 100%; left: 0; right: 0; background: #ffffff; border: 1px solid #d1d5db; border-radius: 0 0 4px 4px; list-style: none; padding: 0; margin: 0; z-index: 9999; box-shadow: 0 4px 10px rgba(0,0,0,0.15); max-height: 300px; overflow-y: auto; display: none;"></ul>
+          <!-- 1. Search Engine Input Bar Layout Space -->
+          <div class="global-search-container">
+            <input type="text" id="jekyll-search-input" autocomplete="off" placeholder="🔍 Search physics laboratory demos" style="width: 100%; padding: 14px 20px; font-size: 19px; border: 2px solid #d1d5db; border-radius: 4px; box-sizing: border-box; background-color: #ffffff !important; color: #111111 !important;">
+            <ul id="jekyll-search-results"></ul>
           </div>
 
-          <!-- 2. NOW UNDERNEATH: Global Horizontal Category Navigation Row -->
+          <!-- 2. Global Horizontal Category Navigation Row -->
           <div class="horizontal-nav">
             {% for category in site.categories %}
               {% capture relative_category_url %}{{ category.url | relative_url }}{% endcapture %}
               
-              <!-- SMART CHECK: Triggers maroon if looking at the main category page OR an individual card -->
               {% assign is_active = false %}
               {% assign loop_slug = category.title | downcase | strip | replace: ' ', '-' %}
               {% assign current_card_cat = page.category | downcase | strip | replace: ' ', '-' %}
+              {% assign current_page_title = page.title | downcase | strip | replace: ' ', '-' %}
               
-              {% capture cat_path_snippet %}/categories/{{ loop_slug }}/{% endcapture %}
+              {% capture target_cat_url %}/categories/{{ loop_slug }}/{% endcapture %}
               
-              {% if current_card_cat == loop_slug or page.url == cat_path_snippet or page.url contains cat_path_snippet %}
+              {% if current_card_cat == loop_slug or current_page_title == loop_slug or page.url == target_cat_url %}
                 {% assign is_active = true %}
               {% endif %}
-              
+
               <a class="pseudo button{% if is_active %} current{% endif %}" href="{{ relative_category_url }}">{{ category.title }}</a>
             {% endfor %}
           </div>
@@ -128,7 +218,6 @@
           <hr style="opacity: 0.15; margin-bottom: 20px;">
         </header>
 
-        <!-- Page content container now takes full width -->
         <article class="full">
           <h1>{{ page.title }}</h1>
           {{ content }}
@@ -136,116 +225,147 @@
 
       </section>
     </main>
-  <!-- Native JavaScript Search Engine Engine (Multi-Page Aware Fix) -->
+
     <script>
-     document.addEventListener("DOMContentLoaded", function() {
-  const searchInput = document.getElementById('jekyll-search-input');
-  const resultsContainer = document.getElementById('jekyll-search-results');
-  if (!searchInput || !resultsContainer) return;
+      document.addEventListener("DOMContentLoaded", function() {
+        const searchInput = document.getElementById('jekyll-search-input');
+        const resultsContainer = document.getElementById('jekyll-search-results');
+        if (!searchInput || !resultsContainer) return;
 
-  let searchData = [];
-  let currentFocus = -1; // Tracks which list item is currently highlighted
+        let searchData = [];
+        let currentFocus = -1;
 
-  // 1. Fetch the search file
-  const searchUrl = "{{ '/search.json' | relative_url }}";
-  fetch(searchUrl)
-    .then(response => {
-      if (!response.ok) throw new Error("Network response error fetching search file");
-      return response.json();
-    })
-    .then(data => { searchData = data; })
-    .catch(error => console.error("Search engine setup error:", error));
-
-  // 2. Real-time filtering logic
-  searchInput.addEventListener('input', function() {
-    const query = this.value.toLowerCase().trim();
-    resultsContainer.innerHTML = '';
-    currentFocus = -1; // Reset focus when typing changes
-    
-    if (query.length === 0) {
-      resultsContainer.style.display = 'none';
-      return;
-    }
-
-    // Filter data based on title or content
-    const filtered = searchData.filter(item => 
-      item.title.toLowerCase().includes(query) || 
-      item.category.toLowerCase().includes(query)
-    );
-
-    if (filtered.length > 0) {
-      filtered.forEach(item => {
-        const li = document.createElement('li');
-        const a = document.createElement('a');
-        a.href = item.url;
-        a.textContent = item.title;
-        a.style.display = 'block';
-        a.style.padding = '10px 15px';
-        a.style.textDecoration = 'none';
-        a.style.color = '#111111';
+        const searchUrl = "{{ '/search.json' | relative_url }}";
         
-        li.appendChild(a);
-        resultsContainer.appendChild(li);
+        fetch(searchUrl)
+          .then(response => {
+            if (!response.ok) throw new Error("Database fetch returned failure code");
+            return response.json();
+          })
+          .then(data => {
+            searchData = Array.isArray(data) ? data : (data.items || []);
+          })
+          .catch(error => {
+            console.error("Search index failed to stream:", error);
+          });
+
+        searchInput.addEventListener('input', function() {
+          const query = this.value.toLowerCase().trim();
+          resultsContainer.innerHTML = '';
+          currentFocus = -1;
+          
+          if (query.length === 0) {
+            resultsContainer.style.display = 'none';
+            return;
+          }
+
+          const filtered = searchData.filter(item => {
+            const title = item.title ? String(item.title).toLowerCase() : "";
+            const content = item.content ? String(item.content).toLowerCase() : "";
+            const rawCat = item.category || item.categories || "";
+            const category = Array.isArray(rawCat) ? rawCat.join(" ").toLowerCase() : String(rawCat).toLowerCase();
+            
+            return title.includes(query) || content.includes(query) || category.includes(query);
+          });
+
+          if (filtered.length > 0) {
+            filtered.forEach(item => {
+              const li = document.createElement('li');
+              
+              const a = document.createElement('a');
+              a.href = item.url;
+              
+              const titleSpan = document.createElement('span');
+              titleSpan.textContent = item.title;
+              titleSpan.style.fontWeight = 'bold';
+              titleSpan.style.color = '#111111';
+
+              const categorySpan = document.createElement('span');
+              const rawCategory = item.category || item.categories;
+              
+              if (rawCategory) {
+                const cleanCat = Array.isArray(rawCategory) ? rawCategory.join(", ") : rawCategory;
+                categorySpan.textContent = ` [${cleanCat}]`;
+                categorySpan.style.color = '#8F001A'; // Official uOttawa Red/Maroon
+                categorySpan.style.fontSize = '0.9em';
+                categorySpan.style.marginLeft = '8px';
+                categorySpan.style.fontWeight = 'normal';
+                categorySpan.className = 'category-tag';
+              }
+              
+              a.appendChild(titleSpan);
+              a.appendChild(categorySpan);
+              li.appendChild(a);
+              resultsContainer.appendChild(li);
+            });
+            resultsContainer.style.display = 'block';
+          } else {
+            const noMatchLi = document.createElement('li');
+            noMatchLi.style.padding = '12px 15px';
+            noMatchLi.style.color = '#6b7280';
+            noMatchLi.style.backgroundColor = '#ffffff';
+            noMatchLi.innerText = "🔍 No matching demonstrations found.";
+            resultsContainer.appendChild(noMatchLi);
+            resultsContainer.style.display = 'block';
+          }
+        });
+
+        // Keyboard navigation configurations
+        searchInput.addEventListener('keydown', function(e) {
+          const items = resultsContainer.getElementsByTagName('li');
+          if (items.length === 0) return;
+
+          if (e.key === 'ArrowDown') {
+            e.preventDefault();
+            currentFocus++;
+            addActive(items);
+          } else if (e.key === 'ArrowUp') {
+            e.preventDefault();
+            currentFocus--;
+            addActive(items);
+          } else if (e.key === 'Enter') {
+            if (currentFocus > -1 && items[currentFocus]) {
+              e.preventDefault();
+              const targetLink = items[currentFocus].querySelector('a');
+              if (targetLink) targetLink.click();
+            }
+          }
+        });
+
+        function addActive(items) {
+          if (!items || items.length === 0) return;
+          removeActive(items);
+          
+          if (currentFocus >= items.length) currentFocus = 0;
+          if (currentFocus < 0) currentFocus = items.length - 1;
+          
+          items[currentFocus].classList.add('search-item-active');
+          items[currentFocus].style.backgroundColor = '#f3f4f6';
+          
+          const targetLink = items[currentFocus].querySelector('a');
+          if (targetLink) targetLink.style.color = '#8F001A';
+          
+          items[currentFocus].scrollIntoView({ block: 'nearest' });
+        }
+
+        function removeActive(items) {
+          for (let i = 0; i < items.length; i++) {
+            items[i].classList.remove('search-item-active');
+            items[i].style.backgroundColor = '#ffffff';
+            const targetLink = items[i].querySelector('a');
+            if (targetLink) targetLink.style.color = '#111111';
+            
+            const targetTag = items[i].querySelector('.category-tag');
+            if (targetTag) targetTag.style.color = '#8F001A'; 
+          }
+        }
+
+        document.addEventListener('click', function(e) {
+          if (e.target !== searchInput && e.target !== resultsContainer) {
+            resultsContainer.style.display = 'none';
+          }
+        });
       });
-      resultsContainer.style.display = 'block';
-    } else {
-      resultsContainer.style.display = 'none';
-    }
-  });
-
-  // 3. NEW: Keyboard navigation handling (Arrows and Enter)
-  searchInput.addEventListener('keydown', function(e) {
-    const items = resultsContainer.getElementsByTagName('li');
-    if (items.length === 0) return;
-
-    if (e.key === 'ArrowDown') {
-      e.preventDefault();
-      currentFocus++;
-      addActive(items);
-    } else if (e.key === 'ArrowUp') {
-      e.preventDefault();
-      currentFocus--;
-      addActive(items);
-    } else if (e.key === 'Enter') {
-      if (currentFocus > -1 && items[currentFocus]) {
-        e.preventDefault();
-        // Click the link inside the highlighted item
-        items[currentFocus].getElementsByTagName('a')[0].click();
-      }
-    }
-  });
-
-  // Helper function to handle CSS highlighting
-  function addActive(items) {
-    if (!items) return false;
-    removeActive(items);
-    
-    if (currentFocus >= items.length) currentFocus = 0;
-    if (currentFocus < 0) currentFocus = items.length - 1;
-    
-    // Highlight the active row and give it a subtle gray background
-    items[currentFocus].style.backgroundColor = '#f3f4f6';
-    items[currentFocus].getElementsByTagName('a')[0].style.color = '#8F001A';
-    
-    // Auto-scroll the dropdown menu if navigating past visible area
-    items[currentFocus].scrollIntoView({ block: 'nearest' });
-  }
-
-  function removeActive(items) {
-    for (let i = 0; i < items.length; i++) {
-      items[i].style.backgroundColor = '';
-      items[i].getElementsByTagName('a')[0].style.color = '#111111';
-    }
-  }
-
-  // Close dropdown if user clicks anywhere else outside the search box
-  document.addEventListener('click', function(e) {
-    if (e.target !== searchInput && e.target !== resultsContainer) {
-      resultsContainer.style.display = 'none';
-    }
-  });
-});
     </script>
   </body>
-    </body>
 </html>
