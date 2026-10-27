@@ -36,7 +36,7 @@ Pull the block using the string attached the the spring scale. Note the tension 
 ### Concepts ###
 * Coefficient of Friction: A dimensionless scalar value representing the structural roughness and adhesive properties between two specific materials.
 *  Normal Force: The perpendicular support force exerted by a surface against an object pressing down on it.
-*  static Friction: The force that prevents two surfaces from sliding past one another up to a strict maximum threshold.
+*  Static Friction: The force that prevents two surfaces from sliding past one another up to a strict maximum threshold.
 *  Kinetic Friction: The constant force that opposes the relative motion of surfaces already sliding against each other.
 
 ### Keywords ###
