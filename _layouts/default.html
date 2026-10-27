@@ -98,7 +98,6 @@
       /* Dropdown rows hover aesthetic effects */
       #jekyll-search-results li a:hover {
         background-color: #f3f4f6 !important; /* Soft gray highlight color */
-        color: #8F001A !important;             /* Flips text targets to uOttawa Maroon on hover */
       }
 
       /* CRITICAL FIX: FORCES THE NEW LOGO TO STAY CAPTURED ON THE FAR RIGHT EDGE */
@@ -172,7 +171,7 @@
             {% for category in site.categories %}
               {% capture relative_category_url %}{{ category.url | relative_url }}{% endcapture %}
               
-                    <!-- SMART CHECK: Triggers maroon strictly on absolute matches to avoid overlapping sub-strings -->
+              <!-- SMART CHECK: Triggers maroon strictly on absolute matches to avoid overlapping sub-strings -->
               {% assign is_active = false %}
               {% assign loop_slug = category.title | downcase | strip | replace: ' ', '-' %}
               {% assign current_card_cat = page.category | downcase | strip | replace: ' ', '-' %}
@@ -185,15 +184,12 @@
                 {% assign is_active = true %}
               {% endif %}
 
-              
               <a class="pseudo button{% if is_active %} current{% endif %}" href="{{ relative_category_url }}">{{ category.title }}</a>
             {% endfor %}
           </div>
-
           <hr style="opacity: 0.15; margin-bottom: 20px;">
         </header>
 
-        <!-- Page content container now takes full width -->
         <article class="full">
           <h1>{{ page.title }}</h1>
           {{ content }}
@@ -202,7 +198,6 @@
       </section>
     </main>
 
-    <!-- Native JavaScript Search Engine Engine (Multi-Page Aware Fix) -->
     <script>
       document.addEventListener("DOMContentLoaded", function() {
         const searchInput = document.getElementById('jekyll-search-input');
@@ -233,12 +228,13 @@
             return;
           }
 
-          // Filter data based on title, category, or content elements
-          const filtered = searchData.filter(item => 
-            item.title.toLowerCase().includes(query) || 
-            (item.category && item.category.toLowerCase().includes(query)) ||
-            (item.content && item.content.toLowerCase().includes(query))
-          );
+          // Filter data based on title, category variations, or content elements
+          const filtered = searchData.filter(item => {
+            const itemCat = item.category || item.categories || "";
+            return item.title.toLowerCase().includes(query) || 
+                   itemCat.toLowerCase().includes(query) ||
+                   (item.content && item.content.toLowerCase().includes(query));
+          });
 
           if (filtered.length > 0) {
             filtered.forEach(item => {
@@ -258,11 +254,14 @@
 
               // Create the custom maroon category tag label segment
               const categorySpan = document.createElement('span');
-              if (item.category) {
-                categorySpan.textContent = ` [${item.category}]`;
-                categorySpan.style.color = '#8F001A'; // Official uOttawa Maroon
+              // FIX: Safely fallback across both search index data naming patterns
+              const rawCategory = item.category || item.categories; 
+              if (rawCategory) {
+                categorySpan.textContent = ` [${rawCategory}]`;
+                categorySpan.style.color = '#8F001A'; // Official uOttawa Red/Maroon
                 categorySpan.style.fontSize = '0.9em';
                 categorySpan.style.marginLeft = '8px';
+                categorySpan.style.fontWeight = 'normal';
                 categorySpan.className = 'category-tag';
               }
               
@@ -321,6 +320,10 @@
             items[i].style.backgroundColor = '';
             const targetLink = items[i].getElementsByTagName('a')[0];
             if (targetLink) targetLink.style.color = '#111111';
+            
+            // Retain the red category style tags even during active loops resets
+            const targetTag = items[i].querySelector('.category-tag');
+            if (targetTag) targetTag.style.color = '#8F001A';
           }
         }
 
