@@ -1,5 +1,5 @@
 ---
-title: Spinning top and gyroscope
+title: Bicycle spinning top and gyroscope
 pira: 1D50.20
 category: mechanics
 subcategory: "Rotational motion"
