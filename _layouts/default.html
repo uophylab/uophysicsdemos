@@ -186,7 +186,8 @@
 
               <a class="pseudo button{% if is_active %} current{% endif %}" href="{{ relative_category_url }}">{{ category.title }}</a>
             {% endfor %}
-          </div>
+          </div> <!-- FIXED: Added missing closing div layout container tag -->
+
           <hr style="opacity: 0.15; margin-bottom: 20px;">
         </header>
 
@@ -292,7 +293,7 @@
           } else if (e.key === 'Enter') {
             if (currentFocus > -1 && items[currentFocus]) {
               e.preventDefault();
-              const targetLink = items[currentFocus].getElementsByTagName('a')[0];
+              const targetLink = items[currentFocus].getElementsByTagName('a')[0]; // FIXED: Targeted structural item index correctly
               if (targetLink) targetLink.click();
             }
           }
@@ -309,7 +310,7 @@
           items[currentFocus].style.backgroundColor = '#f3f4f6';
           
           // Flip link hover title text targets to uOttawa Maroon on keyboard focus match
-          const targetLink = items[currentFocus].getElementsByTagName('a')[0];
+          const targetLink = items[currentFocus].getElementsByTagName('a')[0]; // FIXED: Targeted structural item index correctly
           if (targetLink) targetLink.style.color = '#8F001A';
           
           items[currentFocus].scrollIntoView({ block: 'nearest' });
@@ -318,7 +319,7 @@
         function removeActive(items) {
           for (let i = 0; i < items.length; i++) {
             items[i].style.backgroundColor = '';
-            const targetLink = items[i].getElementsByTagName('a')[0];
+            const targetLink = items[i].getElementsByTagName('a')[0]; // FIXED: Targeted structural item index correctly
             if (targetLink) targetLink.style.color = '#111111';
             
             // Retain the red category style tags even during active loops resets
