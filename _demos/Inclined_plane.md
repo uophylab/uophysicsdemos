@@ -30,5 +30,11 @@ Adjust the inclined plane to the desired angle. Let the ball roll down the plane
   Your browser does not support the video tag.
 </video>
 
+### Physics ###
+Gravity pulls the ball straight down, but the ramp splits this into two forces. The steeper angle increases forward acceleration. The ramp's surface exerts friction on the bottom of the ball.
+
+### Concepts ###
+Vector decomposition on an inclined plane. The acceleration scales with the sine of the incline angle.
+
 ### Keywords ###
 incline, plane, ramp, ball, roll
