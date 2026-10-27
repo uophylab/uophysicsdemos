@@ -7,143 +7,226 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/picnic">
     <link rel="stylesheet" href="{{ site.baseurl }}/assets/styles/style.css">
     <style>
+      /* FORCES THE BACKGROUND OF THE WHOLE SCREEN TO LIGHT GRAY */
       body {
-        background-color: #f4f5f7 !important;
+        background-color: #f4f5f7 !important; /* Soft, modern light gray background */
       }
+
+      /* CHANGING THE NAVBAR COLOR TO MAROON */
       nav {
-        background-color: #8F001A !important;
-        height: 3.5em !important;
-        box-shadow: 0 2px 5px rgba(0,0,0,0.15) !important;
-        position: relative !important;
-        z-index: 100000 !important;
+        background-color: #8F001A !important;  /* Official University of Ottawa Garnet/Maroon */
+        height: 3.5em !important;             /* Slightly taller layout to frame larger text comfortably */
+        box-shadow: 0 2px 5px rgba(0,0,0,0.15) !important; /* Clean drop shadow beneath the colored bar */
       }
+
+      /* FIXES THE TEXT INSIDE THE MAROON NAVBAR TO BE CRISP WHITE */
       nav .brand {
-        color: #ffffff !important;
+        color: #ffffff !important;            /* Changes "uOttawa Physics Demonstrations" text to white */
         font-family: Arial, Helvetica, sans-serif;
-        font-size: 1.3em !important;
-        line-height: 3.5em !important;
+        font-size: 1.3em !important;          /* Keeps title bold and highly readable */
+        line-height: 3.5em !important;        /* Centers text vertically inside the navbar */
       }
+
+      /* FORCES THE COMPLETE SCREEN (INCLUDING THE CENTER) TO TURN LIGHT GRAY */
       html, body, main, document, .document, section, article {
-        background-color: #f4f5f7 !important;
-        background: #f4f5f7 !important;
-        box-shadow: none !important;
-        border: none !important;
+        background-color: #f4f5f7 !important; /* Forces the exact color code globally */
+        background: #f4f5f7 !important;       /* Overwrites any gradient backgrounds */
+        box-shadow: none !important;          /* Wipes out any borders hiding under containers */
+        border: none !important;              /* Wipes out framework card borders */
       }
+
+          /* FORCES THE WEBSITE TO TIGHTLY EXPAND TO 100% EDGE-TO-EDGE FULL SCREEN */
       main.document {
-        max-width: 100% !important;
-        width: 100% !important;
-        margin: 0 auto !important;
-        padding-top: 1.1em !important;
-        padding-left: 20px;
-        padding-right: 20px;
-        background-color: transparent !important;
+         max-width: 100% !important;         /* INCREASED: Expanded from 1200px to allow a much wider layout */
+        width: 100% !important;  /* Shaves down side margin space on medium/large monitors */
+        margin: 0 auto !important;       
+        padding-top: 1.1em !important;        /* TIGHTENED: Reduced from 5.5em to pull everything up */
+        padding-left: 20px;         
+        padding-right: 20px;        
+        background-color: transparent !important; /* Removes any hidden white blocks over the gray body */
       }
+
+      /* 1. NOW ON TOP: Clean Search Engine Input Bar Layout Space */
       .global-search-container {
-        position: relative !important;
-        margin-top: 5px !important;
-        margin-bottom: 15px !important;
-        width: 100%;
-        max-width: 650px !important;
-        z-index: 1000001 !important;
+        position: relative; 
+        margin-top: 5px !important;           /* TIGHTENED: Reduced from 15px to close the gap beneath nav */
+        margin-bottom: 15px !important;       /* Clean spacing before the categories follow below */
+        width: 100%; 
+        max-width: 500px;
       }
+
+      /* ALSO FORCE THE INNER CONTENT AREA TO BE TRANSPARENT */
       main.document article.full, 
       main.document article {
-        background-color: transparent !important;
-        border: none !important;
+        background-color: transparent !important; /* Clears the background behind your titles and text */
+        border: none !important;                  /* Removes any framework borders box outlines */
         box-shadow: none !important;
       }
+
+      /* Spacing out your horizontal category navigation button row */
       .horizontal-nav {
-        margin-top: 15px;
-        margin-bottom: 25px;
+        margin-top: 15px;     
+        margin-bottom: 25px; 
         width: 100%;
-        position: relative !important;
-        z-index: 100000 !important;
       }
+      
+      /* UNSELECTED STATE: STANDBY WHITE BUTTONS WITH DARK TEXT */
       .horizontal-nav .pseudo.button {
-        margin-right: 14px;
+        margin-right: 14px;   
         margin-bottom: 10px;
         font-family: Arial, Helvetica, sans-serif;
-        font-size: 20px !important;
-        font-weight: bold !important;
-        padding: 8px 16px !important;
-        background-color: #ffffff !important;
-        border: 1px solid #d1d5db !important;
-        color: #111111 !important;
+        font-size: 20px !important;    
+        font-weight: bold !important;  
+        padding: 8px 16px !important;  
+        background-color: #ffffff !important; /* White button card */
+        border: 1px solid #d1d5db !important; /* Fine edge outline */
+        color: #111111 !important;            /* Dark text */
       }
+      
+      /* SELECTED STATE: ACTIVE CATEGORY TURNS MAROON WITH WHITE TEXT */
       .horizontal-nav .pseudo.button.current {
-        background-color: #8F001A !important;
-        color: #ffffff !important;
+        background-color: #8F001A !important; /* Highlighted button matches the navbar maroon */
+        color: #ffffff !important;            /* Text color flips to white when selected */
         border-color: #8F001A !important;
       }
+      
+      /* Dropdown rows hover aesthetic effects */
       #jekyll-search-results li a:hover {
-        background-color: #f3f4f6 !important;
+        background-color: #f3f4f6 !important; /* Soft gray highlight color */
+        color: #8F001A !important;             /* Flips text targets to uOttawa Maroon on hover */
       }
-      nav .navbar-logo-right {
-        position: absolute !important;
-        top: 50% !important;
-        right: 20px !important;
-        transform: translateY(-50%) !important;
-        height: 3.2em !important;
-        width: auto !important;
-        display: block !important;
-      }
-      .card {
+        /* FORCES NAV TO RECOGNIZE BOUNDARIES FOR ABSOLUTE ELEMENT PINNING */
+      nav {
         position: relative !important;
       }
+
+      /* CRITICAL FIX: FORCES THE NEW LOGO TO STAY CAPTURED ON THE FAR RIGHT EDGE */
+      nav .navbar-logo-right {
+        position: absolute !important;       /* Rips image from column order to float independently */
+        top: 50% !important;                 /* Pushes down past top boundary to line level */
+        right: 20px !important;              /* Locks and snaps it 20px from the far right screen wall */
+        transform: translateY(-50%) !important; /* Perfect vertical centerline calculation trick */
+        height: 3.2em !important;            /* Constrains height to frame inside maroon limits safely */
+        width: auto !important;              /* Prevents horizontal distortions or compression squishing */
+        display: block !important;
+      }
+
+            /* 1. NOW ON TOP: Clean Search Engine Input Bar Layout Space */
+      .global-search-container {
+        position: relative; 
+        margin-top: 5px !important;           
+        margin-bottom: 15px !important;       
+        width: 100%; 
+        max-width: 650px !important;          /* INCREASED: Expanded from 500px to give it a wider, bolder presence */
+      }
+         /* STRETCHED LINK PATTERN: FORCES THE TEXT LINK TO COVER THE ENTIRE IMAGE AREA ACCESSIBLY */
       .card .stretched-link::after {
         position: absolute !important;
         top: 0 !important;
         right: 0 !important;
         bottom: 0 !important;
         left: 0 !important;
-        z-index: 99999 !important;
+        z-index: 5 !important;              /* Floating invisible click box surface sheet layered over the picture layer */
+        content: "" !important;
+        cursor: pointer !important;
+      }
+
+      /* GIVES AN ACCENT VISUAL MOTION EFFECT WHEN HOVERING ANYWHERE OVER THE DYNAMIC CARD CONTAINER BOUNDS */
+      .card:hover {
+        transform: translateY(-2px) !important;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.1) !important;
+        transition: all 0.2s ease-in-out !important;
+      }
+       /* STRETCHED LINK PATTERN: CREATES AN INVISIBLE CLICK LAYER OVER THE ENTIRE CARD AREA */
+      .card {
+        position: relative !important;       /* Establishes the clear boundary box */
+      }
+
+      .card .stretched-link::after {
+        position: absolute !important;
+        top: 0 !important;
+        right: 0 !important;
+        bottom: 0 !important;
+        left: 0 !important;
+        z-index: 99999 !important;           /* ELEVATED: Pushes it to the absolute top layer above all plugins */
         content: "" !important;
         cursor: pointer !important;
         display: block !important;
-        pointer-events: auto !important;
+        pointer-events: auto !important;     /* Forcefully intercepts all mouse clicks */
       }
+
+      /* FORCES PLUGINS AND GENERATED IMAGE FRAMES TO PASS CLICKS DIRECTLY THROUGH */
       .card picture, 
       .card img, 
       .card figure, 
       .card video,
       .card p {
-        pointer-events: none !important;
+        pointer-events: none !important;     /* Clicks pass straight through these elements like glass */
       }
+
+      /* ACCENT VISUAL HOVER EFFECT ON THE OVERALL CONTAINER CARD */
       .card:hover {
         transform: translateY(-2px) !important;
         box-shadow: 0 4px 12px rgba(0,0,0,0.1) !important;
         transition: all 0.2s ease-in-out !important;
+      }
+ /* FIXED TOP NAV BAR: STICKS TO THE TOP OF THE PAGE AS YOU SCROLL */
+      nav {
+        position: fixed !important;            /* CRITICAL: Forcefully locks the navbar to the viewport screen position */
+        top: 0 !important;                     /* Snaps it to the absolute top edge of the window */
+        left: 0 !important;                    /* Pins it to the left edge boundary wall */
+        right: 0 !important;                   /* Stretches it full width across to the right wall edge */
+        width: 100% !important;                /* Guarantees 100% full screen coverage edge-to-edge */
+        background-color: #8F001A !important;  /* Official University of Ottawa Garnet/Maroon */
+        height: 4.2em !important;             
+        box-shadow: 0 2px 5px rgba(0,0,0,0.15) !important; 
+        z-index: 999999 !important;            /* PLACED ON TOP: Keeps the navbar layered above all cards and image plugins */
+      }
+
+          html {
+        scroll-behavior: smooth !important;
       }
     </style>
   </head>
   <body>
    <nav>
       <a class="brand" href="{{ site.baseurl }}">University of Ottawa | Physics Laboratory | Demos</a>
+      <!-- NEW: Dynamically inserts the uOttawa logo to float on the right side of the navbar -->
       <img src="{{ site.baseurl }}/assets/images/fullsize/2025-uOttawa-Logo-HOR-WHITE.png" class="navbar-logo-right" alt="uOttawa Logo">
    </nav>
 
     <main class="document">
       <section class="flex one">
+        
+        <!-- Global Header Section containing Search and Categories -->
         <header class="full">
-          <!-- Search Container -->
-          <div class="global-search-container">
-            <input type="text" id="jekyll-search-input" autocomplete="off" placeholder="🔍 Search physics laboratory demos" style="width: 100%; padding: 14px 20px; font-size: 19px; border: 2px solid #d1d5db; border-radius: 4px; box-sizing: border-box; background-color: #ffffff !important; color: #111111 !important;">
-            <ul id="jekyll-search-results" style="position: absolute; top: 100%; left: 0; right: 0; background: #ffffff; border: 1px solid #d1d5db; border-radius: 0 0 4px 4px; list-style: none; padding: 0; margin: 0; z-index: 999999 !important; box-shadow: 0 4px 10px rgba(0,0,0,0.15); max-height: 300px; overflow-y: auto; display: none;"></ul>
+
+          <!-- 1. NOW ON TOP: Clean Search Engine Input Bar Layout Space -->
+          <div class="global-search-container" style="position: relative; margin-top: 15px; margin-bottom: 20px; width: 100%; max-width: 500px;">
+            <input type="text" id="jekyll-search-input" placeholder="🔍 Search physics laboratory demos" style="width: 100%; padding: 14px 20px; font-size: 19px; border: 2px solid #d1d5db; border-radius: 4px; box-sizing: border-box; background-color: #ffffff !important; color: #111111 !important;">
+            <!-- Dropdown result overlay panel -->
+            <ul id="jekyll-search-results" style="position: absolute; top: 100%; left: 0; right: 0; background: #ffffff; border: 1px solid #d1d5db; border-radius: 0 0 4px 4px; list-style: none; padding: 0; margin: 0; z-index: 9999; box-shadow: 0 4px 10px rgba(0,0,0,0.15); max-height: 300px; overflow-y: auto; display: none;"></ul>
           </div>
 
-          <!-- Horizontal Navigation -->
+          <!-- 2. NOW UNDERNEATH: Global Horizontal Category Navigation Row -->
           <div class="horizontal-nav">
             {% for category in site.categories %}
               {% capture relative_category_url %}{{ category.url | relative_url }}{% endcapture %}
+              
+                    <!-- SMART CHECK: Triggers maroon strictly on absolute matches to avoid overlapping sub-strings -->
               {% assign is_active = false %}
               {% assign loop_slug = category.title | downcase | strip | replace: ' ', '-' %}
               {% assign current_card_cat = page.category | downcase | strip | replace: ' ', '-' %}
               {% assign current_page_title = page.title | downcase | strip | replace: ' ', '-' %}
+              
+              <!-- Generate the definitive category landing page URL template -->
               {% capture target_cat_url %}/categories/{{ loop_slug }}/{% endcapture %}
               
               {% if current_card_cat == loop_slug or current_page_title == loop_slug or page.url == target_cat_url %}
                 {% assign is_active = true %}
               {% endif %}
+
+              
               <a class="pseudo button{% if is_active %} current{% endif %}" href="{{ relative_category_url }}">{{ category.title }}</a>
             {% endfor %}
           </div>
@@ -151,13 +234,16 @@
           <hr style="opacity: 0.15; margin-bottom: 20px;">
         </header>
 
+        <!-- Page content container now takes full width -->
         <article class="full">
           <h1>{{ page.title }}</h1>
           {{ content }}
         </article>
+
       </section>
     </main>
 
+    <!-- Native JavaScript Search Engine Engine (Multi-Page Aware Fix) -->
     <script>
       document.addEventListener("DOMContentLoaded", function() {
         const searchInput = document.getElementById('jekyll-search-input');
@@ -165,86 +251,59 @@
         if (!searchInput || !resultsContainer) return;
 
         let searchData = [];
-        let currentFocus = -1;
+        let currentFocus = -1; // Tracks which list item is currently highlighted
 
-        // 1. Fetch search data with heavy logging to debug silent failures
+        // 1. Fetch the search file
         const searchUrl = "{{ '/search.json' | relative_url }}";
-        console.log("Attempting to fetch search index from:", searchUrl);
-
         fetch(searchUrl)
           .then(response => {
-            if (!response.ok) throw new Error("Status code: " + response.status);
+            if (!response.ok) throw new Error("Network response error fetching search file");
             return response.json();
           })
-          .then(data => {
-            // Handle cases where data is wrapped inside an object (e.g., { "demos": [...] })
-            if (data && !Array.isArray(data)) {
-              console.warn("search.json is an object, trying to find inner array...");
-              for (let key in data) {
-                if (Array.isArray(data[key])) {
-                  searchData = data[key];
-                  break;
-                }
-              }
-            } else {
-              searchData = data || [];
-            }
-            console.log("Search database successfully loaded. Total items found:", searchData.length);
-          })
-          .catch(error => {
-            console.error("CRITICAL: search.json failed to load completely. Error:", error);
-          });
+          .then(data => { searchData = data; })
+          .catch(error => console.error("Search engine setup error:", error));
 
-        // 2. Input filtering logic
+        // 2. Real-time filtering logic
         searchInput.addEventListener('input', function() {
           const query = this.value.toLowerCase().trim();
           resultsContainer.innerHTML = '';
-          currentFocus = -1;
+          currentFocus = -1; // Reset focus when typing changes
           
           if (query.length === 0) {
             resultsContainer.style.display = 'none';
             return;
           }
 
-          if (!Array.isArray(searchData) || searchData.length === 0) {
-            console.warn("Search fired, but searchData array is empty or uninitialized.");
-            showNoResults("Engine initializing or search data missing...");
-            return;
-          }
-
-          const filtered = searchData.filter(item => {
-            const title = item.title ? String(item.title).toLowerCase() : "";
-            const content = item.content ? String(item.content).toLowerCase() : "";
-            const rawCat = item.category || item.categories || "";
-            const category = rawCat ? String(rawCat).toLowerCase() : "";
-            
-            return title.includes(query) || content.includes(query) || category.includes(query);
-          });
+          // Filter data based on title, category, or content elements
+          const filtered = searchData.filter(item => 
+            item.title.toLowerCase().includes(query) || 
+            (item.category && item.category.toLowerCase().includes(query)) ||
+            (item.content && item.content.toLowerCase().includes(query))
+          );
 
           if (filtered.length > 0) {
             filtered.forEach(item => {
               const li = document.createElement('li');
-              li.style.margin = "0";
-              
               const a = document.createElement('a');
-              a.href = item.url || "#";
+              a.href = item.url;
               a.style.display = 'block';
               a.style.padding = '10px 15px';
               a.style.textDecoration = 'none';
               a.style.color = '#111111';
               
+              // Create the card title label segment
               const titleSpan = document.createElement('span');
-              titleSpan.textContent = item.title || "Untitled Demo";
+              titleSpan.textContent = item.title;
               titleSpan.style.fontWeight = 'bold';
+              titleSpan.className = 'demo-title-text';
 
+              // Create the custom maroon category tag label segment
               const categorySpan = document.createElement('span');
-              const rawCategory = item.category || item.categories;
-              if (rawCategory) {
-                categorySpan.textContent = ` [${rawCategory}]`;
-                categorySpan.style.color = '#8F001A'; 
+              if (item.category) {
+                categorySpan.textContent = ` [${item.category}]`;
+                categorySpan.style.color = '#8F001A'; // Official uOttawa Maroon
                 categorySpan.style.fontSize = '0.9em';
                 categorySpan.style.marginLeft = '8px';
-                categorySpan.style.fontWeight = 'normal';
                 categorySpan.className = 'category-tag';
               }
               
@@ -255,22 +314,11 @@
             });
             resultsContainer.style.display = 'block';
           } else {
-            showNoResults("No matching demonstrations found");
+            resultsContainer.style.display = 'none';
           }
         });
 
-        function showNoResults(message) {
-          const li = document.createElement('li');
-          li.style.padding = '10px 15px';
-          li.style.color = '#6b7280';
-          li.style.fontSize = '15px';
-          li.style.textAlign = 'center';
-          li.innerText = message;
-          resultsContainer.appendChild(li);
-          resultsContainer.style.display = 'block';
-        }
-
-        // 3. Keyboard Arrow and Enter Navigation Fixed Node Selections
+        // 3. Keyboard arrow navigation navigation bindings (Arrows + Enter Key)
         searchInput.addEventListener('keydown', function(e) {
           const items = resultsContainer.getElementsByTagName('li');
           if (items.length === 0) return;
@@ -286,21 +334,24 @@
           } else if (e.key === 'Enter') {
             if (currentFocus > -1 && items[currentFocus]) {
               e.preventDefault();
-              const targetLink = items[currentFocus].querySelector('a');
+              const targetLink = items[currentFocus].getElementsByTagName('a')[0];
               if (targetLink) targetLink.click();
             }
           }
         });
 
         function addActive(items) {
-          if (!items || items.length === 0) return false;
+          if (!items) return false;
           removeActive(items);
           
           if (currentFocus >= items.length) currentFocus = 0;
           if (currentFocus < 0) currentFocus = items.length - 1;
           
+          // Highlight active active container background row
           items[currentFocus].style.backgroundColor = '#f3f4f6';
-          const targetLink = items[currentFocus].querySelector('a');
+          
+          // Flip link hover title text targets to uOttawa Maroon on keyboard focus match
+          const targetLink = items[currentFocus].getElementsByTagName('a')[0];
           if (targetLink) targetLink.style.color = '#8F001A';
           
           items[currentFocus].scrollIntoView({ block: 'nearest' });
@@ -309,11 +360,12 @@
         function removeActive(items) {
           for (let i = 0; i < items.length; i++) {
             items[i].style.backgroundColor = '';
-            const targetLink = items[i].querySelector('a');
+            const targetLink = items[i].getElementsByTagName('a')[0];
             if (targetLink) targetLink.style.color = '#111111';
           }
         }
 
+        // Close dropdown if user clicks anywhere outside the input bounds layout area
         document.addEventListener('click', function(e) {
           if (e.target !== searchInput && e.target !== resultsContainer) {
             resultsContainer.style.display = 'none';
