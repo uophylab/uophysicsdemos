@@ -7,12 +7,9 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/picnic">
     <link rel="stylesheet" href="{{ site.baseurl }}/assets/styles/style.css">
     <style>
-      /* FORCES THE BACKGROUND OF THE WHOLE SCREEN TO LIGHT GRAY */
       body {
         background-color: #f4f5f7 !important;
       }
-
-      /* CHANGING THE NAVBAR COLOR TO MAROON */
       nav {
         background-color: #8F001A !important;  
         height: 3.5em !important;             
@@ -20,24 +17,18 @@
         position: relative !important;        
         z-index: 100000 !important;           
       }
-
-      /* FIXES THE TEXT INSIDE THE MAROON NAVBAR TO BE CRISP WHITE */
       nav .brand {
         color: #ffffff !important;            
         font-family: Arial, Helvetica, sans-serif;
         font-size: 1.3em !important;          
         line-height: 3.5em !important;        
       }
-
-      /* FORCES THE COMPLETE SCREEN TO TURN LIGHT GRAY */
       html, body, main, document, .document, section, article {
         background-color: #f4f5f7 !important; 
         background: #f4f5f7 !important;       
         box-shadow: none !important;          
         border: none !important;              
       }
-
-      /* FORCES THE WEBSITE TO TIGHTLY EXPAND TO 100% EDGE-TO-EDGE FULL SCREEN */
       main.document {
         max-width: 100% !important;          
         width: 100% !important;              
@@ -47,8 +38,6 @@
         padding-right: 20px;        
         background-color: transparent !important; 
       }
-
-      /* ELEVATES SEARCH CONTAINER ABOVE CARDS */
       .global-search-container {
         position: relative !important; 
         margin-top: 15px !important;           
@@ -57,8 +46,6 @@
         max-width: 650px !important;          
         z-index: 1000001 !important;          
       }
-
-      /* CRITICAL SHIELD: Overrides framework list mechanics to restore visibility */
       #jekyll-search-results {
         position: absolute !important; 
         top: 100% !important; 
@@ -78,8 +65,6 @@
         display: none;
         width: 100% !important;
       }
-
-      /* Isolates each list item to render inside standard block lines */
       #jekyll-search-results li {
         display: block !important;
         width: 100% !important;
@@ -89,7 +74,6 @@
         border-bottom: 1px solid #f3f4f6 !important;
         text-align: left !important;
       }
-      
       #jekyll-search-results li a {
         display: block !important;
         width: 100% !important;
@@ -98,19 +82,16 @@
         color: #111111 !important;
         box-sizing: border-box !important;
       }
-
       #jekyll-search-results li a:hover,
       #jekyll-search-results li.search-item-active {
         background-color: #f3f4f6 !important; 
       }
-
       main.document article.full, 
       main.document article {
         background-color: transparent !important; 
         border: none !important;                  
         box-shadow: none !important;
       }
-
       .horizontal-nav {
         margin-top: 15px;     
         margin-bottom: 25px; 
@@ -118,7 +99,6 @@
         position: relative !important;
         z-index: 100000 !important;           
       }
-      
       .horizontal-nav .pseudo.button {
         margin-right: 14px;   
         margin-bottom: 10px;
@@ -130,13 +110,11 @@
         border: 1px solid #d1d5db !important; 
         color: #111111 !important;            
       }
-      
       .horizontal-nav .pseudo.button.current {
         background-color: #8F001A !important; 
         color: #ffffff !important;            
         border-color: #8F001A !important;
       }
-
       nav .navbar-logo-right {
         position: absolute !important;       
         top: 50% !important;                 
@@ -146,11 +124,9 @@
         width: auto !important;              
         display: block !important;
       }
-
       .card {
         position: relative !important;       
       }
-
       .card .stretched-link::after {
         position: absolute !important;
         top: 0 !important;
@@ -163,15 +139,9 @@
         display: block !important;
         pointer-events: auto !important;     
       }
-
-      .card picture, 
-      .card img, 
-      .card figure, 
-      .card video,
-      .card p {
+      .card picture, .card img, .card figure, .card video, .card p {
         pointer-events: none !important;     
       }
-
       .card:hover {
         transform: translateY(-2px) !important;
         box-shadow: 0 4px 12px rgba(0,0,0,0.1) !important;
@@ -189,13 +159,11 @@
       <section class="flex one">
         
         <header class="full">
-          <!-- 1. Search Engine Input Bar Layout Space -->
           <div class="global-search-container">
             <input type="text" id="jekyll-search-input" autocomplete="off" placeholder="🔍 Search physics laboratory demos" style="width: 100%; padding: 14px 20px; font-size: 19px; border: 2px solid #d1d5db; border-radius: 4px; box-sizing: border-box; background-color: #ffffff !important; color: #111111 !important;">
             <ul id="jekyll-search-results"></ul>
           </div>
 
-          <!-- 2. Global Horizontal Category Navigation Row -->
           <div class="horizontal-nav">
             {% for category in site.categories %}
               {% capture relative_category_url %}{{ category.url | relative_url }}{% endcapture %}
@@ -239,14 +207,27 @@
         
         fetch(searchUrl)
           .then(response => {
-            if (!response.ok) throw new Error("Database fetch returned failure code");
-            return response.json();
+            if (!response.ok) throw new Error("Database file missing or returned failure code");
+            return response.text();
           })
-          .then(data => {
-            searchData = Array.isArray(data) ? data : (data.items || []);
+          .then(rawText => {
+            try {
+              const data = JSON.parse(rawText);
+              searchData = Array.isArray(data) ? data : (data.items || []);
+            } catch (jsonError) {
+              const fixedText = rawText
+                .replace(/\\/g, '\\\\')
+                .replace(/[\r\n\t]/g, ' ')
+                .replace(/,\s*\]/g, ']');
+              try {
+                searchData = JSON.parse(fixedText);
+              } catch (retryError) {
+                console.error("Critical JSON validation error", retryError);
+              }
+            }
           })
           .catch(error => {
-            console.error("Search index failed to stream:", error);
+            console.error("Search data failed to load:", error);
           });
 
         searchInput.addEventListener('input', function() {
@@ -259,13 +240,19 @@
             return;
           }
 
+          // Split the search query into individual keywords to match word-by-word
+          const queryWords = query.split(/\s+/);
+
           const filtered = searchData.filter(item => {
             const title = item.title ? String(item.title).toLowerCase() : "";
             const content = item.content ? String(item.content).toLowerCase() : "";
             const rawCat = item.category || item.categories || "";
             const category = Array.isArray(rawCat) ? rawCat.join(" ").toLowerCase() : String(rawCat).toLowerCase();
             
-            return title.includes(query) || content.includes(query) || category.includes(query);
+            const combinedText = `${title} ${content} ${category}`;
+            
+            // Ensure every single typed keyword matches a portion of the dataset item
+            return queryWords.every(word => combinedText.includes(word));
           });
 
           if (filtered.length > 0) {
@@ -286,7 +273,7 @@
               if (rawCategory) {
                 const cleanCat = Array.isArray(rawCategory) ? rawCategory.join(", ") : rawCategory;
                 categorySpan.textContent = ` [${cleanCat}]`;
-                categorySpan.style.color = '#8F001A'; // Official uOttawa Red/Maroon
+                categorySpan.style.color = '#8F001A'; 
                 categorySpan.style.fontSize = '0.9em';
                 categorySpan.style.marginLeft = '8px';
                 categorySpan.style.fontWeight = 'normal';
@@ -310,10 +297,9 @@
           }
         });
 
-        // Keyboard navigation configurations
         searchInput.addEventListener('keydown', function(e) {
           const items = resultsContainer.getElementsByTagName('li');
-          if (items.length === 0) return;
+          if (items.length === 0 || items[0].innerText.includes("No matching")) return;
 
           if (e.key === 'ArrowDown') {
             e.preventDefault();
