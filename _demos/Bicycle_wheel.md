@@ -22,8 +22,8 @@ card_picture: IMG_0924.JPG
 
 ### Instruction ###
 1) Spin the bicycle wheel using the motor and then lay it horizontally on the floor on its handle. It should stay upright and spinning.
-2) 
-3) Spin the bicycle wheel using the motor then let it hang from the rope. The wheel will stay upright and rotate torsionally.
+   
+2) Spin the bicycle wheel using the motor then let it hang from the rope. The wheel will stay upright and rotate torsionally.
 
 
 {% include youtubePlayer.html id="_enYKPKVu2g" %}
