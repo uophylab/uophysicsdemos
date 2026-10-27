@@ -3,11 +3,12 @@ title: Hinged stick and ball
 pira: 1D50.20
 category: mechanics
 subcategory: "Dynamics"
-card_picture: IMG_0607.JPG
+card_picture: 1Q20_20_5.JPG
 
 ---
 
-{% picture IMG_0607.JPG %}
+{% picture 1Q20_20_2.JPG %}
+{% picture 1Q20_20_4.JPG %}
 
 ### Description ###
 A ball on the end of a hinged stick falls into a cup mounted on the stick. Also known as "faster than gravity" or "falling chimney".
