@@ -28,5 +28,16 @@ Pull the block using the string attached the the spring scale. Note the tension 
   Your browser does not support the video tag.
 </video>
 
+### Physics ###
+* Static friction is a force that matches your pull exactly until it reaches its maximum threshold. Once the block breaks free, the microscopic bonds between the surfaces shear, transitioning the system to kinetic friction, which is almost always lower than static friction and remains constant regardless of speed. 
+
+* When the string is pulled at an upward angle, the tension splits into two components. The horizontal component drives the block forward, while the vertical component lifts the block slightly, reducing the normal force and lowering the overall friction.
+
+### Concepts ###
+* Coefficient of Friction: A dimensionless scalar value representing the structural roughness and adhesive properties between two specific materials.
+*  Normal Force: The perpendicular support force exerted by a surface against an object pressing down on it.
+*  static Friction: The force that prevents two surfaces from sliding past one another up to a strict maximum threshold.
+*  Kinetic Friction: The constant force that opposes the relative motion of surfaces already sliding against each other.
+
 ### Keywords ###
 block, string, pull, friction
