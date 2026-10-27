@@ -19,16 +19,18 @@ The fast rotation (using a motor) of suspended irregular objects causes them to 
 ### Instruction ###
 Attach each item to the motor, one by one, and observe how the object will start to rise and torsionally rotate as the speed of rotation increases.
 
-{% include youtubePlayer.html id="3736ilWTgDE" %}
-
 ### The physics ###
-A rapidly spinning flywheel contains a large amount angular momentum. This momentum is a vector quantity that points directly along the axis of rotation. According to Newton's rotational laws, a momentum vector strongly resists changes to its direction. When the student turns their body, they force the briefcase to change its horizontal heading, applying an external twisting force (torque) to the gyroscope axis
+Centrifugal Force in a Rotating Frame: When viewed from the rotating reference frame of the motor spindle, every segment of the suspended object experiences an outward centrifugal force. This apparent force scales with the distance from the central axis, any part of the object that flares outward experiences an even stronger outward pull. Nature seeks the most stable rotational configuration. An object rotating at high speed possesses massive angular momentum. To stabilize its rotation, the object naturally shifts its mass as far away from the axis of rotation as physically possible to maximize its moment of inertia.
+
+* The vertical rod pushes its heavy bottom end outward and upward until its mass is distributed symmetrically around the spin axis.
+* The edge-hung disc shifts into a horizontal plane because spinning flat maximizes its radial distance from the axle.
+* The slack chain lasso expands into a perfect circle because a ring projects its entire mass to the absolute maximum allowable radius, converting fluid links into a structurally stable gyro-ring.
+
 
 ### Concepts ###
-* Angular Momentum: A vector quantity tracking the intensity and directional axis of a spinning object. It points perpendicular to the rotation plane along the axle.
-* Torque: The rotational twisting force. In this demo, it is created by the gravitational force acting at a distance from the pivot point where the rope is tied.
-* Gyroscopic Precession: The continuous, perpendicular change in the orientation of a spinning object's rotation axis when a continuous external torque is applied.
-* Rotational Inertia: The structural property of the bicycle wheel that resists changes to its rotation speed or axis direction, maximized by pushing the wheel's mass out to the tire rim.
+* Centrifugal Force: The apparent outward force felt by an object moving in a circular path, which acts perpendicularly away from the central axis of rotation.
+* Moment of Inertia: A measure of a system's resistance to rotational changes, which increases as mass is pushed outward to a larger radius.
+* Dynamic Stability: The state where an accelerating or spinning system self-corrects its geometry to achieve a balanced, smooth, and low-energy rotational configuration.
 
 ### Keywords ###
 spinning, lariat, disc, rod, conservation, angular momentum
