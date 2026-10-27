@@ -32,11 +32,11 @@ This demonstration lies in how motion changes depending on your frame of referen
 This apparent sideways deflection is known as the Coriolis effect. It is caused by an inertial force that appears to act on objects when you track their movement from within a rotating coordinate system.
 
 ### Concepts ###
-• Coriolis Effect: The apparent deflection of a moving object's path caused entirely by the rotation of the frame of reference beneath it.
-• Inertial Reference Frame: A stationary or constant-velocity viewpoint where standard laws of inertia apply, and objects move in straight lines unless acted on by an outside physical force.
-• Non-Inertial (Rotating) Reference Frame: An accelerating or spinning viewpoint where objects appear to curve or drift due to the movement of the frame itself rather than a true physical push.
-• Tangential Velocity: The linear speed of a point on a spinning disc. This speed is zero at the absolute center and increases linearly the further out you move toward the edge.
-• Fictitious Force: An apparent force (like the Coriolis or Centrifugal force) that arises strictly due to the acceleration of a non-inertial reference frame, rather than an actual physical interaction between two objects.
+* Coriolis Effect: The apparent deflection of a moving object's path caused entirely by the rotation of the frame of reference beneath it.
+* Inertial Reference Frame: A stationary or constant-velocity viewpoint where standard laws of inertia apply, and objects move in straight lines unless acted on by an outside physical force.
+* Non-Inertial (Rotating) Reference Frame: An accelerating or spinning viewpoint where objects appear to curve or drift due to the movement of the frame itself rather than a true physical push.
+* Tangential Velocity: The linear speed of a point on a spinning disc. This speed is zero at the absolute center and increases linearly the further out you move toward the edge.
+* Fictitious Force: An apparent force (like the Coriolis or Centrifugal force) that arises strictly due to the acceleration of a non-inertial reference frame, rather than an actual physical interaction between two objects.
 
 ### Keywords ###
 Coriolis, rotating, platform, ink, paint
