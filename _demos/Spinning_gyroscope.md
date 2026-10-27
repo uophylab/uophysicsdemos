@@ -18,6 +18,19 @@ A gyroscope rotates about its axis. A top stays upright.
 ### Instruction ###
 Spin the tops or gyroscopes and lay them on the table. They will rotate and demonstrate properties of rotational dynamics.
 
+<video width="100%" controls>
+  <source src="{{ site.baseurl }}/assets/videos/glider_magnet.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video
+
+<video width="100%" controls>
+  <source src="{{ site.baseurl }}/assets/videos/glider_magnet.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video
+<video width="100%" controls>
+  <source src="{{ site.baseurl }}/assets/videos/glider_magnet.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video
 
 ### The physics ###
 When a top or gyroscope spins rapidly, it gains angular momentum. This momentum is a vector quantity that points directly along the axis of rotation. According to Newton's laws of rotational motion, an object's spin axis will rigidly maintain its orientation in space unless acted upon by an external torque. For a stationary, non-spinning top, gravity immediately pulls its centre of mass downward, causing it to fall over. For a spinning top, however, its massive angular momentum strongly resists this gravitational tipping force.
