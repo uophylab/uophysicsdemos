@@ -24,7 +24,7 @@ The object has previously been hung by each of the three nails around its edge. 
 When the object hangs from a pivot, gravity pulls downward on its centre of mass. If the centre of mass is not directly below the pivot, this gravitational force creates a lever arm, generating a rotational force called torque. The object will only stop moving when the net torque becomes zero. This zero-torque state occurs exclusively when the centre of mass aligns perfectly on the vertical axis straight beneath the pivot.
 
 ### Concepts ###
-* Centre of Mass: The singular point in space where the entire distribution of an object's mass averages out.
+* Centre of Mass: The singular point in space where the entire distribution of an object's mass is located.
 * Static Equilibrium: A state where an object remains completely at rest because both the net external force acting on it and the net external torque or force is zero.
 * Torque: The rotational equivalent of linear force. In this demo, gravity exerts torque around the pivot until the horizontal distance between the pivot and the centre of mass becomes zero.
 * Non-Uniform Density: An uneven mass distribution across an object's surface area, which causes its physical centre of mass to sit in a completely different spot than its geometric centre.
