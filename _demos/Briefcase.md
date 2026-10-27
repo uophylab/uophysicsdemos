@@ -19,8 +19,6 @@ A spinning disc hidden inside a briefcase is spun rapidly. The briefcase is then
 ### Instruction ###
 Use the drill to rapidly rotate the flywheel hidden inside the briefcase. Hand the briefcase to a student and have the student rotate it back and forth and demonstrate its dependence on angular momentum.
 
-{% include youtubePlayer.html id="3736ilWTgDE" %}
-
 ### The physics ###
 A rapidly spinning flywheel contains a large amount angular momentum. This momentum is a vector quantity that points directly along the axis of rotation. According to Newton's rotational laws, a momentum vector strongly resists changes to its direction. When the student turns their body, they force the briefcase to change its horizontal heading, applying an external twisting force (torque) to the gyroscope axis
 
