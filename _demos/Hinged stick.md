@@ -22,10 +22,13 @@ A ball on the end of a hinged stick falls into a cup mounted on the stick. Also 
 ### Instruction ###
 Use the stick to separate the two pieces of wood at an angle and place the ball on top of the tee. Swiftly remove the stick by grabbing or hitting it and the ball should fall directly into the cup as the two pieces of wood collide.
 
+{% include youtubePlayer.html id="17BzUWiMnEQ" %}
+
 ### Physics ###
 The board rotates rather than free-falling, torque around the pivot causes the outer end of the stick to accelerate downward faster than g. The tip of the board drops out from under the ball faster than the ball falls, resulting in the ball landing directly into the moving cup.
 
-{% include youtubePlayer.html id="17BzUWiMnEQ" %}
+### Concepts ###
+Demonstrates angular acceleration vs. linear acceleration, rotational inertia, torque, and the difference between rotational motion and free-fall.
 
 ### Keywords ###
 hinged stick, ball, cup, faster than gravity, falling chimney
