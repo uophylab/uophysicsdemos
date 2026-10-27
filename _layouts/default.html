@@ -149,7 +149,7 @@
   <body>
    <nav>
       <a class="brand" href="{{ site.baseurl }}">University of Ottawa | Physics Laboratory | Demos</a>
-      <!-- NEW: Dynamically inserts the uOttawa logo to float on the right side of the navbar -->
+      <!-- Dynamically inserts the uOttawa logo to float on the right side of the navbar -->
       <img src="{{ site.baseurl }}/assets/images/fullsize/2025-uOttawa-Logo-HOR-WHITE.png" class="navbar-logo-right" alt="uOttawa Logo">
    </nav>
 
@@ -159,25 +159,23 @@
         <!-- Global Header Section containing Search and Categories -->
         <header class="full">
 
-          <!-- 1. NOW ON TOP: Clean Search Engine Input Bar Layout Space -->
+          <!-- 1. Search Engine Input Bar -->
           <div class="global-search-container" style="position: relative; margin-top: 15px; margin-bottom: 20px; width: 100%; max-width: 500px;">
             <input type="text" id="jekyll-search-input" placeholder="🔍 Search physics laboratory demos" style="width: 100%; padding: 14px 20px; font-size: 19px; border: 2px solid #d1d5db; border-radius: 4px; box-sizing: border-box; background-color: #ffffff !important; color: #111111 !important;">
             <!-- Dropdown result overlay panel -->
             <ul id="jekyll-search-results" style="position: absolute; top: 100%; left: 0; right: 0; background: #ffffff; border: 1px solid #d1d5db; border-radius: 0 0 4px 4px; list-style: none; padding: 0; margin: 0; z-index: 9999; box-shadow: 0 4px 10px rgba(0,0,0,0.15); max-height: 300px; overflow-y: auto; display: none;"></ul>
           </div>
 
-          <!-- 2. NOW UNDERNEATH: Global Horizontal Category Navigation Row -->
+          <!-- 2. Global Horizontal Category Navigation Row -->
           <div class="horizontal-nav">
             {% for category in site.categories %}
               {% capture relative_category_url %}{{ category.url | relative_url }}{% endcapture %}
               
-              <!-- SMART CHECK: Triggers maroon strictly on absolute matches to avoid overlapping sub-strings -->
               {% assign is_active = false %}
               {% assign loop_slug = category.title | downcase | strip | replace: ' ', '-' %}
               {% assign current_card_cat = page.category | downcase | strip | replace: ' ', '-' %}
               {% assign current_page_title = page.title | downcase | strip | replace: ' ', '-' %}
               
-              <!-- Generate the definitive category landing page URL template -->
               {% capture target_cat_url %}/categories/{{ loop_slug }}/{% endcapture %}
               
               {% if current_card_cat == loop_slug or current_page_title == loop_slug or page.url == target_cat_url %}
@@ -186,7 +184,7 @@
 
               <a class="pseudo button{% if is_active %} current{% endif %}" href="{{ relative_category_url }}">{{ category.title }}</a>
             {% endfor %}
-          </div> <!-- FIXED: Added missing closing div layout container tag -->
+          </div>
 
           <hr style="opacity: 0.15; margin-bottom: 20px;">
         </header>
@@ -206,7 +204,7 @@
         if (!searchInput || !resultsContainer) return;
 
         let searchData = [];
-        let currentFocus = -1; // Tracks which list item is currently highlighted
+        let currentFocus = -1; 
 
         // 1. Fetch the search file
         const searchUrl = "{{ '/search.json' | relative_url }}";
@@ -222,19 +220,21 @@
         searchInput.addEventListener('input', function() {
           const query = this.value.toLowerCase().trim();
           resultsContainer.innerHTML = '';
-          currentFocus = -1; // Reset focus when typing changes
+          currentFocus = -1; 
           
           if (query.length === 0) {
             resultsContainer.style.display = 'none';
             return;
           }
 
-          // Filter data based on title, category variations, or content elements
+          // Defensively verify and parse strings to prevent engine query crashes
           const filtered = searchData.filter(item => {
-            const itemCat = item.category || item.categories || "";
-            return item.title.toLowerCase().includes(query) || 
-                   itemCat.toLowerCase().includes(query) ||
-                   (item.content && item.content.toLowerCase().includes(query));
+            const title = item.title ? String(item.title).toLowerCase() : "";
+            const content = item.content ? String(item.content).toLowerCase() : "";
+            const rawCat = item.category || item.categories || "";
+            const category = rawCat ? String(rawCat).toLowerCase() : "";
+            
+            return title.includes(query) || content.includes(query) || category.includes(query);
           });
 
           if (filtered.length > 0) {
@@ -247,7 +247,7 @@
               a.style.textDecoration = 'none';
               a.style.color = '#111111';
               
-              // Create the card title label segment
+              // Create the demo name title segment
               const titleSpan = document.createElement('span');
               titleSpan.textContent = item.title;
               titleSpan.style.fontWeight = 'bold';
@@ -255,7 +255,6 @@
 
               // Create the custom maroon category tag label segment
               const categorySpan = document.createElement('span');
-              // FIX: Safely fallback across both search index data naming patterns
               const rawCategory = item.category || item.categories; 
               if (rawCategory) {
                 categorySpan.textContent = ` [${rawCategory}]`;
@@ -277,7 +276,7 @@
           }
         });
 
-        // 3. Keyboard arrow navigation navigation bindings (Arrows + Enter Key)
+        // 3. Keyboard arrow navigation bindings (Arrows + Enter Key)
         searchInput.addEventListener('keydown', function(e) {
           const items = resultsContainer.getElementsByTagName('li');
           if (items.length === 0) return;
@@ -293,7 +292,7 @@
           } else if (e.key === 'Enter') {
             if (currentFocus > -1 && items[currentFocus]) {
               e.preventDefault();
-              const targetLink = items[currentFocus].getElementsByTagName('a')[0]; // FIXED: Targeted structural item index correctly
+              const targetLink = items[currentFocus].getElementsByTagName('a')[0];
               if (targetLink) targetLink.click();
             }
           }
@@ -306,11 +305,9 @@
           if (currentFocus >= items.length) currentFocus = 0;
           if (currentFocus < 0) currentFocus = items.length - 1;
           
-          // Highlight active active container background row
           items[currentFocus].style.backgroundColor = '#f3f4f6';
           
-          // Flip link hover title text targets to uOttawa Maroon on keyboard focus match
-          const targetLink = items[currentFocus].getElementsByTagName('a')[0]; // FIXED: Targeted structural item index correctly
+          const targetLink = items[currentFocus].getElementsByTagName('a')[0];
           if (targetLink) targetLink.style.color = '#8F001A';
           
           items[currentFocus].scrollIntoView({ block: 'nearest' });
@@ -319,16 +316,14 @@
         function removeActive(items) {
           for (let i = 0; i < items.length; i++) {
             items[i].style.backgroundColor = '';
-            const targetLink = items[i].getElementsByTagName('a')[0]; // FIXED: Targeted structural item index correctly
+            const targetLink = items[i].getElementsByTagName('a')[0];
             if (targetLink) targetLink.style.color = '#111111';
             
-            // Retain the red category style tags even during active loops resets
             const targetTag = items[i].querySelector('.category-tag');
             if (targetTag) targetTag.style.color = '#8F001A';
           }
         }
 
-        // Close dropdown if user clicks anywhere outside the input bounds layout area
         document.addEventListener('click', function(e) {
           if (e.target !== searchInput && e.target !== resultsContainer) {
             resultsContainer.style.display = 'none';
