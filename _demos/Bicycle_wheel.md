@@ -25,10 +25,9 @@ card_picture: IMG_0924.JPG
 2) Spin the bicycle wheel using the motor then let it hang from the rope. The wheel will stay upright and rotate torsionally.
 
 
-<video width="100%" controls>
-  <source src="{{ site.baseurl }}/assets/videos/coriolis.mp4" type="video/mp4">
-  Your browser does not support the video tag.
-</video>
+{% include youtubePlayer.html id="_enYKPKVu2g" %}
+
+{% include youtubePlayer.html id="Ug52sJmAmJo" %}
 
 ### The physics ###
 1) Gyroscopic Stability (Action 1): A spinning wheel possesses a massive amount of angular momentum pointing straight along its axle. According to Newton's laws for rotation, the orientation of this momentum vector cannot change unless acted upon by an external torque. When placed on the floor, its high rotational momentum keeps the spin axis locked in place, preventing the wheel from tipping over.
