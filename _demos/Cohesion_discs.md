@@ -20,7 +20,7 @@ Apply a few drops of water to one of the surface. Brings the two surfaces togeth
 
 
 <video width="100%" controls>
-  <source src="{{ site.baseurl }}/assets/videos/friction.mp4" type="video/mp4">
+  <source src="{{ site.baseurl }}/assets/videos/MVI_short.mp4" type="video/mp4">
   Your browser does not support the video tag.
 </video>
 
