@@ -2,11 +2,11 @@
 title: Cohesion discs
 pira: 1D50.20
 category: fluid-mechanics
-card_picture: IMG_1502.JPG
+card_picture: 0645.jpg
 ---
 
 
-{% picture IMG_1502.JPG %}
+{% picture 0645.jpg %}
 
 ### Description ###
 A thin film of water between two flat surfaces make them stick together.
