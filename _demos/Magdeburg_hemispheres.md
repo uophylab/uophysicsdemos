@@ -2,6 +2,7 @@
 title:  Magdeburg hemispheres
 pira: 1D50.20
 category: fluid-mechanics
+subcategory: "Atmospheric pressure"
 card_picture: IMG_1490.JPG
 ---
 
