@@ -2,6 +2,7 @@
 title: Capillary tubes
 pira: 1D50.20
 category: fluid-mechanics
+subcategory: "Surface tension"
 card_picture: IMG_1502.JPG
 ---
 
