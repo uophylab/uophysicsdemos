@@ -17,7 +17,7 @@ Surface tension pulls the surface of liquid up. The bigger the ratio between the
 * Food colouring (Optional)
 
   
-### The physics ###
+### Instruction ###
 Add coloured liquid to the five capillary tubes and compare the different height relative to the diameter of the tubes.
 
 
