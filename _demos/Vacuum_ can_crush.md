@@ -3,11 +3,11 @@ title: Vacuum can crush
 pira: 1D50.20
 category: fluid-mechanics
 subcategory: "Atmospheric pressure"
-card_picture: IMG_1502.JPG
+card_picture: IMG_3380.JPG
 ---
 
 
-{% picture IMG_1502.JPG %}
+{% picture IMG_3380.JPG %}
 
 ### Description ###
 A can is evacuated with a vacuum pump. Eventually the pressure is
