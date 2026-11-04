@@ -1,5 +1,5 @@
 ---
-title: Sode can crush
+title: Soda can crush
 pira: 1D50.20
 category: fluid-mechanics
 subcategory: "Atmospheric pressure"
