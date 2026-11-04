@@ -20,7 +20,7 @@ The maximal height of a liquid in connected vases will be equal.
 Fill each tubes with coloured water and observe the water level remains the same no matter the shape of the tube.
 
 <video width="100%" controls>
-  <source src="{{ site.baseurl }}/assets/videos/Pascal.mp4" type="video/mp4">
+  <source src="{{ site.baseurl }}/assets/videos/pascal.mp4" type="video/mp4">
   Your browser does not support the video tag.
 </video>
 
