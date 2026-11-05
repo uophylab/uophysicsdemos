@@ -21,10 +21,10 @@ The upward force due to the pressure from the fluid in the beaker counter acts t
 ### Instruction ###
 Fill the beaker with clear water insert the tube with the plastic filament and then add the coloured water inside the tube. Watch as the water level in the tube reached that of the beaker the pressure maintaining the filament is remove ans the coloured water leaks in the beaker.
 
-1. The Submersion: Place the loose plastic filament flat against the bottom opening of the hollow tube. Hold it in place manually and plunge the tube vertically down into the beaker of clear water.
-2. The Release: Once submerged, let go of the plastic filament. Observe that the filament stays tightly held against the bottom of the tube by an invisible upward force, keeping the tube sealed.
-3. The Pour: Slowly pour the colored water down into the top of the open tube. Watch the liquid level rise inside.
-4. The Release: The exact moment the inner colored water level rises to match the outer clear water level in the beaker, the plastic filament detaches and drops to the bottom, allowing the colored water to leak into the beaker.
+1. Place the loose plastic filament flat against the bottom opening of the hollow tube. Hold it in place manually and plunge the tube vertically down into the beaker of clear water.
+2. Once submerged, let go of the plastic filament. Observe that the filament stays tightly held against the bottom of the tube by an invisible upward force, keeping the tube sealed.
+3. Slowly pour the coloured water down into the top of the open tube. Watch the liquid level rise inside.
+4. The exact moment the inner coloured water level rises to match the outer clear water level in the beaker, the plastic filament detaches and drops to the bottom, allowing the coloured water to leak into the beaker.
 
 <video width="100%" controls>
   <source src="{{ site.baseurl }}/assets/videos/hydrostatic.mp4" type="video/mp4">
