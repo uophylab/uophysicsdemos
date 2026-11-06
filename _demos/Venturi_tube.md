@@ -27,7 +27,7 @@ Many vertical tubes filled with liquid are connected to a horizontal tube with v
 5. Turn the air blower on.
 
 <video width="100%" controls>
-  <source src="{{ site.baseurl }}/assets/videos/hydrostatic_force.mp4" type="video/mp4">
+  <source src="{{ site.baseurl }}/assets/videos/venturi.mp4" type="video/mp4">
   Your browser does not support the video tag.
 </video>
 
