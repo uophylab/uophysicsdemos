@@ -2,7 +2,7 @@
 title: Attracting sheets
 pira: 1D50.20
 category: fluid-mechanics
-subcategory: "Static pressure"
+subcategory: "Dynamics of fluids"
 card_picture: IMG_1031.JPG
 ---
 
