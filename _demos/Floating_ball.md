@@ -10,14 +10,14 @@ card_picture: 0975.jpg
 {% picture 0975.jpg %}
 
 ### Description ###
-Blowing air between two parallel sheets of paper causes them to pull together rather than blow apart. This classic physics demonstration illustrates fluid pressure differences and Bernoulli's principle.
+A ball is suspended in an upward jet of air.
 
 ### Equipment ###
-* two metal sheets
-* air pump and tube
+* Air blower with tube
+* Ping pong ball
 
 ### Instruction ###
-Place the air flow to the top edge of the gap letting a stream of air straight down the middle between the two sheets. Watch as the two sheets gets closer to each other.
+Tape a thread to a ping pong ball and slowly place it into the vertical airflow. Watch as the ping pong ball becomes trapped inside the stream. It even stays suspended when you rotate the jet of air horizontally. 
 
 <video width="100%" controls>
   <source src="{{ site.baseurl }}/assets/videos/floating_ball.mp4" type="video/mp4">
@@ -26,11 +26,10 @@ Place the air flow to the top edge of the gap letting a stream of air straight d
 
 
 ### Physics ###
-Increasing the speed of a fluid (air) decreases its internal static pressure. The fast-moving air between the sheets has lower pressure than the still air outside them. The higher atmospheric pressure on the outer sides pushes the two sheets inward.
+Bernoulli discovered that as the speed of a moving fluid (like air) increases, its internal pressure decreases. The fast-moving column of air has lower pressure than the slower, stationary air surrounding it. Therefore, the surrounding higher-pressure air pushes the ping pong ball into the stream. When the airflow is vertical, the fast-moving stream pushes upward on the ball, matching and counteracting the downward pull of gravity. When rotated horizontally, tension from the thread pulls back against the airflow, acting in place of gravity to hold the ball in position.
 
 ### Concepts ###
 * Bernoulli's principle: an increase in the speed of a fluid (liquid or gas) occurs simultaneously with a decrease in static pressure or potential energy
-* Venturi effect: As the sheets begin to move inward, the cross-sectional area (A) of the gap shrinks. By the continuity equation (A₁v₁ = A₂v₂), narrowing the channel forces the air to speed up even further, which drops the pressure even lower and creates a brief feedback loop that pulls the sheets together rapidly..
   
 ### Keywords ###
-Bernoulli's, Venturi, two sheets
+Ping pong ball, Bernoulli, low pressure
