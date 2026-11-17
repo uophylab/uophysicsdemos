@@ -10,18 +10,14 @@ card_picture: IMG_1031.JPG
 {% picture IMG_1029.JPG %}
 
 ### Description ###
-The upward force due to the atmospheric pressure from the ambient air is significantly stronger than the downward force of the weight of the water inside the beaker.
+Blowing air between two parallel sheets of paper causes them to pull together rather than blow apart. This classic physics demonstration illustrates fluid pressure differences and Bernoulli's principle.
 
 ### Equipment ###
-* Beaker with coloured water
-* coloured water
-* paper
+* two metal sheets
+* air pump and tube
 
 ### Instruction ###
-1. Place the sheet of paper flat over the top of the completely filled beaker, ensuring it makes full contact with the wet rim and leaves no visible air pockets trapped underneath.
-2. Place one hand flat over the paper to hold it securely against the rim. Carefully and swiftly flip the entire beaker completely upside down.
-3. Slowly remove your hand from the paper.
-4. The paper remains firmly pinned against the inverted rim, sealing the water inside and completely preventing it from spilling out onto the floor.
+Place the air flow to the top edge of the gap letting a stream of air straight down the middle between the two sheets. Watch as the two sheets gets closer to each other.
 
 <video width="100%" controls>
   <source src="{{ site.baseurl }}/assets/videos/two_sheets.mp4" type="video/mp4">
@@ -30,12 +26,11 @@ The upward force due to the atmospheric pressure from the ambient air is signifi
 
 
 ### Physics ###
-The air surrounding us is a heavy fluid that constantly exerts a massive outward pressure of roughly 101.3 kPa} in all directions. Inside the beaker, the downward force pushing on the card is equal to the hydrostatic pressure of the water column P = rho*gh. Because the upward atmospheric pressure is stronger than the downward weight of the water, the net force aggressively pushes the paper upward against the rim. The paper itself does not hold the water, it simply acts as a barrier that prevents air from rushing into the beaker. A tiny layer of water creates a surface tension seal along the edge of the rim. If air were allowed to slip inside, the internal pressure would equalize with the room, causing gravity to instantly pull the water down.
+Increasing the speed of a fluid (air) decreases its internal static pressure. The fast-moving air between the sheets has lower pressure than the still air outside them. The higher atmospheric pressure on the outer sides pushes the two sheets inward.
 
 ### Concepts ###
-* Atmospheric Pressure: The force per unit area exerted against all surfaces by the weight of the Earth's air column.
-* Hydrostatic Pressure: The downward pressure exerted by the weight of the water column, which is completely overwhelmed by the atmospheric pressure in this setup.
-* Surface Tension: The cohesive physical property of water molecules at a boundary layer that helps create an airtight hydraulic seal around the rim of the beaker.
+* Bernoulli's principle: an increase in the speed of a fluid (liquid or gas) occurs simultaneously with a decrease in static pressure or potential energy
+* Venturi effect: As the sheets begin to move inward, the cross-sectional area (A) of the gap shrinks. By the continuity equation (A₁v₁ = A₂v₂), narrowing the channel forces the air to speed up even further, which drops the pressure even lower and creates a brief feedback loop that pulls the sheets together rapidly..
   
 ### Keywords ###
-Pascal, tubes, beaker, hydrostatic force
+Bernoulli's, Venturi, two sheets
