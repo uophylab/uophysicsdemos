@@ -30,7 +30,7 @@ Increasing the speed of a fluid (air) decreases its internal static pressure. Th
 
 ### Concepts ###
 * Bernoulli's principle: an increase in the speed of a fluid (liquid or gas) occurs simultaneously with a decrease in static pressure or potential energy
-* Venturi effect: As the sheets begin to move inward, the cross-sectional area (A) of the gap shrinks. By the continuity equation (A₁v₁ = A₂v₂), narrowing the channel forces the air to speed up even further, which drops the pressure even lower and creates a brief feedback loop that pulls the sheets together rapidly..
+* Venturi effect: As the sheets begin to move inward, the cross-sectional area (A) of the gap shrinks. By the continuity equation (A₁v₁ = A₂v₂), narrowing the channel forces the air to speed up even further, which drops the pressure even lower and creates a brief feedback loop that pulls the sheets together rapidly.
   
 ### Keywords ###
 Bernoulli's, Venturi, two sheets
