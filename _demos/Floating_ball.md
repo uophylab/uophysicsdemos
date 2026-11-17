@@ -3,11 +3,11 @@ title: Floating ball
 pira: 1D50.20
 category: fluid-mechanics
 subcategory: "Dynamics of fluids"
-card_picture: IMG_1031.JPG
+card_picture: 0975.jpg
 ---
 
 
-{% picture IMG_1029.JPG %}
+{% picture 0975.jpg %}
 
 ### Description ###
 Blowing air between two parallel sheets of paper causes them to pull together rather than blow apart. This classic physics demonstration illustrates fluid pressure differences and Bernoulli's principle.
@@ -20,7 +20,7 @@ Blowing air between two parallel sheets of paper causes them to pull together ra
 Place the air flow to the top edge of the gap letting a stream of air straight down the middle between the two sheets. Watch as the two sheets gets closer to each other.
 
 <video width="100%" controls>
-  <source src="{{ site.baseurl }}/assets/videos/two_sheets.mp4" type="video/mp4">
+  <source src="{{ site.baseurl }}/assets/videos/floating_ball.mp4" type="video/mp4">
   Your browser does not support the video tag.
 </video>
 
