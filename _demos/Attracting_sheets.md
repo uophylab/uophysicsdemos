@@ -1,5 +1,5 @@
 ---
-title: Two metal sheets
+title: Attracting sheets
 pira: 1D50.20
 category: fluid-mechanics
 subcategory: "Static pressure"
@@ -24,7 +24,7 @@ The upward force due to the atmospheric pressure from the ambient air is signifi
 4. The paper remains firmly pinned against the inverted rim, sealing the water inside and completely preventing it from spilling out onto the floor.
 
 <video width="100%" controls>
-  <source src="{{ site.baseurl }}/assets/videos/hydrostatic_force.mp4" type="video/mp4">
+  <source src="{{ site.baseurl }}/assets/videos/two_sheets.mp4" type="video/mp4">
   Your browser does not support the video tag.
 </video>
 
