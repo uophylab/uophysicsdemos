@@ -19,7 +19,7 @@ A jet of air is blown across one end of a tube filled with crispy rice or puffed
 * Cripsy rice or Puffed wheat
 
 ### Instruction ###
-Place the air flow to the top edge of the gap letting a stream of air straight down the middle between the two sheets. Watch as the two sheets gets closer to each other.
+Pour the crispy rice inside a large beaker. Place the transparent tube in the crispy rice and set the end of the air flow to the top edge of the gap letting a stream of air straight down the pipe. Watch as the two puffed wheat are propelled out of the beaker!
 
 {% include youtubePlayer.html id="YrhITSuizC0" %}
 <video width="100%" controls>
