@@ -1,7 +1,7 @@
 ---
 title: Thermal expansion
 pira: 1D50.20
-category: Thermodynamics
+category: thermodynamics
 subcategory: "Thermal properties"
 card_picture: IMG_1448.JPG
 ---
