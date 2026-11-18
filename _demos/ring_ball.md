@@ -1,8 +1,8 @@
 ---
 title: Thermal expansion
 pira: 1D50.20
-category: fluid-mechanics
-subcategory: "Dynamics of fluids"
+category: Thermodynamics
+subcategory: "Thermal properties"
 card_picture: IMG_1448.JPG
 ---
 
