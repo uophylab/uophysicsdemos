@@ -10,15 +10,18 @@ card_picture: IMG_1023.JPG
 {% picture IMG_1019.JPG %}
 
 ### Description ###
-Blowing air between two parallel sheets of paper causes them to pull together rather than blow apart. This classic physics demonstration illustrates fluid pressure differences and Bernoulli's principle.
+A jet of air is blown across one end of a tube filled with crispy rice or puffed wheat.
 
 ### Equipment ###
-* two metal sheets
-* air pump and tube
+* Air blower
+* Large beaker
+* Transparent tube
+* Cripsy rice or Puffed wheat
 
 ### Instruction ###
 Place the air flow to the top edge of the gap letting a stream of air straight down the middle between the two sheets. Watch as the two sheets gets closer to each other.
 
+{% include youtubePlayer.html id="YrhITSuizC0" %}
 <video width="100%" controls>
   <source src="{{ site.baseurl }}/assets/videos/Crispy_automizer.mp4" type="video/mp4">
   Your browser does not support the video tag.
@@ -30,7 +33,6 @@ Increasing the speed of a fluid (air) decreases its internal static pressure. Th
 
 ### Concepts ###
 * Bernoulli's principle: an increase in the speed of a fluid (liquid or gas) occurs simultaneously with a decrease in static pressure or potential energy
-* Venturi effect: As the sheets begin to move inward, the cross-sectional area (A) of the gap shrinks. By the continuity equation (A₁v₁ = A₂v₂), narrowing the channel forces the air to speed up even further, which drops the pressure even lower and creates a brief feedback loop that pulls the sheets together rapidly.
   
 ### Keywords ###
-Bernoulli's, Venturi, two sheets
+Bernoulli's, Crispy,
