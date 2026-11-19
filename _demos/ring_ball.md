@@ -32,7 +32,7 @@ A solid brass ball passes easily through a matching brass ring at room temperatu
 
 
 ### Physics ###
-Adding heat increases the kinetic energy of the atoms inside the solid metal lattice, causing them to vibrate faster and with greater amplitude. Because interatomic bonds are asymmetric—resisting compression more strongly than stretching—the average distance between neighboring atoms increases. This microscopic spacing increase causes the entire object to expand uniformly in all three dimensions, enlarging the diameter of the sphere (and expanding the inner opening of the ring outward if heated).
+Adding heat increases the kinetic energy of the atoms inside the solid metal lattice, causing them to vibrate faster and with greater amplitude. Because interatomic bonds are asymmetric the average distance between neighboring atoms increases. This microscopic spacing increase causes the entire object to expand uniformly in all three dimensions, enlarging the diameter of the sphere (and expanding the inner opening of the ring outward if heated).
 
 ### Concepts ###
 * Thermal expansion: the tendency of matter to change its shape, area, and volume in response to a change in temperature due to increased atomic vibration and spacing.
