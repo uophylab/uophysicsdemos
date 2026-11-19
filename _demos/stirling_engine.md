@@ -3,10 +3,10 @@ title: Stirling engine
 pira: 1D50.20
 category: thermodynamics
 subcategory: "Thermal properties"
-card_picture: IMG_3629.JPG
+card_picture: stirling.png
 ---
 
-{% picture IMG_3629.JPG4.jpg %}
+{% picture stirling.png %}
 
 ### Description ###
 A small tabletop Stirling engine converts thermal energy from a heat source into continuous mechanical rotation of a flywheel by cyclically heating and cooling a trapped gas.
