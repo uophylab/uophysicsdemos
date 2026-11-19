@@ -3,10 +3,10 @@ title: Bimetallic Strip
 pira: 1D50.20
 category: thermodynamics
 subcategory: "Thermal properties"
-card_picture: IMG_1460.JPG
+card_picture: IMG_1461.JPG
 ---
 
-{% picture IMG_1460.JPG %}
+{% picture IMG_1461.JPG %}
 
 ### Description ###
 A straight metal strip made of two different metals bonded together bends into a sharp curve when heated over a flame and straightens back out as it cools.
