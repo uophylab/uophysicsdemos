@@ -23,7 +23,7 @@ A Peltier thermoelectric module sandwiched between two metal heat sinks—one pl
 * Running the motor: Wait 10 to 20 seconds for heat to conduct through the metal legs across the Peltier junction. Once a sufficient temperature difference is established, the propeller will begin spinning continuously.
 * Reversing polarity (optional): Remove the unit, wipe the legs dry, and swap their positions so the hot and cold sides are reversed. Observe the propeller spinning in the opposite direction as the current reverses.
 
-{% include youtubePlayer.html id="gztxrR_ytNM" %}
+{% include youtubePlayer.html id="lUHCeE6-RzU" %}
 
 ### Physics ###
 The demonstration operates as a solid-state heat engine utilizing the Seebeck effect. Inside the Peltier module, alternating p-type and n-type semiconductor pellets are connected electrically in series and thermally in parallel. When one side is heated and the other is cooled, charge carriers (electrons in n-type and holes in p-type semiconductors) diffuse faster from the hot junction toward the cold junction. This thermal diffusion creates a net buildup of charge at the cold side, establishing an electric potential difference (voltage). When connected to the small DC motor, this voltage drives a continuous electric current that converts thermal energy directly into mechanical rotation without any moving fluid or pistons.
