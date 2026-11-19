@@ -1,5 +1,5 @@
 ---
-title: Steam engine
+title: Stirling engine
 pira: 1D50.20
 category: thermodynamics
 subcategory: "Thermal properties"
@@ -23,7 +23,6 @@ A small tabletop Stirling engine converts thermal energy from a heat source into
 * Starting the cycle: Give the flywheel a gentle spin by hand to initiate the thermodynamic cycle. Once started, the engine will accelerate and run continuously on its own.
 * Stopping the engine: Extinguish the flame or remove the heat source. Observe the flywheel gradually slowing down and stopping as the temperature difference between the hot and cold ends equalizes.
 
-{% include youtubePlayer.html id="Tki_eh2gNKA" %}
 {% include youtubePlayer.html id="gztxrR_ytNM" %}
 
 ### Physics ###
