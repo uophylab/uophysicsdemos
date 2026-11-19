@@ -24,6 +24,11 @@ A small piece of cotton placed at the bottom of a sealed transparent cylinder ig
 * Resetting: Pull the plunger back up immediately to clear the smoke, and use a cleaning rod to remove any charred residue before repeating.
 
 
+<video width="100%" controls>
+  <source src="{{ site.baseurl }}/assets/videos/fire_syringe.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
+
 ### Physics ###
 Slamming the plunger downward performs mechanical work on the trapped air inside the cylinder. Because the compression happens in a fraction of a second, virtually no heat has time to escape through the walls of the tube—making it a nearly adiabatic process ($Q \approx 0$). According to the First Law of Thermodynamics ($\Delta U = Q - W$), all of the mechanical work done on the gas goes directly into increasing its internal energy ($U$). For an ideal gas, internal energy is directly proportional to absolute temperature, so rapidly reducing the air's volume to roughly one-fifteenth of its original size causes its temperature to spike above $250^\circ\text{C}$ ($480^\circ\text{F}$)—exceeding the autoignition temperature of the cotton.
 
