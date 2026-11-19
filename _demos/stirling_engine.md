@@ -12,8 +12,8 @@ card_picture: IMG_3629.JPG
 A small tabletop Stirling engine converts thermal energy from a heat source into continuous mechanical rotation of a flywheel by cyclically heating and cooling a trapped gas.
 
 ### Equipment ###
-* Tabletop Stirling engine model (gamma or beta configuration)
-* Heat source (alcohol lamp with denatured alcohol, or a mug of hot water for low-temperature-differential models)
+* Tabletop Stirling engine model
+* Heat source 
 * Matches or lighter
 * Heat-resistant mat
 
