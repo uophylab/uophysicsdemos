@@ -1,7 +1,7 @@
 ---
 title: Electrostatic Repulsion
 pira: 1D50.20
-category: e_and_m
+category: Electricity and Magnetism
 subcategory: "Electrostatics"
 card_picture: IMG_1623.JPG
 ---
