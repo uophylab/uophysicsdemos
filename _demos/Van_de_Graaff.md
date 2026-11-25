@@ -46,7 +46,6 @@ Inside the vertical column, a motor-driven rubber belt rubs against rollers made
 ### Concepts ###
 * Triboelectric effect: the transfer of electric charge between two different materials when they make contact and separate.
 * Electrostatic shielding (Faraday cage): excess charge placed inside a hollow conductor migrates entirely to its outer surface, allowing continuous charge buildup.
-* Dielectric breakdown: when an electric field becomes strong enough (roughly $3 \times 10^6\text{ V/m}$ in dry air), it strips electrons from air molecules, turning the insulating air into a conductor and producing a spark.
 
 ### Keywords ###
 Van de Graaff, Electrostatics
